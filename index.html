@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06142b">
+  <meta name="description" content="NutriPulse — mange mieux, bouge plus et atteins tes objectifs.">
+  <title>NutriPulse — Accueil</title>
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#030b19;font-family:Arial,Helvetica,sans-serif}
+    body{display:flex;justify-content:center;align-items:flex-start}
+    .page{position:relative;width:min(100%,1672px);line-height:0;isolation:isolate}
+    .maquette{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+    .zone{position:absolute;display:block;z-index:2;border:0;border-radius:14px;background:transparent;cursor:pointer;text-decoration:none;line-height:normal;outline:none}
+    .zone:hover{background:rgba(255,145,20,.10);box-shadow:inset 0 0 0 2px rgba(255,160,35,.65)}
+    .zone:focus-visible{background:rgba(255,145,20,.14);box-shadow:inset 0 0 0 3px #ffd36a,0 0 0 3px #06142b}
+    .zone span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:7px 10px;border-radius:8px;background:#07152beF;color:#fff;font-size:13px;white-space:nowrap;opacity:0;pointer-events:none}
+    .zone:focus-visible span{opacity:1}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .hint{position:fixed;right:12px;bottom:12px;z-index:5;padding:8px 12px;border:1px solid #35527e;border-radius:20px;background:#07152be8;color:#dceaff;font-size:12px;line-height:1.3;opacity:.85}
+    @media(max-width:650px){.page{width:100%;min-width:0}.hint{font-size:10px;right:6px;bottom:6px;padding:6px 8px}}
+  </style>
+</head>
+<body>
+  <main class="page" aria-label="Accueil NutriPulse — maquette interactive">
+    <img class="maquette" src="assets/accueil-maquette.png" alt="Maquette de l'accueil NutriPulse : tableau de bord fitness bleu nuit et orange, montagne au coucher du soleil, objectifs, calories, entraînement, eau, badges et calculateur IMC" fetchpriority="high">
+
+    <!-- Navigation latérale -->
+    <a class="zone" style="left:1%;top:14.1%;width:14%;height:6.3%" href="index.html" aria-label="Accueil"><span>Accueil</span></a>
+    <a class="zone" style="left:1%;top:21.2%;width:14%;height:6.2%" href="fuel.html" aria-label="Nutrition"><span>Nutrition</span></a>
+    <a class="zone" style="left:1%;top:27.8%;width:14%;height:6.3%" href="exercices.html" aria-label="Exercices"><span>Exercices</span></a>
+    <a class="zone" style="left:1%;top:34.4%;width:14%;height:6.2%" href="suivi.html" aria-label="Mon suivi"><span>Mon suivi</span></a>
+    <a class="zone" style="left:1%;top:40.9%;width:14%;height:6.1%" href="faq.html" aria-label="FAQ"><span>FAQ</span></a>
+    <a class="zone" style="left:1%;top:47.1%;width:14%;height:6.2%" href="contact.html" aria-label="Contact"><span>Contact</span></a>
+
+    <!-- Actions et cartes principales -->
+    <a class="zone" style="left:19%;top:28.8%;width:18%;height:5.2%" href="suivi.html" aria-label="Commencer mon parcours"><span>Commencer mon parcours</span></a>
+    <a class="zone" style="left:78%;top:10%;width:19%;height:20%" href="suivi.html" aria-label="Modifier mon objectif"><span>Mon objectif</span></a>
+    <a class="zone" style="left:17%;top:35.5%;width:20%;height:12%" href="fuel.html" aria-label="Calories du jour et nutrition"><span>Nutrition</span></a>
+    <a class="zone" style="left:38%;top:35.5%;width:20%;height:12%" href="exercices.html" aria-label="Entraînement"><span>Entraînement</span></a>
+    <a class="zone" style="left:58.5%;top:35.5%;width:20%;height:12%" href="suivi.html" aria-label="Suivi de l'hydratation"><span>Hydratation</span></a>
+    <a class="zone" style="left:79%;top:35.5%;width:19%;height:12%" href="suivi.html" aria-label="XP gagnés"><span>XP et progression</span></a>
+    <a class="zone" style="left:17%;top:50%;width:32%;height:27%" href="suivi.html" aria-label="Choisir ton objectif"><span>Choisir ton objectif</span></a>
+    <a class="zone" style="left:50%;top:50%;width:24%;height:27%" href="fuel.html" aria-label="Accès rapide aux recettes, exercices et suivi"><span>Accès rapide</span></a>
+    <a class="zone" style="left:75%;top:50%;width:23%;height:27%" href="suivi.html" aria-label="Mes badges"><span>Mes badges</span></a>
+    <a class="zone" style="left:17%;top:78%;width:37%;height:19%" href="suivi.html" aria-label="Calculateur IMC"><span>Calculateur IMC</span></a>
+    <a class="zone" style="left:55%;top:78%;width:27%;height:19%" href="suivi.html" aria-label="Témoignages et progression"><span>Progression</span></a>
+    <a class="zone" style="left:81%;top:1%;width:18%;height:8%" href="suivi.html" aria-label="Profil et niveau"><span>Mon profil</span></a>
+  </main>
+  <div class="hint" aria-hidden="true">Clique sur les zones de la maquette pour naviguer</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#102c68"/>
+      <stop offset=".45" stop-color="#f58642"/>
+      <stop offset=".68" stop-color="#ffd18a"/>
+      <stop offset="1" stop-color="#254c78"/>
+    </linearGradient>
+    <radialGradient id="sunset" cx=".62" cy=".58" r=".4">
+      <stop stop-color="#fff5c3" stop-opacity=".95"/>
+      <stop offset=".24" stop-color="#ffad5c" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#f28544" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="snow" x2="0" y2="1">
+      <stop stop-color="#e4edff"/>
+      <stop offset=".38" stop-color="#879ec1"/>
+      <stop offset="1" stop-color="#192b4d"/>
+    </linearGradient>
+    <linearGradient id="front" x2="0" y2="1">
+      <stop stop-color="#172847"/>
+      <stop offset="1" stop-color="#040d1d"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h1200v480H0z"/>
+  <path fill="url(#sunset)" d="M0 0h1200v480H0z"/>
+  <path fill="#f3a669" opacity=".24" d="M0 164q75-20 142 0t138 0 142 0 138 0 138 0 138 0 138 0 126 0v34H0z"/>
+  <path fill="#283f68" d="m0 328 118-123 58 55 107-120 94 105 85-82 104 127 89-154 117 113 97-91 131 133 105-100 95 92v197H0z"/>
+  <path fill="#e2eaff" opacity=".8" d="m118 205 36 38-27-10-12 17-11-8-18 17zm165-65 38 55-32-14-18 19-9-13-24 13zm286 96 53-75 46 72-37-23-15 17-16-18zm303-66 37 37-30-10-14 17-13-11-19 10zm225 68 39 33-38-11-17 16-14-11-18 7z"/>
+  <path fill="#172c4e" d="m0 371 145-98 104 69 162-146 126 158 141-201 165 186 130-139 135 121 92-56v215H0z"/>
+  <path fill="#ccdafa" opacity=".78" d="m411 196 38 66-31-19-20 18-13-17-24 16zm267-43 52 77-41-22-17 21-15-17-27 17zm295 61 39 35-33-9-15 17-13-10-19 11z"/>
+  <path fill="url(#front)" d="m0 429 155-73 113 42 160-187 94 127 122-190 100 149 93-71 152 119 111-70 100 49v106H0z"/>
+  <path fill="#ffb965" opacity=".78" d="m428 211 29 92-38-45-21 17-13-20-23 13zm216-63 35 81-39-39-17 20-16-19-23 16z"/>
+  <path fill="#081426" d="m482 386 91-116 92 116z"/>
+  <path fill="#17213a" d="m540 316 33-55 40 56-23-9-15 10-17-10z"/>
+  <g stroke="#0a1525" stroke-linecap="round" fill="none">
+    <path stroke-width="8" d="M574 263v-39m-1 8-24-18m24 18 23-22m-23 13-16 20m16-20 17 20"/>
+    <circle cx="574" cy="214" r="7" fill="#091324" stroke="none"/>
+  </g>
+  <path fill="#f4a146" opacity=".4" d="m516 399 57-68 58 68z"/>
+  <path fill="#ffbd6a" opacity=".7" d="M0 453q165-39 322 1t312 1 314-2 252 3v24H0z"/>
+</svg>

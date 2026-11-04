@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="13" y1="8" x2="57" y2="65" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffcc2"/>
+      <stop offset=".18" stop-color="#fff270"/>
+      <stop offset=".42" stop-color="#ffbf13"/>
+      <stop offset=".68" stop-color="#ff7900"/>
+      <stop offset=".86" stop-color="#ffcf25"/>
+      <stop offset="1" stop-color="#a54100"/>
+    </linearGradient>
+    <linearGradient id="side" x1="17" y1="14" x2="59" y2="61" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffad00"/>
+      <stop offset=".5" stop-color="#e25600"/>
+      <stop offset="1" stop-color="#7e2900"/>
+    </linearGradient>
+    <filter id="depth" x="-35%" y="-25%" width="170%" height="175%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feOffset dy="4"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".62"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <path d="m36 7 9 18 20 3-14.5 14 3.5 20-18-9.5L18 62l3.5-20L7 28l20-3L36 7Z" fill="url(#side)" stroke="#ff8d00" stroke-width="3" stroke-linejoin="round" filter="url(#depth)"/>
+  <path d="m36 7 9 18 20 3-14.5 14 3.5 20-18-9.5L18 62l3.5-20L7 28l20-3L36 7Z" fill="url(#gold)" stroke="#fff1a0" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="m36 15 6.5 13.5L58 31l-11 10.5 2.7 14.8L36 49l-13.2 7.3 2.7-14.8L14.5 31l15.3-2.5L36 15Z" fill="#fff6a6" fill-opacity=".26" stroke="#fff9cd" stroke-opacity=".72"/>
+  <path d="m36 15 1.5 23 11.2 18.3L36 49V15Z" fill="#ff7300" fill-opacity=".2"/>
+</svg>

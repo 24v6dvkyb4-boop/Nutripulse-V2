@@ -609,10 +609,80 @@
     .video-copy p { margin: 6px 0 8px; color: #cedcf1; font-size: 12px; }
     .video-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; color: #ffc027; font-size: 11px; font-weight: 700; }
     .video-link { display: inline-block; margin-top: 9px; color: #9dcaff; font-size: 12px; font-weight: 650; }
-    .followup-placeholder { max-width: 760px; margin: 26px auto; padding: clamp(20px, 4vw, 38px); text-align: center; }
-    .followup-placeholder > span { display: block; font-size: 50px; filter: drop-shadow(0 0 12px rgba(57, 153, 255, .7)); }
-    .followup-placeholder h2 { margin: 10px 0; font-size: clamp(22px, 3vw, 30px); }
-    .followup-placeholder p { max-width: 550px; margin: 0 auto; color: #d2e0f6; }
+    .followup-banner { background: radial-gradient(ellipse at 82% 10%, rgba(255, 139, 34, .42), transparent 38%), linear-gradient(110deg, #09182f, #102d53 58%, #09182f); }
+    .followup-dashboard { display: grid; gap: 14px; }
+    .followup-panel { min-width: 0; padding: 14px; border: 1px solid rgba(137, 197, 255, .68); border-radius: 20px; background: radial-gradient(ellipse at 8% 0%, rgba(31, 130, 255, .27), transparent 58%), linear-gradient(145deg, rgba(10, 31, 64, .94), rgba(4, 14, 33, .96)); box-shadow: 0 8px 22px rgba(0, 0, 0, .28), inset 0 1px rgba(225, 241, 255, .12); }
+    .followup-top-grid { display: grid; grid-template-columns: minmax(0, 1fr) 156px 190px; gap: 12px; }
+    .followup-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0 0 10px; }
+    .followup-panel-heading h2, .followup-summary h2, .followup-performance h2 { margin: 0; font-size: 17px; }
+    .followup-panel-heading h2 span, .followup-summary h2 span, .followup-performance h2 span { margin-right: 7px; color: #ffb13d; font-size: 21px; }
+    .followup-muted { color: #c5d5ee; font-size: 11px; }
+    .followup-badge-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
+    .followup-badge { display: flex; min-width: 0; flex-direction: column; align-items: center; padding: 5px 2px; border: 1px solid transparent; border-radius: 13px; color: var(--text); background: transparent; text-align: center; cursor: pointer; transition: transform .18s ease, background .18s ease, border-color .18s ease; }
+    .followup-badge:hover, .followup-badge:focus-visible { transform: translateY(-2px); border-color: rgba(255, 173, 44, .6); background: rgba(255, 153, 32, .08); }
+    .followup-badge img { width: clamp(42px, 6vw, 68px); height: clamp(42px, 6vw, 68px); object-fit: contain; filter: grayscale(.85) brightness(.65); }
+    .followup-badge.unlocked img { filter: drop-shadow(0 0 8px rgba(255, 157, 46, .62)) saturate(1.12) brightness(1.08); }
+    .followup-badge strong { font-size: 11px; line-height: 1.2; }
+    .followup-badge small { margin-top: 2px; color: #c5d5ee; font-size: 9px; }
+    .followup-badge.unlocked strong { color: #ffd16c; }
+    .followup-level { display: grid; align-content: center; justify-items: center; text-align: center; }
+    .followup-level-ring { display: grid; width: 112px; height: 112px; place-items: center; border-radius: 50%; background: radial-gradient(circle, #0b1c36 58%, transparent 60%), conic-gradient(from 220deg, #ff761c 0deg, #ffd15c var(--xp-progress, 0deg), #263a59 var(--xp-progress, 0deg) 360deg); box-shadow: 0 0 18px rgba(255, 139, 44, .38), inset 0 0 0 1px #ffcf6a; }
+    .followup-level-ring div { display: grid; justify-items: center; }
+    .followup-level-ring small { color: #dce8fa; font-weight: 700; }
+    .followup-level-ring strong { font-size: 36px; line-height: 1.05; }
+    .followup-xp-label { margin-top: 8px; color: #ffe0a1; font-size: 12px; font-weight: 800; }
+    .followup-progress-stat { display: flex; justify-content: space-between; gap: 8px; margin: 12px 0 7px; font-size: 12px; }
+    .followup-progress-track { height: 11px; overflow: hidden; border-radius: 99px; background: #102a58; box-shadow: inset 0 1px 4px #000; }
+    .followup-progress-fill { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #ff6b09, #ffbe20); box-shadow: 0 0 9px rgba(255, 135, 14, .6); transition: width .25s ease; }
+    .followup-week { padding: 14px; }
+    .followup-week-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .followup-week-heading h2 { margin: 0; font-size: 18px; }
+    .followup-week-heading h2 span { margin-right: 7px; color: #ffb13d; }
+    .followup-week-switch { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border: 1px solid rgba(129, 165, 230, .45); border-radius: 99px; background: rgba(7, 18, 39, .66); }
+    .followup-week-switch button { width: 30px; height: 30px; border: 0; border-radius: 50%; color: #fff; background: rgba(43, 82, 137, .55); cursor: pointer; font-size: 20px; line-height: 1; }
+    .followup-week-switch button:hover { background: #c56a16; }
+    .followup-week-switch button:disabled { opacity: .4; cursor: not-allowed; }
+    .followup-week-title { min-width: 0; font-size: 11px; font-weight: 750; text-align: center; }
+    .followup-week-area { display: grid; grid-template-columns: minmax(0, 1fr) 176px; gap: 12px; align-items: center; }
+    .followup-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 7px; }
+    .followup-day { min-width: 0; padding: 8px 6px; border: 1px solid rgba(110, 169, 245, .45); border-radius: 13px; background: linear-gradient(180deg, rgba(18, 36, 58, .92), rgba(7, 21, 39, .94)); }
+    .followup-day.complete { border-color: rgba(22, 214, 138, .78); box-shadow: inset 0 0 16px rgba(22, 214, 138, .08); }
+    .followup-day-name { font-size: 11px; font-weight: 800; }
+    .followup-day-date { color: #c5d5ee; font-size: 10px; }
+    .followup-day-status { min-height: 17px; margin: 3px 0 6px; color: #c5d5ee; font-size: 9px; }
+    .followup-day.complete .followup-day-status { color: #63efb4; }
+    .followup-day label { display: block; margin: 6px 0 3px; color: #cbd9ed; font-size: 9px; }
+    .followup-day input { width: 100%; min-width: 0; padding: 6px 4px; border: 1px solid rgba(114, 151, 199, .45); border-radius: 7px; color: #fff; background: rgba(4, 13, 28, .9); font-size: 11px; }
+    .followup-day input::placeholder { color: #8398b5; }
+    .followup-validate-box { text-align: center; }
+    .followup-validate { width: 100%; padding: 10px 12px; border: 1px solid rgba(255, 183, 62, .8); border-radius: 99px; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); box-shadow: 0 0 13px rgba(255, 140, 12, .3); cursor: pointer; font-size: 12px; font-weight: 800; }
+    .followup-validate:disabled { cursor: default; filter: saturate(.55); opacity: .7; }
+    .followup-validate-box p { margin: 7px 0 0; color: #c5d5ee; font-size: 10px; }
+    .followup-bottom-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .85fr); gap: 12px; }
+    .followup-summary h2, .followup-performance h2 { margin-bottom: 10px; }
+    .followup-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .followup-metric { min-width: 0; padding: 10px 9px; border: 1px solid rgba(87, 149, 230, .42); border-radius: 13px; background: rgba(7, 22, 44, .7); }
+    .followup-metric small { display: block; min-height: 30px; color: #c5d5ee; font-size: 10px; }
+    .followup-metric strong { display: block; overflow-wrap: anywhere; font-size: clamp(15px, 1.8vw, 20px); }
+    .followup-chart-title { margin: 13px 0 5px; font-size: 12px; font-weight: 750; }
+    .followup-chart { display: block; width: 100%; height: 130px; overflow: visible; }
+    .followup-circles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .followup-circle-stat { min-width: 0; text-align: center; }
+    .followup-circle { display: grid; width: clamp(68px, 7vw, 92px); aspect-ratio: 1; place-items: center; margin: 0 auto 5px; border: 4px solid rgba(255, 162, 46, .8); border-radius: 50%; background: radial-gradient(circle, rgba(8, 24, 49, .96) 58%, transparent 60%); box-shadow: 0 0 13px rgba(255, 137, 30, .22); }
+    .followup-circle.purple { border-color: rgba(163, 77, 255, .9); box-shadow: 0 0 13px rgba(163, 77, 255, .28); }
+    .followup-circle.cyan { border-color: rgba(0, 200, 238, .9); box-shadow: 0 0 13px rgba(0, 200, 238, .28); }
+    .followup-circle strong { display: block; font-size: 14px; }
+    .followup-circle small, .followup-circle-stat > small { color: #c5d5ee; font-size: 9px; }
+    .followup-congrats { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 11px; border: 1px solid rgba(255, 174, 47, .55); border-radius: 14px; background: linear-gradient(110deg, rgba(255, 126, 8, .14), rgba(6, 21, 46, .72) 55%); }
+    .followup-congrats-icon { font-size: 28px; }
+    .followup-congrats strong, .followup-congrats span { display: block; }
+    .followup-congrats span { margin-top: 3px; color: #d2e0f6; font-size: 11px; }
+    .followup-badge-dialog { width: min(390px, calc(100% - 32px)); padding: 20px; border: 1px solid rgba(137, 197, 255, .74); border-radius: 20px; color: var(--text); background: linear-gradient(145deg, #0d2446, #071326); box-shadow: 0 20px 70px rgba(0, 0, 0, .65); text-align: center; }
+    .followup-badge-dialog::backdrop { background: rgba(0, 5, 15, .76); backdrop-filter: blur(4px); }
+    .followup-badge-dialog img { display: block; width: 116px; height: 116px; margin: 4px auto 10px; object-fit: contain; }
+    .followup-badge-dialog h2 { margin: 0; color: #ffd16c; }
+    .followup-badge-dialog p { color: #d2e0f6; }
+    .followup-dialog-close { float: right; border: 0; color: #eaf2ff; background: transparent; cursor: pointer; font-size: 24px; }
 
     @media (min-width: 1051px) and (max-width: 1150px) {
       .metric { gap: 6px; padding-right: 8px; padding-left: 8px; }
@@ -632,6 +702,11 @@
       .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: -74px; }
       .hero-copy { max-width: 410px; }
       .below-fold { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .followup-top-grid { grid-template-columns: minmax(0, 1fr) 150px; }
+      .followup-badges-panel { grid-column: 1 / -1; }
+      .followup-week-area { grid-template-columns: 1fr; }
+      .followup-days { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .followup-validate-box { max-width: 360px; justify-self: end; }
     }
     @media (max-width: 820px) {
       .sidebar { position: sticky; inset: 0 0 auto; width: 100%; height: auto; padding: 10px 13px; border-right: 0; border-bottom: 1px solid var(--line); }
@@ -651,6 +726,8 @@
       .content-grid { grid-template-columns: 1fr 1fr; }
       .bmi-and-review { grid-template-columns: 1fr 1fr; }
       .below-fold { grid-template-columns: 1fr 1fr; }
+      .followup-bottom-grid { grid-template-columns: 1fr; }
+      .followup-days { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     }
     @media (max-width: 560px) {
       .topbar { gap: 5px; }
@@ -682,6 +759,17 @@
       .panel { padding: 12px; }
       .bmi-calculator-layout { grid-template-columns: 1fr; }
       .bmi-result { min-height: 84px; }
+      .followup-top-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+      .followup-badges-panel { grid-column: 1 / -1; }
+      .followup-badge-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .followup-level-ring { width: 96px; height: 96px; }
+      .followup-week-heading { align-items: flex-start; flex-direction: column; }
+      .followup-week-switch { width: 100%; justify-content: space-between; }
+      .followup-days { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .followup-day { padding: 9px; }
+      .followup-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .followup-metric small { min-height: 0; margin-bottom: 5px; }
+      .followup-circle { width: 64px; }
     }
     @media (max-width: 1050px) {
       .nutrition-layout { grid-template-columns: 1fr; }
@@ -1051,18 +1139,83 @@
       </section>
 
       <section class="page-view" id="followupPage" data-page-view="suivi" aria-labelledby="followupTitle" hidden>
-        <header class="feature-banner">
+        <header class="feature-banner followup-banner">
           <h1 id="followupTitle">Mon <span>suivi</span></h1>
-          <p>Retrouve tes progrès et avance vers tes objectifs.</p>
+          <p>Suis tes efforts semaine après semaine et collectionne tes badges.</p>
         </header>
-        <section class="feature-panel followup-placeholder">
-          <span aria-hidden="true">📈</span>
-          <h2>Ton suivi personnalisé arrive bientôt</h2>
-          <p>Je garde cette page prête. Envoie-moi le code de ton suivi et les règles de tes badges, et je les intégrerai ici sans inventer tes données ni tes récompenses.</p>
-        </section>
+        <div class="followup-dashboard">
+          <div class="followup-top-grid">
+            <section class="followup-panel followup-badges-panel" aria-labelledby="followupBadgesTitle">
+              <div class="followup-panel-heading"><h2 id="followupBadgesTitle"><span aria-hidden="true">🏆</span>Tes badges de performance</h2><span class="followup-muted">Appuie sur un badge pour voir le détail</span></div>
+              <div class="followup-badge-grid" id="followupBadges"></div>
+            </section>
+            <section class="followup-panel followup-level" aria-label="Niveau et expérience">
+              <div class="followup-level-ring" id="followupLevelRing"><div><small>Niveau</small><strong id="followupLevel">1</strong></div></div>
+              <div class="followup-xp-label" id="followupXpLabel">0 / 100 XP</div>
+            </section>
+            <section class="followup-panel" aria-labelledby="followupProgressTitle">
+              <div class="followup-panel-heading"><h2 id="followupProgressTitle"><span aria-hidden="true">📈</span>Ta progression</h2></div>
+              <div class="followup-progress-stat"><span>Semaine complétée</span><strong id="followupGlobalPct">0%</strong></div>
+              <div class="followup-progress-track" role="progressbar" aria-label="Progression de la semaine" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="followupGlobalTrack"><div class="followup-progress-fill" id="followupGlobalBar"></div></div>
+              <div class="followup-progress-stat"><span>XP cette semaine</span><strong id="followupWeekXp">0 XP</strong></div>
+              <p class="followup-muted">5 XP par journée validée.</p>
+            </section>
+          </div>
+
+          <section class="followup-panel followup-week" aria-labelledby="followupWeekHeading">
+            <div class="followup-week-heading">
+              <h2 id="followupWeekHeading"><span aria-hidden="true">🗓️</span>Ma semaine</h2>
+              <div class="followup-week-switch" aria-label="Choisir la semaine">
+                <button id="followupPrevWeek" type="button" aria-label="Semaine précédente">‹</button>
+                <span class="followup-week-title" id="followupWeekTitle"></span>
+                <button id="followupNextWeek" type="button" aria-label="Semaine suivante">›</button>
+              </div>
+            </div>
+            <div class="followup-week-area">
+              <div class="followup-days" id="followupDays"></div>
+              <div class="followup-validate-box">
+                <button class="followup-validate" id="followupValidate" type="button">✓ Valider ma semaine</button>
+                <p id="followupValidateHint">Renseigne au moins une journée avant de valider.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="followup-bottom-grid">
+            <section class="followup-panel followup-summary" aria-labelledby="followupSummaryTitle">
+              <h2 id="followupSummaryTitle"><span aria-hidden="true">📊</span>Bilan de la semaine</h2>
+              <div class="followup-metrics">
+                <div class="followup-metric"><small>Calories notées</small><strong id="followupCalories">0 kcal</strong></div>
+                <div class="followup-metric"><small>Poids moyen renseigné</small><strong id="followupAverageWeight">— kg</strong></div>
+                <div class="followup-metric"><small>Journées renseignées</small><strong id="followupSessions">0 / 7</strong></div>
+                <div class="followup-metric"><small>Objectif hebdomadaire</small><strong id="followupGoalPct">0%</strong></div>
+              </div>
+              <p class="followup-chart-title">Évolution du poids cette semaine</p>
+              <svg class="followup-chart" id="followupWeightChart" viewBox="0 0 650 130" role="img" aria-label="Graphique du poids de la semaine"></svg>
+            </section>
+            <section class="followup-panel followup-performance" aria-labelledby="followupPerformanceTitle">
+              <h2 id="followupPerformanceTitle"><span aria-hidden="true">⭐</span>Tes performances</h2>
+              <div class="followup-circles">
+                <div class="followup-circle-stat"><div class="followup-circle"><div><strong id="followupCaloriesPct">0%</strong><small>Calories</small></div></div><small id="followupCaloriesText">0 kcal notée</small></div>
+                <div class="followup-circle-stat"><div class="followup-circle purple"><div><strong id="followupSessionsPct">0%</strong><small>Jours</small></div></div><small id="followupSessionsText">0 / 7 renseigné</small></div>
+                <div class="followup-circle-stat"><div class="followup-circle cyan"><div><strong id="followupXpCircle">0 XP</strong><small>Gagnés</small></div></div><small>Cette semaine</small></div>
+              </div>
+              <div class="followup-congrats"><span class="followup-congrats-icon" aria-hidden="true">💪</span><div><strong id="followupCongratsTitle">À toi de jouer !</strong><span id="followupCongratsText">Renseigne tes journées pour suivre ta progression.</span></div></div>
+            </section>
+          </div>
+        </div>
       </section>
     </main>
   </div>
+
+  <dialog class="followup-badge-dialog" id="followupBadgeDialog" aria-labelledby="followupBadgeDialogTitle">
+    <form method="dialog"><button class="followup-dialog-close" type="submit" aria-label="Fermer">×</button></form>
+    <img id="followupBadgeDialogImage" alt="">
+    <h2 id="followupBadgeDialogTitle"></h2>
+    <p id="followupBadgeDialogStatus"></p>
+    <p id="followupBadgeDialogGoal"></p>
+    <div class="followup-progress-track"><div class="followup-progress-fill" id="followupBadgeDialogBar"></div></div>
+    <p id="followupBadgeDialogProgress"></p>
+  </dialog>
 
   <div class="modal-backdrop" id="modalBackdrop" role="presentation">
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -1251,6 +1404,334 @@
         const isLight = document.body.classList.toggle("light");
         event.currentTarget.setAttribute("aria-pressed", String(isLight));
       });
+
+      const followupBadgeData = [
+        { name: "Loup", days: 10 },
+        { name: "Crocodile", days: 25 },
+        { name: "Cerf", days: 50 },
+        { name: "Gorille", days: 75 },
+        { name: "Grizzly", days: 100 },
+        { name: "Lion", days: 150 }
+      ];
+      const followupDayNames = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+      const followupStorageKey = "nutripulse-pro-dashboard-v3";
+      const followupLegacyStorageKey = "nutripulse-pro-dashboard-v2";
+      const followupBlankDays = () => Array.from({ length: 7 }, () => ({ w: "", c: "" }));
+      const followupDateKey = date => `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+      const followupMondayOf = date => {
+        const monday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+        monday.setDate(monday.getDate() - (monday.getDay() + 6) % 7);
+        return followupDateKey(monday);
+      };
+      const followupReadState = key => {
+        const stored = localStorage.getItem(key);
+        return stored ? JSON.parse(stored) : null;
+      };
+      let followupState;
+      try {
+        followupState = followupReadState(followupStorageKey);
+      } catch (error) {
+        console.error("Impossible de lire le suivi enregistré.", error);
+        showToast("Le suivi enregistré n'a pas pu être lu.");
+      }
+      if (!followupState || typeof followupState !== "object" || !followupState.weeks || typeof followupState.weeks !== "object") {
+        let legacyState = null;
+        try {
+          legacyState = followupReadState(followupLegacyStorageKey);
+        } catch (error) {
+          console.error("Impossible de migrer l'ancien suivi.", error);
+          showToast("L'ancien suivi n'a pas pu être récupéré.");
+        }
+        const initialWeek = typeof legacyState?.weekStart === "string" && /^\d{4}-\d{2}-\d{2}$/.test(legacyState.weekStart)
+          ? legacyState.weekStart
+          : followupMondayOf(new Date());
+        followupState = {
+          weekStart: initialWeek,
+          weeks: {
+            [initialWeek]: {
+              days: Array.isArray(legacyState?.days) ? legacyState.days.slice(0, 7) : followupBlankDays(),
+              validated: Boolean(legacyState?.validated),
+              xpEarned: Number(legacyState?.xpEarned) || 0
+            }
+          },
+          lifetime: Number(legacyState?.lifetime) || 0,
+          xpTotal: Number(legacyState?.xpTotal ?? legacyState?.xp) || 0
+        };
+      }
+      if (typeof followupState.weekStart !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(followupState.weekStart)) {
+        followupState.weekStart = followupMondayOf(new Date());
+      }
+      if (!followupState.weeks || typeof followupState.weeks !== "object") followupState.weeks = {};
+      if (!Number.isFinite(followupState.lifetime)) followupState.lifetime = 0;
+      if (!Number.isFinite(followupState.xpTotal)) followupState.xpTotal = Number(followupState.xp) || 0;
+      let followupStorageWarningShown = false;
+
+      function saveFollowup() {
+        try {
+          localStorage.setItem(followupStorageKey, JSON.stringify(followupState));
+        } catch (error) {
+          console.error("Impossible d'enregistrer le suivi.", error);
+          if (!followupStorageWarningShown) {
+            showToast("Le suivi n'a pas pu être enregistré dans ce navigateur.");
+            followupStorageWarningShown = true;
+          }
+        }
+      }
+
+      function currentFollowupWeek() {
+        if (!followupState.weeks[followupState.weekStart]) {
+          followupState.weeks[followupState.weekStart] = { days: followupBlankDays(), validated: false, xpEarned: 0 };
+        }
+        const week = followupState.weeks[followupState.weekStart];
+        if (!Array.isArray(week.days)) week.days = followupBlankDays();
+        week.days = Array.from({ length: 7 }, (_, index) => {
+          const day = week.days[index];
+          return {
+            w: day && day.w !== undefined && day.w !== null ? String(day.w) : "",
+            c: day && day.c !== undefined && day.c !== null ? String(day.c) : ""
+          };
+        });
+        week.validated = Boolean(week.validated);
+        week.xpEarned = Number(week.xpEarned) || 0;
+        return week;
+      }
+
+      function followupDateAt(offset) {
+        const date = new Date(`${followupState.weekStart}T12:00:00`);
+        date.setDate(date.getDate() + offset);
+        return date;
+      }
+
+      function followupDateLabel(date) {
+        return date.toLocaleDateString("fr-FR", { day: "numeric", month: "short" }).replace(".", "");
+      }
+
+      function isFollowupDayValid(day) {
+        return day && day.w !== "" && day.c !== "" &&
+          Number.isFinite(Number(day.w)) && Number(day.w) > 0 &&
+          Number.isFinite(Number(day.c)) && Number(day.c) >= 0;
+      }
+
+      function buildFollowupDays() {
+        const root = $("#followupDays");
+        root.replaceChildren();
+        const week = currentFollowupWeek();
+        week.days.forEach((value, index) => {
+          const date = followupDateAt(index);
+          const complete = isFollowupDayValid(value);
+          const card = document.createElement("article");
+          card.className = `followup-day${complete ? " complete" : ""}`;
+          const heading = document.createElement("div");
+          heading.className = "followup-day-name";
+          heading.textContent = followupDayNames[index];
+          const dateText = document.createElement("div");
+          dateText.className = "followup-day-date";
+          dateText.textContent = followupDateLabel(date);
+          const status = document.createElement("div");
+          status.className = "followup-day-status";
+          status.textContent = complete ? "✓ Journée renseignée" : "À renseigner";
+          card.append(heading, dateText, status);
+
+          [
+            { key: "w", label: "Poids (kg)", min: "1", max: "400", step: "0.1" },
+            { key: "c", label: "Calories (kcal)", min: "0", max: "15000", step: "1" }
+          ].forEach(field => {
+            const label = document.createElement("label");
+            label.textContent = field.label;
+            const input = document.createElement("input");
+            input.type = "number";
+            input.min = field.min;
+            input.max = field.max;
+            input.step = field.step;
+            input.placeholder = "--";
+            input.value = value[field.key];
+            input.dataset.dayIndex = String(index);
+            input.dataset.dayField = field.key;
+            input.setAttribute("aria-label", `${field.label} ${followupDayNames[index]}`);
+            input.addEventListener("input", () => {
+              currentFollowupWeek().days[index][field.key] = input.value;
+              refreshFollowup();
+            });
+            card.append(label, input);
+          });
+          root.append(card);
+        });
+      }
+
+      function renderFollowupBadges() {
+        const root = $("#followupBadges");
+        root.replaceChildren();
+        followupBadgeData.forEach((badge, index) => {
+          const button = document.createElement("button");
+          button.className = "followup-badge";
+          button.type = "button";
+          button.dataset.badgeIndex = String(index);
+          const image = document.createElement("img");
+          image.src = `assets/followup-badge-${index + 1}.png`;
+          image.alt = "";
+          image.loading = "lazy";
+          const name = document.createElement("strong");
+          name.textContent = badge.name;
+          const requirement = document.createElement("small");
+          requirement.textContent = `${badge.days} jours validés`;
+          button.append(image, name, requirement);
+          button.addEventListener("click", () => showFollowupBadge(index));
+          root.append(button);
+        });
+      }
+
+      function showFollowupBadge(index) {
+        const badge = followupBadgeData[index];
+        if (!badge) return;
+        const earnedDays = Math.max(0, followupState.lifetime);
+        const previousThreshold = index ? followupBadgeData[index - 1].days : 0;
+        const progress = Math.max(0, Math.min(100, ((earnedDays - previousThreshold) / (badge.days - previousThreshold)) * 100));
+        $("#followupBadgeDialogImage").src = `assets/followup-badge-${index + 1}.png`;
+        $("#followupBadgeDialogImage").alt = `Badge ${badge.name}`;
+        $("#followupBadgeDialogTitle").textContent = badge.name;
+        $("#followupBadgeDialogStatus").textContent = earnedDays >= badge.days ? "Badge débloqué !" : "Badge encore verrouillé";
+        $("#followupBadgeDialogGoal").textContent = `Objectif : ${badge.days} journées validées`;
+        $("#followupBadgeDialogBar").style.width = `${progress}%`;
+        $("#followupBadgeDialogProgress").textContent = `${Math.min(earnedDays, badge.days)} / ${badge.days} journées validées`;
+        $("#followupBadgeDialog").showModal();
+      }
+
+      function drawFollowupWeightChart(days) {
+        const svg = $("#followupWeightChart");
+        const namespace = "http://www.w3.org/2000/svg";
+        svg.replaceChildren();
+        const points = days.map((day, index) => ({ index, weight: Number(day.w) }))
+          .filter(point => Number.isFinite(point.weight) && point.weight > 0);
+        if (!points.length) {
+          const note = document.createElementNS(namespace, "text");
+          note.setAttribute("x", "15");
+          note.setAttribute("y", "68");
+          note.setAttribute("fill", "#a9bad4");
+          note.textContent = "Ajoute tes poids pour voir leur évolution cette semaine.";
+          svg.append(note);
+          return;
+        }
+        const weights = points.map(point => point.weight);
+        const minimum = Math.min(...weights);
+        const maximum = Math.max(...weights);
+        const spread = maximum - minimum || 1;
+        const coordinates = points.map(point => ({
+          x: 28 + point.index * (594 / 6),
+          y: 18 + ((maximum - point.weight) / spread) * 70
+        }));
+        const line = document.createElementNS(namespace, "polyline");
+        line.setAttribute("points", coordinates.map(point => `${point.x},${point.y}`).join(" "));
+        line.setAttribute("fill", "none");
+        line.setAttribute("stroke", "#ff9b2e");
+        line.setAttribute("stroke-width", "3");
+        line.setAttribute("stroke-linecap", "round");
+        line.setAttribute("stroke-linejoin", "round");
+        svg.append(line);
+        coordinates.forEach((point, index) => {
+          const dot = document.createElementNS(namespace, "circle");
+          dot.setAttribute("cx", String(point.x));
+          dot.setAttribute("cy", String(point.y));
+          dot.setAttribute("r", "5");
+          dot.setAttribute("fill", "#ffd16c");
+          dot.setAttribute("aria-label", `${followupDayNames[points[index].index]} : ${points[index].weight} kg`);
+          svg.append(dot);
+        });
+        followupDayNames.forEach((name, index) => {
+          const label = document.createElementNS(namespace, "text");
+          label.setAttribute("x", String(28 + index * (594 / 6)));
+          label.setAttribute("y", "119");
+          label.setAttribute("fill", "#a9bad4");
+          label.setAttribute("font-size", "10");
+          label.setAttribute("text-anchor", "middle");
+          label.textContent = name.slice(0, 3);
+          svg.append(label);
+        });
+      }
+
+      function refreshFollowup() {
+        const week = currentFollowupWeek();
+        const days = week.days;
+        const validDays = days.filter(isFollowupDayValid);
+        const count = validDays.length;
+        const calories = validDays.reduce((total, day) => total + Number(day.c), 0);
+        const weights = validDays.map(day => Number(day.w));
+        const averageWeight = weights.length ? weights.reduce((total, weight) => total + weight, 0) / weights.length : 0;
+        const percent = Math.round(count / 7 * 100);
+        const xpInLevel = Math.max(0, followupState.xpTotal) % 100;
+        const level = Math.floor(Math.max(0, followupState.xpTotal) / 100) + 1;
+        const weeklyXp = week.xpEarned;
+
+        $("#followupCalories").textContent = `${calories.toLocaleString("fr-FR")} kcal`;
+        $("#followupAverageWeight").textContent = averageWeight ? `${averageWeight.toFixed(1).replace(".", ",")} kg` : "— kg";
+        $("#followupSessions").textContent = `${count} / 7`;
+        $("#followupGoalPct").textContent = `${percent}%`;
+        $("#followupGlobalPct").textContent = `${percent}%`;
+        $("#followupGlobalBar").style.width = `${percent}%`;
+        $("#followupGlobalTrack").setAttribute("aria-valuenow", String(percent));
+        $("#followupLevel").textContent = String(level);
+        $("#followupXpLabel").textContent = `${xpInLevel} / 100 XP`;
+        $("#followupLevelRing").style.setProperty("--xp-progress", `${xpInLevel * 3.6}deg`);
+        $("#followupWeekXp").textContent = `${weeklyXp} XP`;
+        $("#followupCaloriesPct").textContent = `${Math.min(100, Math.round(calories / 3500 * 100))}%`;
+        $("#followupCaloriesText").textContent = `${calories.toLocaleString("fr-FR")} / 3 500 kcal notées`;
+        $("#followupSessionsPct").textContent = `${percent}%`;
+        $("#followupSessionsText").textContent = `${count} / 7 journées renseignées`;
+        $("#followupXpCircle").textContent = `+${weeklyXp} XP`;
+        $("#followupCongratsTitle").textContent = count === 7 ? "Semaine complète !" : "Continue tes efforts !";
+        $("#followupCongratsText").textContent = count === 7
+          ? "Tu as renseigné les 7 journées. Bravo !"
+          : `Encore ${7 - count} journée${7 - count === 1 ? "" : "s"} à renseigner pour compléter ta semaine.`;
+        $("#followupWeekTitle").textContent = `Semaine du ${followupDateAt(0).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })} au ${followupDateAt(6).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`;
+        $("#followupValidate").disabled = week.validated;
+        $("#followupValidate").textContent = week.validated ? "✓ Semaine validée" : "✓ Valider ma semaine";
+        $("#followupValidateHint").textContent = week.validated
+          ? `${week.xpEarned} XP gagnés. Cette semaine est déjà validée.`
+          : "Une journée compte lorsque son poids et ses calories sont renseignés.";
+        $("#followupPrevWeek").disabled = false;
+        $("#followupNextWeek").disabled = false;
+        $$(".followup-day").forEach((card, index) => {
+          const complete = isFollowupDayValid(days[index]);
+          card.classList.toggle("complete", complete);
+          $(".followup-day-status", card).textContent = complete ? "✓ Journée renseignée" : "À renseigner";
+        });
+        $$(".followup-badge").forEach((button, index) => {
+          button.classList.toggle("unlocked", followupState.lifetime >= followupBadgeData[index].days);
+        });
+        drawFollowupWeightChart(days);
+        saveFollowup();
+      }
+
+      function moveFollowupWeek(delta) {
+        const start = new Date(`${followupState.weekStart}T12:00:00`);
+        start.setDate(start.getDate() + delta * 7);
+        followupState.weekStart = followupDateKey(start);
+        buildFollowupDays();
+        refreshFollowup();
+      }
+
+      $("#followupPrevWeek").addEventListener("click", () => moveFollowupWeek(-1));
+      $("#followupNextWeek").addEventListener("click", () => moveFollowupWeek(1));
+      $("#followupValidate").addEventListener("click", () => {
+        const week = currentFollowupWeek();
+        const count = week.days.filter(isFollowupDayValid).length;
+        if (!count) {
+          showToast("Renseigne au moins une journée avant de valider.");
+          return;
+        }
+        if (week.validated) {
+          showToast("Cette semaine est déjà validée.");
+          return;
+        }
+        week.validated = true;
+        week.xpEarned = count * 5;
+        followupState.lifetime += count;
+        followupState.xpTotal += week.xpEarned;
+        refreshFollowup();
+        showToast(`Semaine validée : ${count} journée${count === 1 ? "" : "s"}, +${week.xpEarned} XP !`);
+      });
+      renderFollowupBadges();
+      buildFollowupDays();
+      refreshFollowup();
 
       const routeViews = new Map([
         ["nutrition", $("#nutritionPage")],

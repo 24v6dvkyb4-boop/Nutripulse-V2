@@ -223,6 +223,7 @@
       background: #f21b2d;
       font-size: 11px;
     }
+    .notification-count[hidden] { display: none; }
 
     .hero {
       position: relative;
@@ -234,8 +235,8 @@
         linear-gradient(90deg, rgba(3, 10, 25, .72) 1%, rgba(3, 11, 28, .4) 35%, rgba(3, 13, 30, .12) 75%, rgba(3, 10, 24, .16)),
         linear-gradient(0deg, rgba(5, 15, 33, .5), transparent 48%),
         url("assets/hero-mountain.png") center 48% / cover no-repeat;
-      border-bottom: 1px solid rgba(255, 171, 71, .48);
-      box-shadow: 0 12px 34px rgba(2, 8, 24, .38);
+      border: 1px solid rgba(130, 220, 255, .72);
+      box-shadow: 0 0 7px rgba(112, 218, 255, .7), 0 0 20px rgba(53, 178, 255, .28), 0 12px 34px rgba(2, 8, 24, .38);
     }
     .hero::after {
       position: absolute;
@@ -254,6 +255,7 @@
     .hero-title-puls { color: #ff7800; filter: hue-rotate(158deg) saturate(1.25) drop-shadow(0 0 17px rgba(53, 178, 255, .45)); }
     .hero-exclamation { color: #ff8a08; text-shadow: 0 0 10px #ff8a08, 0 0 23px rgba(255, 92, 0, .92); }
     .hero-copy p { margin: 7px 0 9px; color: #e3ecff; font-size: 17px; line-height: 1.2; }
+    .hero-start-link { margin-top: 5px; }
     .primary-button {
       display: inline-flex;
       min-height: 39px;
@@ -381,6 +383,19 @@
     .metric-percent { position: absolute; right: 12px; bottom: 3px; color: #e8f1ff; font-size: 12px; font-weight: 700; }
     .metric .progress-fill.blue { background: linear-gradient(90deg, #00d9f4, #126bff); }
     .metric .progress-fill.cyan { background: linear-gradient(90deg, #00e3db, #13a5ff); }
+
+    .home-guide { margin: 0 0 15px; }
+    .home-guide-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .home-guide-heading h2 { margin: 0; font-size: 20px; letter-spacing: -.3px; }
+    .home-guide-heading p { margin: 2px 0 0; color: #c5d5ee; font-size: 12px; }
+    .home-guide-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .home-guide-card { display: grid; grid-template-columns: 38px minmax(0, 1fr) 18px; align-items: center; gap: 9px; min-height: 82px; padding: 11px 12px; border: 1px solid rgba(105, 174, 255, .48); border-radius: 17px; color: var(--text); background: linear-gradient(145deg, rgba(15, 43, 82, .9), rgba(6, 20, 43, .9)); box-shadow: 0 0 16px rgba(27, 119, 239, .13), inset 0 1px rgba(210, 233, 255, .12); text-decoration: none; transition: border-color .18s ease, transform .18s ease, box-shadow .18s ease; }
+    .home-guide-card:hover { border-color: #80d5ff; box-shadow: 0 0 18px rgba(49, 171, 255, .24), inset 0 1px rgba(210, 233, 255, .16); transform: translateY(-2px); }
+    .home-guide-icon { display: grid; width: 38px; height: 38px; place-items: center; border: 1px solid rgba(100, 193, 255, .32); border-radius: 12px; background: rgba(31, 116, 218, .2); font-size: 21px; }
+    .home-guide-copy { display: grid; gap: 3px; min-width: 0; }
+    .home-guide-copy strong { font-size: 13px; line-height: 1.25; }
+    .home-guide-copy small { color: #c5d5ee; font-size: 11px; line-height: 1.35; }
+    .home-guide-arrow { color: #80d5ff; font-size: 23px; }
 
     .content-grid { display: grid; grid-template-columns: 1.22fr .9fr .88fr; gap: 14px; align-items: stretch; }
     .panel { min-width: 0; padding: 14px; border-radius: 21px; }
@@ -576,7 +591,7 @@
     .ntc-disclaimer { margin-top: 10px !important; color: #b9c9e0 !important; font-size: 12px !important; }
     #minigamesPage .feature-banner::after { position: absolute; inset: 5px; border: 1px solid rgba(163, 232, 255, .22); content: ""; pointer-events: none; }
     #minigamesPage .fruit-game-stat, #minigamesPage .minigame-coming-soon li { border-color: rgba(130, 220, 255, .5); box-shadow: inset 0 0 10px rgba(53, 178, 255, .08), 0 0 8px rgba(53, 178, 255, .1); }
-    #minigamesPage .fruit-game-arena, #minigamesPage .food-memory-grid, #minigamesPage .jump-fruit-intro, #minigamesPage .jump-fruit-canvas, #minigamesPage .fruit-drop-canvas { border-color: rgba(130, 220, 255, .78); box-shadow: 0 0 5px rgba(112, 218, 255, .58), 0 0 15px rgba(53, 178, 255, .25), inset 0 0 18px rgba(76, 182, 255, .08), 0 10px 24px rgba(0, 0, 0, .28); }
+    #minigamesPage .fruit-game-arena, #minigamesPage .food-memory-grid, #minigamesPage .jump-fruit-intro, #minigamesPage .jump-fruit-canvas, #minigamesPage .parkour-intro, #minigamesPage .parkour-canvas, #minigamesPage .fruit-drop-canvas { border-color: rgba(130, 220, 255, .78); box-shadow: 0 0 5px rgba(112, 218, 255, .58), 0 0 15px rgba(53, 178, 255, .25), inset 0 0 18px rgba(76, 182, 255, .08), 0 10px 24px rgba(0, 0, 0, .28); }
     .fruit-game-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
     .fruit-game-stats { display: flex; flex-wrap: wrap; gap: 9px; margin: 12px 0; }
     .fruit-game-stat { padding: 7px 12px; border: 1px solid rgba(102, 166, 255, .35); border-radius: 12px; background: linear-gradient(145deg, rgba(15, 38, 69, .92), rgba(5, 16, 34, .82)); box-shadow: inset 0 1px rgba(255, 255, 255, .06); font-size: 14px; }
@@ -630,12 +645,56 @@
     .jump-fruit-controls button { width: 76px; min-height: 48px; border: 1px solid rgba(137, 197, 255, .65); border-radius: 14px; color: #fff; background: linear-gradient(145deg, #173d6b, #0a1a33); font-size: 24px; font-weight: 800; cursor: pointer; touch-action: none; user-select: none; }
     .jump-fruit-controls button:active { border-color: #ffc027; background: linear-gradient(145deg, #25548a, #102747); transform: translateY(1px); }
     .jump-fruit-controls button:focus-visible { outline: 3px solid #ffc027; outline-offset: 2px; }
-    .fruit-drop-canvas { display: block; width: min(100%, 430px); height: auto; margin: 12px auto 0; border: 1px solid rgba(255, 178, 101, .55); border-radius: 16px; background: #20192d; box-shadow: 0 10px 24px rgba(0,0,0,.3), 0 0 22px rgba(255, 141, 75, .08); touch-action: none; }
+    .parkour-intro { position: relative; display: grid; min-height: 132px; align-content: center; justify-items: center; gap: 8px; margin-top: 12px; overflow: hidden; padding: 18px; border: 1px solid rgba(130, 211, 255, .52); border-radius: 16px; color: #fff; background: radial-gradient(ellipse at 82% 18%, rgba(255, 219, 126, .3), transparent 18%), linear-gradient(180deg, #77c8dc, #76b878 55%, #235b4a); text-align: center; }
+    .parkour-intro::after { position: absolute; right: 38%; bottom: -82px; left: 38%; height: 190px; border-radius: 50% 50% 0 0; content: ""; background: linear-gradient(180deg, #546b50, #25343a); transform: perspective(90px) rotateX(10deg); }
+    .parkour-intro > * { position: relative; z-index: 1; text-shadow: 0 2px 6px rgba(0, 0, 0, .75); }
+    .parkour-intro > span:first-child { font-size: 34px; }
+    .parkour-intro strong { font-size: 19px; }
+    .parkour-intro span:last-child { max-width: 430px; color: #f1f8ff; font-size: 13px; line-height: 1.5; }
+    .parkour-intro[hidden] { display: none; }
+    .parkour-canvas { display: block; width: 100%; height: auto; margin-top: 12px; overflow: hidden; border: 1px solid rgba(130, 211, 255, .58); border-radius: 16px; background: #173c59; box-shadow: 0 10px 24px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.1); touch-action: none; }
+    .parkour-canvas[hidden] { display: none; }
+    .parkour-progress { height: 10px; margin: -2px 0 12px; overflow: hidden; border-radius: 99px; background: rgba(9, 25, 50, .9); }
+    .parkour-progress > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #5ef2a2, #ffe16b); box-shadow: 0 0 10px rgba(94, 242, 162, .6); transition: width .12s linear; }
+    .parkour-controls { display: flex; justify-content: center; gap: 10px; margin-top: 12px; }
+    .parkour-controls button { min-width: 72px; min-height: 48px; padding: 7px 14px; border: 1px solid rgba(137, 197, 255, .65); border-radius: 14px; color: #fff; background: linear-gradient(145deg, #173d6b, #0a1a33); font-size: 20px; font-weight: 800; cursor: pointer; touch-action: manipulation; user-select: none; }
+    .parkour-controls button[data-parkour-action="jump"] { min-width: 126px; border-color: rgba(255, 198, 83, .8); background: linear-gradient(145deg, #bd641d, #6b2b18); font-size: 15px; }
+    .parkour-controls button:active { filter: brightness(1.25); transform: translateY(1px); }
+    .parkour-controls button:focus-visible { outline: 3px solid #ffc027; outline-offset: 2px; }
+    .fruit-drop-panel { border-color: rgba(255, 142, 174, .72); background: radial-gradient(ellipse at 92% 8%, rgba(255, 116, 99, .2), transparent 34%), radial-gradient(ellipse at 4% 92%, rgba(144, 103, 255, .16), transparent 42%), linear-gradient(145deg, rgba(28, 22, 57, .98), rgba(8, 17, 39, .99)); box-shadow: 0 0 8px rgba(255, 113, 149, .22), 0 0 22px rgba(113, 82, 240, .17), 0 12px 30px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 213, 230, .2); }
+    .fruit-drop-panel::before { background: linear-gradient(90deg, transparent, #ffca8a, #ff8dc0, #9d9aff, transparent); box-shadow: 0 0 13px rgba(255, 148, 183, .6); }
+    .fruit-drop-panel .fruit-game-heading .heading-emoji { border-color: rgba(255, 133, 164, .55); background: linear-gradient(145deg, rgba(255, 95, 119, .28), rgba(164, 83, 255, .18)); box-shadow: 0 0 16px rgba(255, 96, 142, .2); }
+    .fruit-drop-panel .fruit-game-stat { border-color: rgba(217, 153, 255, .48); background: linear-gradient(145deg, rgba(65, 42, 100, .75), rgba(20, 25, 59, .86)); box-shadow: inset 0 1px rgba(255, 255, 255, .08), 0 0 12px rgba(174, 104, 255, .08); }
+    .fruit-drop-panel .fruit-game-stat strong { color: #ffe09a; }
+    .fruit-drop-panel .fruit-drop-stat-next strong { display: inline-block; font-size: 19px; vertical-align: middle; filter: drop-shadow(0 0 6px rgba(255, 211, 126, .45)); }
+    .fruit-drop-reward { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px 10px; align-items: center; margin: 8px 0 13px; }
+    .fruit-drop-reward-label { color: #e9dcff; font-size: 12px; font-weight: 750; }
+    .fruit-drop-reward-count { color: #ffe09a; font-size: 12px; font-weight: 850; }
+    .fruit-drop-reward-track { grid-column: 1 / -1; height: 10px; overflow: hidden; border: 1px solid rgba(229, 174, 255, .3); border-radius: 99px; background: rgba(7, 12, 31, .75); box-shadow: inset 0 2px 5px rgba(0, 0, 0, .45); }
+    .fruit-drop-reward-fill { width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #ff6484, #ffbe68 52%, #b998ff); box-shadow: 0 0 12px rgba(255, 140, 180, .55); transition: width .28s ease; }
+    .fruit-drop-canvas { display: block; width: min(100%, 500px); height: auto; margin: 12px auto 0; border: 1px solid rgba(255, 156, 190, .78); border-radius: 19px; background: #171532; box-shadow: 0 0 8px rgba(255, 130, 170, .42), 0 0 26px rgba(112, 91, 255, .2), 0 12px 26px rgba(0,0,0,.35); touch-action: none; }
     .fruit-drop-canvas[hidden] { display: none; }
     .fruit-drop-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin-top: 12px; }
-    .fruit-drop-controls button { min-width: 62px; min-height: 46px; padding: 6px 14px; border: 1px solid rgba(137, 197, 255, .65); border-radius: 13px; color: #fff; background: linear-gradient(145deg, #173d6b, #0a1a33); font-size: 20px; font-weight: 800; cursor: pointer; touch-action: manipulation; }
-    .fruit-drop-controls button:active { border-color: #ffc027; background: linear-gradient(145deg, #25548a, #102747); transform: translateY(1px); }
+    .fruit-drop-controls button { min-width: 68px; min-height: 50px; padding: 7px 16px; border: 1px solid rgba(201, 168, 255, .68); border-radius: 15px; color: #fff; background: linear-gradient(145deg, #49346f, #1d2852); box-shadow: inset 0 1px rgba(255, 255, 255, .14), 0 5px 13px rgba(0, 0, 0, .24); font-size: 21px; font-weight: 850; cursor: pointer; touch-action: manipulation; transition: transform .15s, filter .15s, border-color .15s; }
+    .fruit-drop-controls button:hover { border-color: #ffd1a0; filter: brightness(1.18); transform: translateY(-2px); }
+    .fruit-drop-controls button:active { border-color: #ffc027; background: linear-gradient(145deg, #684a92, #2e3768); transform: translateY(1px); }
     .fruit-drop-controls button:focus-visible { outline: 3px solid #ffc027; outline-offset: 2px; }
+    .fruit-drop-controls button[data-fruit-drop-action="drop"] { min-width: 126px; border-color: rgba(255, 198, 129, .82); color: #24152d; background: linear-gradient(180deg, #ffe09a, #ff9a6a 58%, #fb668e); box-shadow: 0 0 16px rgba(255, 128, 150, .28), inset 0 1px 2px rgba(255, 255, 255, .72); }
+    .fruit-drop-controls button[data-fruit-drop-action="drop"]:hover { filter: brightness(1.08); }
+    .fruit-drop-intro { position: relative; display: grid; min-height: 260px; align-content: center; justify-items: center; gap: 10px; margin-top: 12px; padding: 22px; overflow: hidden; border: 1px solid rgba(255, 151, 185, .68); border-radius: 19px; color: #fff; background: radial-gradient(ellipse at 78% 18%, rgba(255, 203, 123, .26), transparent 27%), radial-gradient(ellipse at 12% 90%, rgba(146, 104, 255, .28), transparent 38%), linear-gradient(145deg, #402755, #20264d 55%, #172643); box-shadow: inset 0 1px rgba(255,255,255,.16), 0 0 20px rgba(255, 124, 169, .14); text-align: center; }
+    .fruit-drop-intro[hidden] { display: none; }
+    .fruit-drop-intro::before, .fruit-drop-intro::after { position: absolute; width: 190px; height: 190px; border: 1px solid rgba(255, 212, 168, .18); border-radius: 50%; content: ""; pointer-events: none; }
+    .fruit-drop-intro::before { top: -124px; right: -40px; box-shadow: 0 0 0 16px rgba(255, 208, 171, .04), 0 0 0 34px rgba(255, 208, 171, .025); }
+    .fruit-drop-intro::after { bottom: -156px; left: -52px; border-color: rgba(191, 170, 255, .2); box-shadow: 0 0 0 18px rgba(191, 170, 255, .045); }
+    .fruit-drop-intro > * { position: relative; z-index: 1; }
+    .fruit-drop-intro-fruits { display: flex; align-items: center; gap: 13px; margin-bottom: 2px; font-size: 44px; filter: drop-shadow(0 6px 7px rgba(0, 0, 0, .36)); }
+    .fruit-drop-intro-fruits span:nth-child(odd) { animation: fruit-fusion-bob 1.8s ease-in-out infinite alternate; }
+    .fruit-drop-intro-fruits span:nth-child(even) { animation: fruit-fusion-bob 1.8s ease-in-out .45s infinite alternate; }
+    .fruit-drop-intro strong { color: #fff4d9; font-size: 22px; letter-spacing: -.3px; text-shadow: 0 2px 12px rgba(255, 129, 161, .4); }
+    .fruit-drop-intro > span:last-child { max-width: 380px; color: #e7e5ff; font-size: 13px; line-height: 1.55; }
+    @keyframes fruit-fusion-bob { to { transform: translateY(-6px) rotate(5deg); } }
+    #fruitDropStatus { color: #ffda9d; }
+    @media (prefers-reduced-motion: reduce) { .fruit-drop-intro-fruits span { animation: none !important; } }
     .minigame-coming-soon { display: grid; gap: 9px; margin: 14px 0 0; padding: 0; }
     .minigame-coming-soon li { padding: 10px 12px; border: 1px solid rgba(102, 166, 255, .28); border-radius: 12px; color: #e0e9f7; background: rgba(5, 16, 34, .65); list-style: none; }
     .search-results { position: absolute; z-index: 8; top: calc(100% + 6px); right: 0; left: 0; display: none; padding: 6px; border: 1px solid var(--line); border-radius: 15px; background: #0a1933; box-shadow: var(--shadow); }
@@ -651,6 +710,12 @@
     .close-modal { border: 0; color: var(--muted); background: transparent; font-size: 25px; cursor: pointer; }
     .modal-body { display: grid; gap: 13px; margin-top: 16px; }
     .modal-body p { margin: 0; color: var(--muted); }
+    .notification-list { display: grid; max-height: min(58vh, 430px); gap: 9px; overflow-y: auto; }
+    .notification-item { padding: 11px 12px; border: 1px solid rgba(112, 190, 255, .28); border-radius: 12px; background: rgba(7, 22, 44, .75); }
+    .notification-item strong { display: block; color: #eef7ff; font-size: 14px; }
+    .notification-item p { margin: 4px 0 0; color: #c5d5ee; font-size: 13px; line-height: 1.45; }
+    .notification-item time { display: block; margin-top: 6px; color: #91a8c8; font-size: 11px; }
+    .notification-empty { color: #c5d5ee; }
     .profile-editor { display: grid; justify-items: center; gap: 10px; }
     .profile-avatar-preview, .profile-avatar-fallback {
       display: grid;
@@ -715,7 +780,7 @@
     }
     #exercisePage .exercise-banner::after { position: absolute; inset: 5px; border: 1px solid rgba(163, 232, 255, .22); content: ""; pointer-events: none; }
     .nutrition-banner {
-      justify-content: flex-start;
+      justify-content: flex-end;
       border: 1px solid rgba(130, 220, 255, .72);
       background: url("assets/nutrition-hero.png") center center / cover no-repeat;
       box-shadow: 0 0 7px rgba(112, 218, 255, .7), 0 0 20px rgba(53, 178, 255, .28), 0 12px 34px rgba(2, 8, 24, .38);
@@ -723,7 +788,7 @@
     #nutritionPage .nutrition-banner::after { position: absolute; inset: 5px; border: 1px solid rgba(163, 232, 255, .22); content: ""; pointer-events: none; }
     .nutrition-banner h1 { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .nutrition-banner h1 span { color: #ffd078; }
-    .nutrition-banner p { max-width: 520px; text-shadow: 0 2px 12px rgba(0, 0, 0, .95); }
+    .nutrition-banner p { max-width: 520px; margin-bottom: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, .95); }
     #nutritionPage .feature-panel { background: linear-gradient(145deg, #0b2040, #07162d); backdrop-filter: none; }
     #nutritionPage .meal-card, #nutritionPage .recipe-card { background: linear-gradient(145deg, #0a1f40, #061329); }
     #nutritionPage .tip-banner { background: linear-gradient(110deg, #102d4b, #07162d 58%); }
@@ -814,8 +879,10 @@
     .tip-banner > span { font-size: 30px; }
     .tip-banner p { margin: 0; color: #e7eefb; font-size: 13px; }
     .exercise-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
-    .exercise-filter { min-height: 36px; padding: 6px 15px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 99px; color: #eaf2ff; background: rgba(10, 30, 65, .9); box-shadow: inset 0 0 10px rgba(53, 178, 255, .08), 0 0 8px rgba(53, 178, 255, .12); cursor: pointer; }
-    .exercise-filter[aria-pressed="true"] { border-color: #ffc027; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); box-shadow: 0 0 13px rgba(255, 140, 12, .55); font-weight: 750; }
+    .exercise-filter { min-height: 44px; padding: 8px 19px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 99px; color: #eaf2ff; background: rgba(10, 30, 65, .9); box-shadow: inset 0 0 10px rgba(53, 178, 255, .08), 0 0 8px rgba(53, 178, 255, .12); cursor: pointer; font-size: 15px; font-weight: 700; }
+    .exercise-filter[aria-pressed="true"] { border-color: #ffc027; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); box-shadow: 0 0 13px rgba(255, 140, 12, .55); font-weight: 800; }
+    .exercise-filter:disabled { border-color: rgba(130, 170, 210, .28); color: #8799b4; background: rgba(7, 18, 35, .76); box-shadow: none; cursor: not-allowed; }
+    .exercise-unlock-hint { min-height: 20px; margin: -7px 0 12px; color: #b7c9e2; font-size: 12px; }
     .exercise-section { margin: 0 0 16px; }
     .exercise-section-title { display: flex; align-items: center; gap: 9px; margin: 0 0 8px; font-size: clamp(18px, 2vw, 23px); font-style: italic; }
     .exercise-section-title span { font-size: 26px; filter: drop-shadow(0 0 7px rgba(255, 153, 27, .7)); }
@@ -1025,12 +1092,13 @@
       .ntc-wallet-chip { gap: 3px; padding: 4px 6px 4px 4px; font-size: 10px; }
       .ntc-wallet-chip .ntc-coin-mark { width: 24px; height: 24px; font-size: 7px; }
       .ntc-wallet-chip > span:last-child { display: none; }
-      .hero { min-height: 470px; padding-top: 65px; padding-bottom: 110px; }
+      .hero { min-height: 340px; padding-top: 65px; padding-bottom: 42px; border-radius: 0 0 18px 18px; background-position: center, center, 50% 48%; }
       .hero-copy { max-width: 100%; }
       .hero h1 { font-size: clamp(42px, 13vw, 58px); }
       .hero-pulse { width: 78px; height: 31px; }
       .hero-copy p { font-size: 15px; }
-      .goal-summary { top: auto; right: 12px; bottom: 110px; left: 12px; width: auto; }
+      .hero-start-link { min-height: 35px; padding: 6px 13px; font-size: 12px; }
+      .goal-summary { top: auto; right: 12px; bottom: 94px; left: 12px; width: auto; }
       .metrics { gap: 8px; }
       .metric { min-height: 84px; gap: 7px; padding: 9px; border-radius: 15px; }
       .metric-icon { width: 48px; height: 48px; flex-basis: 48px; font-size: 37px; }
@@ -1068,6 +1136,7 @@
       .meal-grid, .recipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .video-grid, .exercise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .exercise-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .home-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 820px) {
       .feature-banner { margin: 8px -12px 14px; }
@@ -1076,8 +1145,13 @@
     @media (max-width: 560px) {
       .feature-banner { min-height: 154px; padding: 18px 14px; background-position: center, 60% center; }
       .feature-banner p { max-width: 34ch; font-size: 14px; }
+      .exercise-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .exercise-filter { width: 100%; padding-inline: 8px; font-size: 14px; }
       .nutrition-aside, .video-grid { grid-template-columns: 1fr; }
+      .home-guide-grid { grid-template-columns: 1fr; gap: 8px; }
+      .home-guide-card { min-height: 72px; }
       .exercise-video-grid { grid-template-columns: 1fr; }
+      .exercise-player-host { grid-column: 1; grid-row: auto; min-height: 0; }
       .exercise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .meal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .recipe-grid { grid-template-columns: 1fr; }
@@ -1256,9 +1330,16 @@
     #homeView .mini-card p { color: #e0e9f7; font-size: 14px; line-height: 1.5; }
     #homeView .mini-card .legal-shortcuts a { font-size: 13px; }
     #homeView .below-fold { grid-template-columns: 1fr; }
-    .exercise-complete-button { display: block; width: 100%; margin-top: 10px; padding: 8px 10px; border: 1px solid rgba(255, 192, 39, .65); border-radius: 10px; color: #ffe4a3; background: rgba(255, 153, 32, .1); font-size: 12px; font-weight: 750; cursor: pointer; }
-    .exercise-complete-button:hover:not(:disabled) { background: rgba(255, 153, 32, .2); }
-    .exercise-complete-button:disabled { color: #b9c9e0; cursor: default; opacity: .8; }
+    .exercise-watch-button { display: block; width: 100%; margin-top: 10px; padding: 8px 10px; border: 1px solid rgba(130, 220, 255, .62); border-radius: 10px; color: #e8f7ff; background: rgba(45, 154, 230, .13); font-size: 12px; font-weight: 750; cursor: pointer; }
+    .exercise-watch-button:hover:not(:disabled) { background: rgba(45, 154, 230, .25); }
+    .exercise-watch-button:disabled { color: #b9c9e0; cursor: default; opacity: .8; }
+    .exercise-watch-progress { height: 7px; margin-top: 7px; overflow: hidden; border-radius: 99px; background: rgba(12, 31, 57, .95); }
+    .exercise-watch-progress[hidden] { display: none; }
+    .exercise-watch-progress > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #39d8ff, #718dff, #bd7bff); box-shadow: 0 0 9px rgba(81, 191, 255, .55); transition: width .3s ease; }
+    .exercise-watch-status { min-height: 16px; margin: 5px 0 0; color: #b7c9e2; font-size: 11px; line-height: 1.4; }
+    .exercise-player-host { position: relative; grid-column: 2; grid-row: 1; min-height: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #020813; }
+    .exercise-player-host[hidden] { display: none; }
+    .exercise-player-host iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .minigames-panel + .minigames-panel { margin-top: 14px; }
     .fruit-game-stat strong { color: #ffe4a3; }
     .fruit-game-status { line-height: 1.5; }
@@ -1302,9 +1383,9 @@
     body.nutrition-view .topbar .icon-button,
     body.exercise-view .topbar .icon-button,
     body.followup-view .topbar .icon-button { min-width: 43px; min-height: 43px; padding: 8px; }
-    #nutritionPage .nutrition-banner { min-height: 300px; margin: -16px -21px 16px; background-position: center 58%; }
-    #exercisePage .exercise-banner { min-height: 420px; margin: -16px -21px 16px; padding-bottom: 44px; background-position: center 50%; }
-    #followupPage .followup-banner { min-height: 300px; margin: -16px -21px 16px; background-position: center 48%; }
+    #nutritionPage .nutrition-banner { margin: -16px -21px 16px; background-position: center center; }
+    #exercisePage .exercise-banner { margin: -16px -21px 16px; padding-bottom: 44px; background-position: center 50%; }
+    #followupPage .followup-banner { margin: -16px -21px 16px; background-position: center 48%; }
     #followupPage .followup-banner h1,
     #followupPage .followup-banner p { transform: translateY(-13px); }
     @media (max-width: 560px) {
@@ -1325,9 +1406,17 @@
       body.nutrition-view .topbar .icon-button,
       body.exercise-view .topbar .icon-button,
       body.followup-view .topbar .icon-button { min-width: 37px; min-height: 37px; padding: 6px; }
-      #nutritionPage .nutrition-banner { min-height: 240px; margin: -12px -12px 14px; background-position: center 58%; }
-      #exercisePage .exercise-banner { min-height: 320px; margin: -12px -12px 14px; padding-bottom: 30px; background-position: center 50%; }
-      #followupPage .followup-banner { min-height: 240px; margin: -12px -12px 14px; background-position: center 48%; }
+      #nutritionPage .nutrition-banner,
+      #exercisePage .exercise-banner,
+      #followupPage .followup-banner {
+        min-height: 154px;
+        margin: -12px -12px 14px;
+        padding: 18px 14px;
+        background-position: center 60%;
+      }
+      #nutritionPage .nutrition-banner { background-position: center center; }
+      #followupPage .followup-banner h1,
+      #followupPage .followup-banner p { transform: none; }
     }
   </style>
 </head>
@@ -1383,7 +1472,9 @@
           <span class="profile-copy"><strong id="profileNameDisplay">Alex</strong><small>Niveau 0</small></span>
           <span class="profile-chevron" aria-hidden="true">⌄</span>
         </button>
-        <button class="icon-button" id="notifications" type="button" aria-label="Notifications">🔔<span class="notification-count">2</span></button>
+        <button class="icon-button" id="notifications" type="button" aria-label="Notifications">
+          🔔<span class="notification-count" id="notificationCount" hidden></span>
+        </button>
       </header>
 
       <div id="homeView">
@@ -1410,6 +1501,34 @@
         <button class="metric" type="button" data-metric="xp">
           <span class="metric-icon star" aria-hidden="true"><img src="assets/star-3d.svg" alt=""></span><span class="metric-copy"><small>XP au total</small><strong><span id="homeXpValue">0</span> <span>XP</span></strong></span>
         </button>
+      </section>
+
+      <section class="home-guide" id="homeGuide" aria-labelledby="homeGuideTitle">
+        <div class="home-guide-heading">
+          <div><h2 id="homeGuideTitle">Par où commencer ?</h2><p>Choisis une première action, tu pourras explorer le reste ensuite.</p></div>
+        </div>
+        <div class="home-guide-grid">
+          <a class="home-guide-card" href="#objectifs">
+            <span class="home-guide-icon" aria-hidden="true">🎯</span>
+            <span class="home-guide-copy"><strong>Choisis ton objectif</strong><small>Perte de poids, forme ou endurance</small></span>
+            <span class="home-guide-arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="home-guide-card" href="#home-challenge">
+            <span class="home-guide-icon" aria-hidden="true">✨</span>
+            <span class="home-guide-copy"><strong>Essaie le défi du jour</strong><small>Une petite action à ton rythme</small></span>
+            <span class="home-guide-arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="home-guide-card" href="#nutrition">
+            <span class="home-guide-icon" aria-hidden="true">🥗</span>
+            <span class="home-guide-copy"><strong>Trouve une recette</strong><small>Des idées pour composer tes repas</small></span>
+            <span class="home-guide-arrow" aria-hidden="true">›</span>
+          </a>
+          <a class="home-guide-card" href="#suivi">
+            <span class="home-guide-icon" aria-hidden="true">📈</span>
+            <span class="home-guide-copy"><strong>Note ta progression</strong><small>Renseigne ton poids et tes habitudes</small></span>
+            <span class="home-guide-arrow" aria-hidden="true">›</span>
+          </a>
+        </div>
       </section>
 
       <section class="bmi-feature" id="imc" aria-label="Calculateur IMC">
@@ -1512,7 +1631,7 @@
           <div class="faq-grid">
             <details class="faq-item"><summary>NutriPulse remplace-t-il un médecin ou un diététicien ?</summary><p>Non. Le site propose des idées générales de repas et d’activité ; il ne donne ni diagnostic ni conseil médical personnalisé. Pour un objectif de santé, une maladie, une grossesse ou une douleur, demande l’avis d’un professionnel de santé.</p></details>
             <details class="faq-item"><summary>Les calories et les portions sont-elles exactes ?</summary><p>Non, ce sont des estimations indicatives. Les valeurs réelles changent selon les marques, les ingrédients, les portions et la préparation. Elles ne remplacent pas un avis nutritionnel individualisé.</p></details>
-            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids et tes calories pour chaque journée, puis valide la semaine. Chaque journée renseignée et validée rapporte 5 XP. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
+            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids pour une journée ; les calories sont facultatives et tu peux laisser ce champ vide si tu ne les connais pas. Valide ensuite la semaine : chaque journée avec un poids renseigné rapporte 5 XP. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
             <details class="faq-item"><summary>Où sont enregistrés mon profil, mon suivi et mes NTC ?</summary><p>Dans le stockage local du navigateur utilisé sur cet appareil. Le site ne crée pas de compte et son code n’envoie pas ces saisies vers un serveur NutriPulse. Les NTC sont des points virtuels sans valeur monétaire, non transférables et non synchronisés entre appareils. Ces données peuvent être perdues si le stockage du navigateur est effacé ou modifiées depuis ce navigateur ; sans serveur, NutriPulse ne peut pas empêcher toute triche.</p></details>
             <details class="faq-item"><summary>Comment effacer mes données enregistrées ?</summary><p>Dans les réglages de ton navigateur, efface les données du site (stockage local) pour NutriPulse. Cela supprimera aussi les informations de profil, d’hydratation et de suivi enregistrées dans ce navigateur.</p></details>
             <details class="faq-item"><summary>Les vidéos et les images viennent-elles de NutriPulse ?</summary><p>Les vidéos d’exercices s’ouvrent sur YouTube et certaines photos sont chargées depuis Unsplash. Ces services externes appliquent leurs propres règles de confidentialité. Adapte les exercices à tes capacités et arrête si tu ressens une douleur.</p></details>
@@ -1739,10 +1858,11 @@
           <button class="exercise-filter" type="button" data-exercise-filter="advanced" aria-pressed="false">Avancé</button>
           <button class="exercise-filter" type="button" data-exercise-filter="expert" aria-pressed="false">Expert</button>
         </div>
+        <p class="exercise-unlock-hint" id="exerciseUnlockHint" aria-live="polite"></p>
         <section class="feature-panel" aria-labelledby="exerciseSessionsTitle">
           <h2 class="feature-heading" id="exerciseSessionsTitle"><span aria-hidden="true">▶️</span> Choisis ton sport : la vidéo est juste à côté</h2>
           <p class="exercise-gender-note">Les mêmes sports et séances sont proposés aux femmes comme aux hommes. Choisis le niveau qui te correspond.</p>
-          <p class="exercise-gender-note">Après une séance réellement terminée, tu peux la valider pour gagner des points d’effort, dans la limite quotidienne.</p>
+          <p class="exercise-gender-note">Choisis librement ton niveau. Si tu débutes ou reprends, le niveau Débutant est conseillé. Regarde au moins 90 % d’une vidéo dans le lecteur pour gagner des points. Les validations restent locales à cet appareil.</p>
           <div class="video-grid exercise-video-grid">
             <article class="video-card" data-exercise-level="beginner">
               <a class="video-preview" href="https://www.youtube.com/watch?v=V4_KJ64N_oY" target="_blank" rel="noopener noreferrer" aria-label="Regarder la séance débutant de musculation sur YouTube"><img class="video-thumb" src="https://i.ytimg.com/vi/V4_KJ64N_oY/hqdefault.jpg" alt="" loading="lazy"><span class="video-play" aria-hidden="true">▶</span></a>
@@ -1933,40 +2053,43 @@
           <div class="minigames-games">
             <section class="minigames-panel" aria-labelledby="fruitGameTitle">
             <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🍎</span><h2 id="fruitGameTitle">Attrape les fruits</h2></div>
-            <p>Attrape au moins 20 fruits en 30 secondes pour gagner 10 points d’effort. Tu peux rejouer pour t’amuser, mais une seule partie peut être récompensée par jour.</p>
+            <p>Enchaîne 3 niveaux : attrape 20 fruits par niveau avant la fin des 90 secondes. La vitesse augmente à chaque niveau ; terminer le parcours rapporte 10 points d’effort, une fois par jour.</p>
             <div class="fruit-game-stats">
-              <span class="fruit-game-stat">Fruits : <strong id="fruitGameScore">0</strong> / 20</span>
-              <span class="fruit-game-stat">Temps : <strong id="fruitGameTime">30</strong> s</span>
+              <span class="fruit-game-stat">Niveau : <strong id="fruitGameLevel">1</strong> / 3</span>
+              <span class="fruit-game-stat">Fruits : <strong id="fruitGameScore">0</strong> / 60</span>
+              <span class="fruit-game-stat">Temps : <strong id="fruitGameTime">90</strong> s</span>
             </div>
             <div class="fruit-game-arena" id="fruitGameArena" role="group" aria-label="Zone de jeu Attrape les fruits">
               <div class="fruit-grove-decor" aria-hidden="true"><span class="fruit-grove-tree"></span><span class="fruit-grove-tree"></span><span class="fruit-grove-tree"></span><span class="fruit-grove-fruit">🍓</span><span class="fruit-grove-fruit">🍊</span></div>
-              <div class="fruit-game-intro" id="fruitGameIntro"><span aria-hidden="true">🍎 🍐 🍊</span><strong>Attrape les fruits</strong><span>Clique sur les fruits qui apparaissent dans le verger : 20 en 30 secondes pour réussir !</span></div>
+              <div class="fruit-game-intro" id="fruitGameIntro"><span aria-hidden="true">🍎 🍐 🍊</span><strong>Attrape les fruits</strong><span>3 niveaux de 20 fruits. Attrape-les avant la fin du chrono pour passer au niveau suivant !</span></div>
             </div>
             <div class="fruit-game-controls">
               <button class="primary-button" id="fruitGameStart" type="button">Jouer une partie</button>
-              <span>Objectif : 20 fruits en 30 secondes</span>
+              <span>3 niveaux · 20 fruits par niveau</span>
             </div>
             <p class="fruit-game-status" id="fruitGameStatus" role="status" aria-live="polite"></p>
             </section>
             <section class="minigames-panel" aria-labelledby="foodMemoryTitle">
             <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🧠</span><h2 id="foodMemoryTitle">Mémoire des aliments</h2></div>
-            <p>Retrouve les 6 paires avant la fin des 60 secondes. Une victoire rapporte 5 points d’effort, une seule fois par jour ; rejoue autant que tu veux pour t’entraîner.</p>
+            <p>Retrouve les paires sur 3 niveaux : 6, puis 8, puis 10 paires. Chaque niveau a son propre chrono ; terminer les trois rapporte 5 points d’effort, une fois par jour.</p>
             <div class="fruit-game-stats">
-              <span class="fruit-game-stat">Paires : <strong id="foodMemoryPairs">0</strong> / 6</span>
+              <span class="fruit-game-stat">Niveau : <strong id="foodMemoryLevel">1</strong> / 3</span>
+              <span class="fruit-game-stat">Paires : <strong id="foodMemoryPairs">0</strong> / <span id="foodMemoryPairGoal">6</span></span>
               <span class="fruit-game-stat">Temps : <strong id="foodMemoryTime">60</strong> s</span>
               <span class="fruit-game-stat">Coups : <strong id="foodMemoryMoves">0</strong></span>
             </div>
             <div class="food-memory-grid" id="foodMemoryGrid" role="group" aria-label="Cartes du jeu Mémoire des aliments" hidden></div>
             <div class="fruit-game-controls">
               <button class="primary-button" id="foodMemoryStart" type="button">Jouer une partie</button>
-              <span>Retrouve les 6 paires en 60 secondes</span>
+              <span>6, 8 puis 10 paires · 3 niveaux</span>
             </div>
             <p class="fruit-game-status" id="foodMemoryStatus" role="status" aria-live="polite">Retourne deux cartes à la fois pour retrouver les aliments identiques.</p>
             </section>
             <section class="minigames-panel" aria-labelledby="jumpFruitTitle">
               <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🍓</span><h2 id="jumpFruitTitle">Jump Fruit</h2></div>
-              <p>Saute de plateforme en plateforme, évite les ronces et les fruits épineux. Certaines plateformes bougent : utilise ← → ou les boutons pour ajuster ton saut.</p>
+              <p>Saute de plateforme en plateforme et évite les ronces. Tous les 35 m, un nouveau niveau ajoute des plateformes mobiles et davantage d’obstacles : va le plus haut possible !</p>
               <div class="fruit-game-stats">
+                <span class="fruit-game-stat">Niveau : <strong id="jumpFruitLevel">1</strong></span>
                 <span class="fruit-game-stat">Hauteur : <strong id="jumpFruitHeight">0</strong> m</span>
                 <span class="fruit-game-stat">Record : <strong id="jumpFruitBest">0</strong> m</span>
               </div>
@@ -1982,16 +2105,48 @@
               </div>
               <p class="fruit-game-status" id="jumpFruitStatus" role="status" aria-live="polite">Ton record est conservé pendant cette session.</p>
             </section>
-            <section class="minigames-panel" aria-labelledby="fruitDropTitle">
-              <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🍉</span><h2 id="fruitDropTitle">Fruit Fusion</h2></div>
-              <p>Fais tomber les fruits dans la colonne de ton choix. Aligne au moins 3 fruits identiques, horizontalement ou verticalement, pour les faire disparaître et marquer des points.</p>
+            <section class="minigames-panel" aria-labelledby="parkourTitle">
+              <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🏃</span><h2 id="parkourTitle">Parcours des fruits</h2></div>
+              <p>Enchaîne 3 niveaux de 600 m sur une piste en 3D. Change de voie, saute et ramasse au moins 5 fruits ; la vitesse et les obstacles augmentent à chaque niveau. Le parcours complet rapporte 5 points d’effort, une fois par jour.</p>
               <div class="fruit-game-stats">
+                <span class="fruit-game-stat">Niveau : <strong id="parkourLevel">1</strong> / 3</span>
+                <span class="fruit-game-stat">Distance : <strong id="parkourDistance">0</strong> / 1 800 m</span>
+                <span class="fruit-game-stat">Fruits : <strong id="parkourFruitCount">0</strong> / 5</span>
+                <span class="fruit-game-stat">Vies : <strong id="parkourLives">❤️❤️❤️</strong></span>
+                <span class="fruit-game-stat">Record : <strong id="parkourBest">0</strong> m</span>
+              </div>
+              <div class="parkour-progress" id="parkourProgressTrack" role="progressbar" aria-label="Progression du parcours" aria-valuemin="0" aria-valuemax="1800" aria-valuenow="0"><span id="parkourProgressFill"></span></div>
+              <canvas class="parkour-canvas" id="parkourCanvas" width="640" height="360" aria-label="Parcours des fruits : trois voies, évite les obstacles en changeant de voie ou en sautant et ramasse les fruits." hidden></canvas>
+              <div class="parkour-intro" id="parkourIntro"><span aria-hidden="true">🍓 🏃 🍊</span><strong>Prêt·e pour le parcours ?</strong><span>Utilise ← → pour changer de voie et ↑ ou Espace pour sauter. Sur téléphone, touche les boutons sous le jeu.</span></div>
+              <div class="fruit-game-controls">
+                <button class="primary-button" id="parkourStart" type="button">Lancer le parcours</button>
+                <span>3 niveaux · 1 800 m et 5 fruits</span>
+              </div>
+              <div class="parkour-controls" role="group" aria-label="Commandes du Parcours des fruits">
+                <button type="button" data-parkour-action="left" aria-label="Aller à gauche">←</button>
+                <button type="button" data-parkour-action="jump" aria-label="Sauter">⬆ Sauter</button>
+                <button type="button" data-parkour-action="right" aria-label="Aller à droite">→</button>
+              </div>
+              <p class="fruit-game-status" id="parkourStatus" role="status" aria-live="polite">Évite les obstacles et ramasse 5 fruits pour réussir le parcours.</p>
+            </section>
+            <section class="minigames-panel fruit-drop-panel" aria-labelledby="fruitDropTitle">
+              <div class="fruit-game-heading"><span class="heading-emoji" aria-hidden="true">🍉</span><h2 id="fruitDropTitle">Fruit Fusion</h2></div>
+              <p>Dépose les fruits dans la colonne de ton choix et aligne au moins 3 fruits identiques, horizontalement ou verticalement. Prépare tes combinaisons pour faire grimper ton score !</p>
+              <div class="fruit-game-stats">
+                <span class="fruit-game-stat">Niveau : <strong id="fruitDropLevel">1</strong></span>
                 <span class="fruit-game-stat">Score : <strong id="fruitDropScore">0</strong></span>
                 <span class="fruit-game-stat">Alignements : <strong id="fruitDropMatches">0</strong></span>
-                <span class="fruit-game-stat">Prochain : <strong id="fruitDropNext" aria-label="Prochain fruit">🍓</strong></span>
+                <span class="fruit-game-stat fruit-drop-stat-next">Prochain : <strong id="fruitDropNext" aria-label="Prochain fruit">🍓</strong></span>
               </div>
-              <canvas class="fruit-drop-canvas" id="fruitDropCanvas" width="430" height="470" aria-label="Plateau Fruit Fusion. Déplace le fruit avec les flèches gauche et droite, puis dépose-le avec la flèche bas ou la barre espace." hidden></canvas>
-              <div class="fruit-game-intro jump-fruit-intro" id="fruitDropIntro"><span aria-hidden="true">🍓🍇🍊</span><strong>Aligne les fruits !</strong><span>Fais des groupes de 3 fruits identiques ou plus. Atteins 60 points pour valider la partie.</span></div>
+              <div class="fruit-drop-reward" aria-label="Progression vers la récompense Fruit Fusion">
+                <span class="fruit-drop-reward-label">Objectif récompense</span>
+                <span class="fruit-drop-reward-count"><span id="fruitDropRewardScore">0</span> / 60 pts</span>
+                <div class="fruit-drop-reward-track" id="fruitDropRewardTrack" role="progressbar" aria-label="Progression vers la récompense Fruit Fusion" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0">
+                  <div class="fruit-drop-reward-fill" id="fruitDropRewardFill"></div>
+                </div>
+              </div>
+              <canvas class="fruit-drop-canvas" id="fruitDropCanvas" width="500" height="520" aria-label="Plateau Fruit Fusion. Déplace le fruit avec les flèches gauche et droite, puis dépose-le avec la flèche bas ou la barre espace." hidden></canvas>
+              <div class="fruit-drop-intro" id="fruitDropIntro"><span class="fruit-drop-intro-fruits" aria-hidden="true"><span>🍓</span><span>🍇</span><span>🍊</span><span>🍋</span><span>🍏</span></span><strong>Prêt·e pour Fruit Fusion ?</strong><span>Déplace les fruits dans les colonnes avec les flèches. Les groupes de 3 identiques disparaissent et rapportent des points. Chaque niveau rend la chute plus rapide ; 60 points débloquent la récompense du jour !</span></div>
               <div class="fruit-game-controls">
                 <button class="primary-button" id="fruitDropStart" type="button">Jouer à Fruit Fusion</button>
                 <span>60 points = 5 points d’effort, une fois par jour</span>
@@ -2010,6 +2165,7 @@
               <ul class="minigame-coming-soon">
                 <li>🍎 Attrape les fruits : 10 points d’effort, une fois par jour.</li>
                 <li>🧠 Mémoire des aliments : 5 points d’effort, une fois par jour.</li>
+                <li>🏃 Parcours des fruits : 5 points d’effort après 3 niveaux (1 800 m) et 5 fruits, une fois par jour.</li>
                 <li>🍉 Fruit Fusion : 5 points d’effort à 60 points, une fois par jour.</li>
                 <li>✅ Défi du jour validé : 5 points d’effort.</li>
                 <li>🏃 Séance terminée et validée : 10 points d’effort.</li>
@@ -2064,7 +2220,7 @@
               <div class="followup-days" id="followupDays"></div>
               <div class="followup-validate-box">
                 <button class="followup-validate" id="followupValidate" type="button">✓ Valider ma semaine</button>
-                <p id="followupValidateHint">Renseigne au moins une journée avant de valider.</p>
+                <p id="followupValidateHint">Le poids suffit pour valider une journée. Calories facultatives : laisse vide si tu ne les connais pas.</p>
               </div>
             </div>
           </section>
@@ -2141,9 +2297,63 @@
         const now = new Date();
         return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
       };
+      const notificationStorageKey = "nutripulse-notifications-v1";
+      let notificationState = { items: [] };
+      try {
+        const storedNotifications = JSON.parse(localStorage.getItem(notificationStorageKey) || "null");
+        if (storedNotifications !== null) {
+          if (!storedNotifications || !Array.isArray(storedNotifications.items) ||
+              storedNotifications.items.some(item => !item || typeof item.id !== "string" ||
+                typeof item.title !== "string" || typeof item.message !== "string" ||
+                typeof item.date !== "string" || typeof item.read !== "boolean")) {
+            throw new Error("Format des notifications invalide.");
+          }
+          notificationState = { items: storedNotifications.items.slice(0, 30) };
+        }
+      } catch (error) {
+        console.error("Impossible de charger les notifications.", error);
+        showToast("Les notifications enregistrées n’ont pas pu être chargées.");
+      }
+      function renderNotificationBadge() {
+        const badge = $("#notificationCount");
+        const unreadCount = notificationState.items.filter(item => !item.read).length;
+        badge.textContent = unreadCount > 99 ? "99+" : String(unreadCount);
+        badge.hidden = unreadCount === 0;
+        $("#notifications").setAttribute("aria-label", unreadCount
+          ? `Notifications, ${unreadCount} non lue${unreadCount === 1 ? "" : "s"}`
+          : "Notifications");
+      }
+      function saveNotificationState() {
+        try {
+          localStorage.setItem(notificationStorageKey, JSON.stringify(notificationState));
+          return true;
+        } catch (error) {
+          console.error("Impossible d’enregistrer les notifications.", error);
+          showToast("Les notifications n’ont pas pu être enregistrées dans ce navigateur.");
+          return false;
+        }
+      }
+      function addNotification(id, title, message) {
+        if (notificationState.items.some(item => item.id === id)) return;
+        const previousItems = notificationState.items;
+        notificationState.items = [{ id, title, message, date: ntcToday(), read: false }, ...previousItems].slice(0, 30);
+        if (!saveNotificationState()) {
+          notificationState.items = previousItems;
+          return;
+        }
+        renderNotificationBadge();
+      }
+      function markNotificationsRead() {
+        const previousItems = notificationState.items;
+        notificationState.items = previousItems.map(item => ({ ...item, read: true }));
+        if (!saveNotificationState()) notificationState.items = previousItems;
+        renderNotificationBadge();
+      }
+      renderNotificationBadge();
       const ntcActivityPoints = new Map([
         ["fruit-game", 10],
         ["food-memory", 5],
+        ["fruit-runner", 5],
         ["fruit-drop", 5],
         ["daily-challenge", 5]
       ]);
@@ -2345,7 +2555,30 @@
           });
         } else {
           $("#modalTitle").textContent = "Tes notifications";
-          modalBody.innerHTML = "<p>🔥 Tu es tout près de ton objectif calories du jour.</p><p>💧 Une petite pause hydratation ?</p>";
+          const notifications = notificationState.items;
+          if (notifications.length) {
+            const list = document.createElement("div");
+            list.className = "notification-list";
+            notifications.forEach(item => {
+              const article = document.createElement("article");
+              article.className = "notification-item";
+              const title = document.createElement("strong");
+              title.textContent = item.title;
+              const message = document.createElement("p");
+              message.textContent = item.message;
+              const date = document.createElement("time");
+              date.dateTime = item.date;
+              date.textContent = new Date(`${item.date}T00:00:00`).toLocaleDateString("fr-FR", {
+                day: "numeric", month: "long", year: "numeric"
+              });
+              article.append(title, message, date);
+              list.append(article);
+            });
+            modalBody.replaceChildren(list);
+          } else {
+            modalBody.innerHTML = '<p class="notification-empty">Tu n’as pas encore de notification. Le nouveau défi du jour apparaîtra ici.</p>';
+          }
+          markNotificationsRead();
           $("#modalSave").hidden = true;
         }
         $("#modalSave").hidden = kind !== "goal" && kind !== "profile";
@@ -2512,11 +2745,12 @@
       }
 
       function isFollowupDayValid(day) {
-        if (!day || day.w === "" || day.c === "") return false;
+        if (!day || day.w === "") return false;
         const weight = Number(day.w);
-        const calories = Number(day.c);
+        const hasCalories = day.c !== "";
+        const calories = hasCalories ? Number(day.c) : 0;
         return Number.isFinite(weight) && weight >= 1 && weight <= 400 &&
-          Number.isFinite(calories) && calories >= 0 && calories <= 15000;
+          (!hasCalories || (Number.isFinite(calories) && calories >= 0 && calories <= 15000));
       }
 
       function buildFollowupDays() {
@@ -2542,7 +2776,7 @@
 
           [
             { key: "w", label: "Poids (kg)", icon: "⚖️", min: "1", max: "400", step: "0.1" },
-            { key: "c", label: "Calories (kcal)", icon: "🔥", min: "0", max: "15000", step: "1" }
+            { key: "c", label: "Calories (kcal, facultatif)", icon: "🔥", min: "0", max: "15000", step: "1" }
           ].forEach(field => {
             const label = document.createElement("label");
             label.className = "followup-day-field-label";
@@ -2557,7 +2791,7 @@
             input.min = field.min;
             input.max = field.max;
             input.step = field.step;
-            input.placeholder = "--";
+            input.placeholder = field.key === "c" ? "Facultatif" : "--";
             input.value = value[field.key];
             input.disabled = week.validated || followupDateKey(date) > followupDateKey(new Date());
             input.dataset.dayIndex = String(index);
@@ -2791,7 +3025,8 @@
         const validDays = days.filter((day, index) =>
           isFollowupDayValid(day) && followupDateKey(followupDateAt(index)) <= followupDateKey(new Date()));
         const count = validDays.length;
-        const calories = validDays.reduce((total, day) => total + Number(day.c), 0);
+        const calorieDays = validDays.filter(day => day.c !== "");
+        const calories = calorieDays.reduce((total, day) => total + Number(day.c), 0);
         const weights = validDays.map(day => Number(day.w));
         const averageWeight = weights.length ? weights.reduce((total, weight) => total + weight, 0) / weights.length : 0;
         const percent = Math.round(count / 7 * 100);
@@ -2799,7 +3034,7 @@
         const level = Math.floor(Math.max(0, followupState.xpTotal) / 100) + 1;
         const weeklyXp = week.xpEarned;
 
-        $("#followupCalories").textContent = `${calories.toLocaleString("fr-FR")} kcal`;
+        $("#followupCalories").textContent = calorieDays.length ? `${calories.toLocaleString("fr-FR")} kcal` : "Non renseignées";
         $("#caloriesValue").textContent = calories.toLocaleString("fr-FR");
         $("#trainingValue").textContent = String(count);
         $("#homeFollowupProgress").style.width = `${percent}%`;
@@ -2815,8 +3050,10 @@
         $("#followupXpLabel").textContent = `${xpInLevel} / 100 XP`;
         $("#followupLevelRing").style.setProperty("--xp-progress", `${xpInLevel * 3.6}deg`);
         $("#followupWeekXp").textContent = `${weeklyXp} XP`;
-        $("#followupCaloriesPct").textContent = `${Math.min(100, Math.round(calories / 3500 * 100))}%`;
-        $("#followupCaloriesText").textContent = `${calories.toLocaleString("fr-FR")} / 3 500 kcal notées`;
+        $("#followupCaloriesPct").textContent = calorieDays.length ? `${Math.min(100, Math.round(calories / 3500 * 100))}%` : "—";
+        $("#followupCaloriesText").textContent = calorieDays.length
+          ? `${calories.toLocaleString("fr-FR")} / 3 500 kcal notées`
+          : "Aucune calorie notée";
         $("#followupSessionsPct").textContent = `${percent}%`;
         $("#followupSessionsText").textContent = `${count} / 7 journées renseignées`;
         $("#followupXpCircle").textContent = `+${weeklyXp} XP`;
@@ -2832,7 +3069,7 @@
         $("#followupValidateHint").textContent = week.validated
           ? `${week.xpEarned} XP gagnés. Cette semaine est déjà validée.`
           : isCurrentWeek
-            ? "Une journée compte lorsque son poids et ses calories sont renseignés."
+            ? "Renseigne le poids ; les calories sont facultatives."
             : "Seule la semaine en cours peut être validée pour gagner des XP.";
         $("#followupPrevWeek").disabled = false;
         $("#followupNextWeek").disabled = followupState.weekStart >= currentWeekStart;
@@ -2904,11 +3141,26 @@
         { emoji: "🌿", title: "Prends cinq minutes pour souffler", description: "Installe-toi confortablement et respire calmement." },
         { emoji: "🎵", title: "Bouge sur une musique", description: "Danse ou étire-toi quelques minutes, comme tu préfères." }
       ];
+      let dailyChallengeRefreshTimer = 0;
+      function scheduleDailyChallengeRefresh() {
+        window.clearTimeout(dailyChallengeRefreshTimer);
+        const now = new Date();
+        const nextDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 5);
+        dailyChallengeRefreshTimer = window.setTimeout(() => {
+          renderDailyChallenge();
+          scheduleDailyChallengeRefresh();
+        }, Math.max(1000, nextDay.getTime() - now.getTime()));
+      }
       function renderDailyChallenge() {
         const now = new Date();
         const challengeDate = followupDateKey(now);
         const dayNumber = Math.floor(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) / 86400000);
         const challenge = dailyChallenges[dayNumber % dailyChallenges.length];
+        addNotification(
+          `daily-challenge-${challengeDate}`,
+          "Nouveau défi du jour",
+          `${challenge.emoji} ${challenge.title} — ${challenge.description}`
+        );
         const complete = followupState.dailyChallenge?.date === challengeDate && followupState.dailyChallenge.completed === true;
         $("#dailyChallengeDate").textContent = now.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" });
         $("#dailyChallengeEmoji").textContent = challenge.emoji;
@@ -2924,6 +3176,7 @@
           ? "Défi validé aujourd’hui. Reviens demain pour le prochain !"
           : "Coche la case quand tu as terminé le défi.";
         $("#dailyChallengeXp").textContent = complete ? "✓ +5 XP reçus" : "+5 XP";
+        scheduleDailyChallengeRefresh();
       }
       $("#dailyChallengeComplete").addEventListener("change", event => {
         const checkbox = event.currentTarget;
@@ -3124,41 +3377,246 @@
       });
 
       function setExerciseFilter(filter) {
+        const filterButton = $(`.exercise-filter[data-exercise-filter="${filter}"]`);
+        if (!filterButton || filterButton.disabled) return;
         $$(".exercise-filter").forEach(item => item.setAttribute("aria-pressed", String(item.dataset.exerciseFilter === filter)));
         $$(".exercise-video-grid .video-card").forEach(card => {
           card.hidden = card.dataset.exerciseLevel !== filter;
         });
+        updateExerciseUnlockHint(filter);
       }
       $$(".exercise-filter").forEach(button => button.addEventListener("click", () => setExerciseFilter(button.dataset.exerciseFilter)));
       const initialExerciseFilter = $(".exercise-filter[aria-pressed='true']");
+      const exerciseLevelLabels = {
+        beginner: "Débutant",
+        intermediate: "Intermédiaire",
+        advanced: "Avancé",
+        expert: "Expert"
+      };
+      const exerciseCards = $$(".exercise-video-grid .video-card").map(card => {
+        const videoId = new URL($(".video-preview", card).href).searchParams.get("v");
+        if (!videoId) throw new Error("Une séance d’exercice ne contient pas d’identifiant vidéo YouTube.");
+        return { card, videoId, level: card.dataset.exerciseLevel, key: `${card.dataset.exerciseLevel}:${videoId}` };
+      });
+      const exerciseProgressKey = "nutripulse-exercise-progress-v1";
+      const knownExerciseKeys = new Set(exerciseCards.map(item => item.key));
+      let exerciseProgress = { completed: [] };
+      try {
+        const storedProgress = JSON.parse(localStorage.getItem(exerciseProgressKey) || "null");
+        if (storedProgress !== null) {
+          if (!storedProgress || !Array.isArray(storedProgress.completed) ||
+              storedProgress.completed.some(key => typeof key !== "string" || !knownExerciseKeys.has(key))) {
+            throw new Error("Format de progression des séances invalide.");
+          }
+          exerciseProgress = { completed: [...new Set(storedProgress.completed)] };
+        }
+      } catch (error) {
+        console.error("Impossible de charger la progression des séances.", error);
+        showToast("La progression des séances n’a pas pu être chargée.");
+      }
+      function saveExerciseProgress() {
+        try {
+          localStorage.setItem(exerciseProgressKey, JSON.stringify(exerciseProgress));
+          return true;
+        } catch (error) {
+          console.error("Impossible d’enregistrer la progression des séances.", error);
+          showToast("La progression des séances n’a pas pu être enregistrée dans ce navigateur.");
+          return false;
+        }
+      }
+      function exerciseCompletionCount(level) {
+        const keys = new Set(exerciseCards.filter(item => item.level === level).map(item => item.key));
+        return exerciseProgress.completed.filter(key => keys.has(key)).length;
+      }
+      function updateExerciseUnlockHint(activeLevel = "beginner") {
+        const hint = $("#exerciseUnlockHint");
+        const completedCount = exerciseCompletionCount(activeLevel);
+        const progressMessage = completedCount
+          ? ` Tu as terminé ${completedCount} séance${completedCount === 1 ? "" : "s"} ${exerciseLevelLabels[activeLevel]}.`
+          : "";
+        hint.textContent = activeLevel === "beginner"
+          ? `Tous les niveaux sont accessibles. Débutant est conseillé si tu commences ou reprends.${progressMessage}`
+          : `${exerciseLevelLabels[activeLevel]} est accessible; choisis un rythme adapté à ton expérience.${progressMessage}`;
+      }
       if (initialExerciseFilter) setExerciseFilter(initialExerciseFilter.dataset.exerciseFilter);
 
-      $$(".exercise-video-grid .video-card").forEach(card => {
-        const videoId = new URL($(".video-preview", card).href).searchParams.get("v");
-        if (!videoId) return;
+      let youtubeApiPromise = null;
+      function loadYouTubeApi() {
+        if (window.YT?.Player) return Promise.resolve(window.YT);
+        if (youtubeApiPromise) return youtubeApiPromise;
+        youtubeApiPromise = new Promise((resolve, reject) => {
+          let settled = false;
+          const previousReady = window.onYouTubeIframeAPIReady;
+          const timeout = window.setTimeout(() => {
+            if (settled) return;
+            settled = true;
+            reject(new Error("Le lecteur YouTube n’a pas répondu."));
+          }, 15000);
+          window.onYouTubeIframeAPIReady = () => {
+            if (typeof previousReady === "function") previousReady();
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timeout);
+            resolve(window.YT);
+          };
+          const script = document.createElement("script");
+          script.src = "https://www.youtube.com/iframe_api";
+          script.onerror = () => {
+            if (settled) return;
+            settled = true;
+            window.clearTimeout(timeout);
+            reject(new Error("L’API YouTube n’a pas pu être chargée."));
+          };
+          document.head.append(script);
+        }).catch(error => {
+          youtubeApiPromise = null;
+          throw error;
+        });
+        return youtubeApiPromise;
+      }
+      function watchStatus(item, message) {
+        item.status.textContent = message;
+      }
+      function closeExercisePlayer(item) {
+        window.clearInterval(item.timer);
+        item.timer = 0;
+        if (item.player) item.player.destroy();
+        item.player = null;
+        item.host.hidden = true;
+        item.preview.hidden = false;
+        item.button.disabled = ntcState.claims[item.activityKey] === ntcCurrentDate();
+        item.button.textContent = item.button.disabled ? "Séance validée aujourd’hui ✓" : "Regarder la séance (+10 EP)";
+        watchStatus(item, "Vidéo fermée. La progression de lecture n’est pas validée.");
+      }
+      function finishExerciseVideo(item) {
+        window.clearInterval(item.timer);
+        item.timer = 0;
+        const previousCompleted = [...exerciseProgress.completed];
+        if (!exerciseProgress.completed.includes(item.key)) exerciseProgress.completed.push(item.key);
+        if (!saveExerciseProgress()) {
+          exerciseProgress.completed = previousCompleted;
+          return;
+        }
+        item.player.pauseVideo();
+        const reward = awardEffortPoints(item.activityKey, 10);
+        item.button.disabled = reward.saved;
+        item.button.textContent = reward.saved ? "Séance validée aujourd’hui ✓" : "Réessayer la validation après la vidéo";
+        const rewardMessage = !reward.saved
+          ? "La séance est terminée, mais les points n’ont pas pu être enregistrés."
+          : reward.duplicate
+            ? "Cette séance a déjà été récompensée aujourd’hui."
+            : reward.awarded
+              ? `+${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""}.`
+              : "Ta limite quotidienne de points est atteinte.";
+        watchStatus(item, `Séance terminée. ${rewardMessage}`);
+        showToast(`Séance terminée. ${rewardMessage}`);
+        updateExerciseUnlockHint(item.level);
+      }
+      exerciseCards.forEach(({ card, videoId, level, key }) => {
         const activityKey = `exercise:${videoId}`;
         const button = document.createElement("button");
-        button.className = "exercise-complete-button";
+        button.className = "exercise-watch-button";
         button.type = "button";
-        button.textContent = "Valider ma séance (+10 EP)";
+        button.textContent = "Regarder la séance (+10 EP)";
         if (ntcState.claims[activityKey] === ntcCurrentDate()) {
           button.disabled = true;
           button.textContent = "Séance validée aujourd’hui ✓";
         }
-        button.addEventListener("click", () => {
-          const reward = awardEffortPoints(activityKey, 10);
-          if (!reward.saved) return;
+        const preview = $(".video-preview", card);
+        const host = document.createElement("div");
+        host.className = "exercise-player-host";
+        host.hidden = true;
+        preview.after(host);
+        const progress = document.createElement("div");
+        progress.className = "exercise-watch-progress";
+        progress.setAttribute("role", "progressbar");
+        progress.setAttribute("aria-label", "Progression de lecture suivie");
+        progress.setAttribute("aria-valuemin", "0");
+        progress.setAttribute("aria-valuemax", "90");
+        progress.hidden = true;
+        const progressFill = document.createElement("span");
+        progress.append(progressFill);
+        const status = document.createElement("p");
+        status.className = "exercise-watch-status";
+        status.setAttribute("aria-live", "polite");
+        const item = { card, videoId, level, key, activityKey, button, preview, host, progress, progressFill, status, player: null, timer: 0, watched: 0, duration: 0, lastTime: null, lastTick: 0 };
+        button.addEventListener("click", async () => {
+          if (item.player) {
+            closeExercisePlayer(item);
+            return;
+          }
+          if (button.disabled) return;
           button.disabled = true;
-          button.textContent = "Séance validée aujourd’hui ✓";
-          if (reward.duplicate) {
-            showToast("Cette séance a déjà été validée aujourd’hui.");
-          } else if (reward.awarded) {
-            showToast(`Séance validée : +${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""} !`);
-          } else {
-            showToast("Séance validée, mais ta limite de points du jour est atteinte.");
+          button.textContent = "Chargement de la vidéo…";
+          status.textContent = "Connexion au lecteur vidéo pour démarrer la séance.";
+          try {
+            const YT = await loadYouTubeApi();
+            preview.hidden = true;
+            host.hidden = false;
+            item.player = new YT.Player(host, {
+              videoId,
+              playerVars: { autoplay: 1, controls: 1, playsinline: 1, rel: 0 },
+              events: {
+                onReady: event => {
+                  item.duration = event.target.getDuration();
+                  item.lastTime = event.target.getCurrentTime();
+                  item.lastTick = performance.now();
+                  progress.hidden = false;
+                  button.disabled = false;
+                  button.textContent = "Fermer la vidéo";
+                  status.textContent = "Regarde au moins 90 % de cette vidéo dans le lecteur pour la valider.";
+                  item.timer = window.setInterval(() => {
+                    if (!item.player || document.hidden) {
+                      item.lastTick = performance.now();
+                      if (item.player) item.lastTime = item.player.getCurrentTime();
+                      return;
+                    }
+                    const now = performance.now();
+                    const currentTime = item.player.getCurrentTime();
+                    const isPlaying = item.player.getPlayerState() === YT.PlayerState.PLAYING;
+                    const elapsed = (now - item.lastTick) / 1000;
+                    const delta = item.lastTime === null ? 0 : currentTime - item.lastTime;
+                    item.duration = item.player.getDuration() || item.duration;
+                    if (isPlaying && elapsed > 0 && elapsed <= 2.5 && delta > 0 && delta <= elapsed + 0.75) {
+                      item.watched += delta;
+                    }
+                    item.lastTick = now;
+                    item.lastTime = currentTime;
+                    const percent = item.duration > 0 ? Math.min(100, item.watched / item.duration * 100) : 0;
+                    progressFill.style.width = `${percent}%`;
+                    progress.setAttribute("aria-valuenow", String(Math.min(90, Math.floor(percent))));
+                    if (item.duration > 0 && item.watched >= item.duration * 0.9) finishExerciseVideo(item);
+                  }, 1000);
+                },
+                onStateChange: event => {
+                  if (event.data === YT.PlayerState.ENDED && item.watched < item.duration * 0.9) {
+                    watchStatus(item, "Vidéo terminée, mais moins de 90 % ont été suivis. Relance-la dans le lecteur pour compléter la séance.");
+                  }
+                },
+                onError: event => {
+                  window.clearInterval(item.timer);
+                  item.timer = 0;
+                  item.player = null;
+                  host.hidden = true;
+                  preview.hidden = false;
+                  button.disabled = false;
+                  button.textContent = "Réessayer la vidéo";
+                  status.textContent = `Cette vidéo ne peut pas être intégrée (erreur YouTube ${event.data}). Aucun point n’a été attribué.`;
+                }
+              }
+            });
+          } catch (error) {
+            console.error("Impossible de démarrer la vidéo d’exercice.", error);
+            host.hidden = true;
+            preview.hidden = false;
+            button.disabled = false;
+            button.textContent = "Réessayer la vidéo";
+            status.textContent = "Le lecteur vidéo n’a pas pu démarrer. Vérifie ta connexion et réessaie; aucun point n’a été attribué.";
+            showToast("La vidéo n’a pas pu être lancée. Aucun point n’a été attribué.");
           }
         });
-        $(".video-copy", card).append(button);
+        const copy = $(".video-copy", card);
+        copy.append(button, progress, status);
       });
 
       const fruitGameArena = $("#fruitGameArena");
@@ -3167,6 +3625,7 @@
       const fruitTypes = ["🍎", "🍐", "🍊", "🍋", "🍇", "🍓", "🍉", "🍍"];
       let fruitGameActive = false;
       let fruitGameScore = 0;
+      let fruitGameLevel = 1;
       let fruitGameEndsAt = 0;
       let fruitGameTimer = 0;
       let fruitSpawnTimer = 0;
@@ -3189,8 +3648,8 @@
         fruitGameStart.disabled = false;
         fruitGameStart.textContent = "Rejouer";
         $("#fruitGameIntro").hidden = false;
-        fruitGameIntroTitle.textContent = fruitGameScore >= 20 ? "Partie réussie !" : "Partie terminée";
-        if (fruitGameScore >= 20) {
+        fruitGameIntroTitle.textContent = fruitGameScore >= 60 ? "Parcours terminé !" : "Partie terminée";
+        if (fruitGameScore >= 60) {
           const reward = awardEffortPoints("fruit-game", 10);
           if (reward.duplicate) {
             $("#fruitGameStatus").textContent = `Bravo, ${fruitGameScore} fruits ! La partie récompensée du jour est déjà validée.`;
@@ -3201,10 +3660,10 @@
           } else {
             $("#fruitGameStatus").textContent = `Bravo, ${fruitGameScore} fruits ! Ta limite quotidienne de points est atteinte.`;
           }
-          fruitGameIntroHint.textContent = "Bien joué ! Tu peux relancer une partie quand tu veux.";
+          fruitGameIntroHint.textContent = "Bien joué ! Tu peux relancer les 3 niveaux quand tu veux.";
         } else {
-          $("#fruitGameStatus").textContent = `Tu as attrapé ${fruitGameScore} fruits. Il en faut 20 pour valider la partie.`;
-          fruitGameIntroHint.textContent = "Relance pour tenter d’attraper les 20 fruits.";
+          $("#fruitGameStatus").textContent = `Tu as attrapé ${fruitGameScore} fruits. Il en faut 60 pour terminer les 3 niveaux.`;
+          fruitGameIntroHint.textContent = "Relance pour tenter de terminer les 3 niveaux.";
         }
       }
       function spawnFruit() {
@@ -3230,22 +3689,32 @@
           fruitGameScore += 1;
           $("#fruitGameScore").textContent = String(fruitGameScore);
           clearFruitTarget();
-          if (fruitGameScore >= 20) finishFruitGame();
+          if (fruitGameScore >= 60) {
+            finishFruitGame();
+          } else if (fruitGameScore % 20 === 0) {
+            fruitGameLevel = Math.min(3, fruitGameLevel + 1);
+            $("#fruitGameLevel").textContent = String(fruitGameLevel);
+            $("#fruitGameStatus").textContent = `Niveau ${fruitGameLevel - 1} terminé ! Niveau ${fruitGameLevel} : les fruits arrivent plus vite.`;
+            clearInterval(fruitSpawnTimer);
+            fruitSpawnTimer = setInterval(spawnFruit, Math.max(420, 900 - fruitGameLevel * 140));
+          }
         });
         currentFruit = fruit;
         fruitGameArena.append(fruit);
-        fruitMissTimer = setTimeout(clearFruitTarget, 1100);
+        fruitMissTimer = setTimeout(clearFruitTarget, Math.max(550, 1250 - fruitGameLevel * 200));
       }
       fruitGameStart.addEventListener("click", () => {
         if (fruitGameActive) return;
         fruitGameActive = true;
         fruitGameScore = 0;
-        fruitGameEndsAt = Date.now() + 30000;
+        fruitGameLevel = 1;
+        fruitGameEndsAt = Date.now() + 90000;
+        $("#fruitGameLevel").textContent = "1";
         $("#fruitGameScore").textContent = "0";
-        $("#fruitGameTime").textContent = "30";
-        $("#fruitGameStatus").textContent = "C’est parti, attrape les fruits !";
+        $("#fruitGameTime").textContent = "90";
+        $("#fruitGameStatus").textContent = "Niveau 1/3 : attrape 20 fruits !";
         fruitGameIntroTitle.textContent = "Attrape les fruits";
-        fruitGameIntroHint.textContent = "Clique sur les fruits qui apparaissent dans le verger : 20 en 30 secondes pour réussir !";
+        fruitGameIntroHint.textContent = "3 niveaux de 20 fruits. Attrape-les avant la fin du chrono pour passer au niveau suivant !";
         fruitGameIntro.hidden = true;
         fruitGameStart.disabled = true;
         spawnFruit();
@@ -3263,18 +3732,26 @@
         { name: "poisson", emoji: "🐟" },
         { name: "brocoli", emoji: "🥦" },
         { name: "pain", emoji: "🍞" },
-        { name: "fraise", emoji: "🍓" }
+        { name: "fraise", emoji: "🍓" },
+        { name: "lait", emoji: "🥛" },
+        { name: "fromage", emoji: "🧀" },
+        { name: "avocat", emoji: "🥑" },
+        { name: "œuf", emoji: "🥚" }
       ];
       const foodMemoryGrid = $("#foodMemoryGrid");
       const foodMemoryStart = $("#foodMemoryStart");
+      const foodMemoryLevelPairs = [6, 8, 10];
+      const foodMemoryLevelTimes = [60, 75, 90];
       let foodMemoryActive = false;
       let foodMemoryLocked = false;
       let foodMemorySelected = [];
       let foodMemoryMatches = 0;
       let foodMemoryMoves = 0;
+      let foodMemoryLevel = 1;
       let foodMemoryEndsAt = 0;
       let foodMemoryTimer = 0;
       let foodMemoryMismatchTimer = 0;
+      let foodMemoryNextLevelTimer = 0;
 
       function finishFoodMemory(won) {
         if (!foodMemoryActive) return;
@@ -3282,6 +3759,7 @@
         foodMemoryLocked = true;
         clearInterval(foodMemoryTimer);
         clearTimeout(foodMemoryMismatchTimer);
+        clearTimeout(foodMemoryNextLevelTimer);
         $("#foodMemoryTime").textContent = String(won ? Math.max(0, Math.ceil((foodMemoryEndsAt - Date.now()) / 1000)) : 0);
         foodMemoryStart.disabled = false;
         foodMemoryStart.textContent = "Rejouer";
@@ -3294,14 +3772,54 @@
 
         const reward = awardEffortPoints("food-memory", 5);
         if (reward.duplicate) {
-          $("#foodMemoryStatus").textContent = `Bravo, les 6 paires en ${foodMemoryMoves} coups ! La partie récompensée du jour est déjà validée.`;
+          $("#foodMemoryStatus").textContent = "Bravo, les 3 niveaux terminés ! La partie récompensée du jour est déjà validée.";
         } else if (!reward.saved) {
-          $("#foodMemoryStatus").textContent = "Bravo, les 6 paires ! Le résultat n’a pas pu être enregistré.";
+          $("#foodMemoryStatus").textContent = "Bravo, les 3 niveaux terminés ! Le résultat n’a pas pu être enregistré.";
         } else if (reward.awarded) {
-          $("#foodMemoryStatus").textContent = `Bravo, les 6 paires en ${foodMemoryMoves} coups : +${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""} !`;
+          $("#foodMemoryStatus").textContent = `Bravo, les 3 niveaux terminés : +${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""} !`;
         } else {
-          $("#foodMemoryStatus").textContent = "Bravo, les 6 paires ! Ta limite quotidienne de points est atteinte.";
+          $("#foodMemoryStatus").textContent = "Bravo, les 3 niveaux terminés ! Ta limite quotidienne de points est atteinte.";
         }
+      }
+
+      function startFoodMemoryLevel() {
+        foodMemoryLocked = false;
+        foodMemorySelected = [];
+        foodMemoryMatches = 0;
+        foodMemoryMoves = 0;
+        const pairGoal = foodMemoryLevelPairs[foodMemoryLevel - 1];
+        const levelTime = foodMemoryLevelTimes[foodMemoryLevel - 1];
+        foodMemoryEndsAt = Date.now() + levelTime * 1000;
+        $("#foodMemoryLevel").textContent = String(foodMemoryLevel);
+        $("#foodMemoryPairs").textContent = "0";
+        $("#foodMemoryPairGoal").textContent = String(pairGoal);
+        $("#foodMemoryMoves").textContent = "0";
+        $("#foodMemoryTime").textContent = String(levelTime);
+        $("#foodMemoryStatus").textContent = `Niveau ${foodMemoryLevel}/3 : retrouve ${pairGoal} paires en ${levelTime} secondes.`;
+        const levelPairs = foodMemoryPairsData.slice(0, pairGoal);
+        const shuffledCards = [...levelPairs, ...levelPairs].sort(() => Math.random() - 0.5);
+        foodMemoryGrid.replaceChildren(...shuffledCards.map(makeFoodMemoryCard));
+        clearInterval(foodMemoryTimer);
+        foodMemoryTimer = setInterval(() => {
+          const remaining = Math.max(0, Math.ceil((foodMemoryEndsAt - Date.now()) / 1000));
+          $("#foodMemoryTime").textContent = String(remaining);
+          if (remaining === 0) finishFoodMemory(false);
+        }, 100);
+      }
+
+      function completeFoodMemoryLevel() {
+        if (foodMemoryLevel >= foodMemoryLevelPairs.length) {
+          finishFoodMemory(true);
+          return;
+        }
+        foodMemoryLocked = true;
+        clearInterval(foodMemoryTimer);
+        $("#foodMemoryStatus").textContent = `Niveau ${foodMemoryLevel} réussi ! Prépare-toi pour ${foodMemoryLevelPairs[foodMemoryLevel]} paires.`;
+        foodMemoryNextLevelTimer = setTimeout(() => {
+          if (!foodMemoryActive) return;
+          foodMemoryLevel += 1;
+          startFoodMemoryLevel();
+        }, 900);
       }
 
       function makeFoodMemoryCard(pair, index) {
@@ -3333,7 +3851,7 @@
             });
             foodMemoryMatches += 1;
             $("#foodMemoryPairs").textContent = String(foodMemoryMatches);
-            if (foodMemoryMatches === foodMemoryPairsData.length) finishFoodMemory(true);
+            if (foodMemoryMatches === foodMemoryLevelPairs[foodMemoryLevel - 1]) completeFoodMemoryLevel();
             return;
           }
 
@@ -3354,27 +3872,12 @@
         if (foodMemoryActive) return;
         clearInterval(foodMemoryTimer);
         clearTimeout(foodMemoryMismatchTimer);
+        clearTimeout(foodMemoryNextLevelTimer);
         foodMemoryActive = true;
-        foodMemoryLocked = false;
-        foodMemorySelected = [];
-        foodMemoryMatches = 0;
-        foodMemoryMoves = 0;
-        foodMemoryEndsAt = Date.now() + 60000;
-        $("#foodMemoryPairs").textContent = "0";
-        $("#foodMemoryMoves").textContent = "0";
-        $("#foodMemoryTime").textContent = "60";
-        $("#foodMemoryStatus").textContent = "C’est parti ! Retrouve les aliments identiques.";
+        foodMemoryLevel = 1;
         foodMemoryStart.disabled = true;
         foodMemoryGrid.hidden = false;
-
-        const shuffledCards = [...foodMemoryPairsData, ...foodMemoryPairsData]
-          .sort(() => Math.random() - 0.5);
-        foodMemoryGrid.replaceChildren(...shuffledCards.map(makeFoodMemoryCard));
-        foodMemoryTimer = setInterval(() => {
-          const remaining = Math.max(0, Math.ceil((foodMemoryEndsAt - Date.now()) / 1000));
-          $("#foodMemoryTime").textContent = String(remaining);
-          if (remaining === 0) finishFoodMemory(false);
-        }, 100);
+        startFoodMemoryLevel();
       });
 
       const jumpFruitCanvas = $("#jumpFruitCanvas");
@@ -3396,6 +3899,7 @@
       let jumpFruitNextPlatformY = 0;
       let jumpFruitStartY = 0;
       let jumpFruitScore = 0;
+      let jumpFruitLevel = 1;
       let jumpFruitBestScore = 0;
       let jumpFruitPreviousBestScore = 0;
 
@@ -3621,9 +4125,10 @@
         const width = 72 + Math.random() * 44;
         const x = width / 2 + 12 + Math.random() * (jumpFruitWidth - width - 24);
         jumpFruitPlatformCount += 1;
-        const moving = jumpFruitPlatformCount > 3 && Math.random() < .28;
+        const level = Math.min(5, Math.floor(jumpFruitScore / 35) + 1);
+        const moving = jumpFruitPlatformCount > 3 && Math.random() < .22 + level * .04;
         jumpFruitPlatforms.push({ x, y, width, moving, speed: moving ? (Math.random() < .5 ? -1 : 1) * (1.1 + Math.random() * .7) : 0 });
-        if (jumpFruitPlatformCount > 7 && jumpFruitPlatformCount % 4 === 0) {
+        if (jumpFruitPlatformCount > 7 && jumpFruitPlatformCount % Math.max(2, 5 - level) === 0) {
           const hazardWidth = 56 + Math.random() * 30;
           jumpFruitHazards.push({
             x: hazardWidth / 2 + 10 + Math.random() * (jumpFruitWidth - hazardWidth - 20),
@@ -3692,6 +4197,12 @@
           jumpFruitCamera = jumpFruitPlayer.y - jumpFruitHeight * .42;
         }
         jumpFruitScore = Math.max(jumpFruitScore, Math.max(0, Math.floor((jumpFruitStartY - jumpFruitPlayer.y) / 10)));
+        const nextLevel = Math.min(5, Math.floor(jumpFruitScore / 35) + 1);
+        if (nextLevel > jumpFruitLevel) {
+          jumpFruitLevel = nextLevel;
+          $("#jumpFruitLevel").textContent = String(jumpFruitLevel);
+          $("#jumpFruitStatus").textContent = `Niveau ${jumpFruitLevel} ! Les plateformes mobiles et les ronces sont plus nombreuses.`;
+        }
         $("#jumpFruitHeight").textContent = String(jumpFruitScore);
         if (jumpFruitScore > jumpFruitBestScore) {
           jumpFruitBestScore = jumpFruitScore;
@@ -3722,6 +4233,8 @@
         jumpFruitDirection = 0;
         jumpFruitKeys = { left: false, right: false };
         jumpFruitScore = 0;
+        jumpFruitLevel = 1;
+        $("#jumpFruitLevel").textContent = "1";
         jumpFruitPreviousBestScore = jumpFruitBestScore;
         jumpFruitCamera = 0;
         jumpFruitPlayer = { x: jumpFruitWidth / 2, y: jumpFruitHeight - 52, velocityY: -10.7 };
@@ -3785,15 +4298,375 @@
         jumpFruitStart.disabled = true;
       }
 
+      const parkourCanvas = $("#parkourCanvas");
+      const parkourContext = parkourCanvas.getContext("2d");
+      const parkourStart = $("#parkourStart");
+      const parkourIntro = $("#parkourIntro");
+      const parkourGoal = 1800;
+      const parkourViewDistance = 210;
+      const parkourContactDistance = 30;
+      const parkourBestStorageKey = "nutripulse-parkour-best-v1";
+      let parkourActive = false;
+      let parkourFrame = 0;
+      let parkourPreviousFrame = 0;
+      let parkourDistance = 0;
+      let parkourFruitCount = 0;
+      let parkourLives = 3;
+      let parkourLane = 1;
+      let parkourJumpRemaining = 0;
+      let parkourInvulnerableUntil = 0;
+      let parkourObjects = [];
+      let parkourNextWave = 30;
+      let parkourBest = 0;
+      try {
+        const storedParkourBest = Number(localStorage.getItem(parkourBestStorageKey) || 0);
+        if (Number.isSafeInteger(storedParkourBest) && storedParkourBest >= 0) parkourBest = storedParkourBest;
+      } catch (error) {
+        console.error("Impossible de charger le record du Parcours des fruits.", error);
+        showToast("Le record du parcours n’a pas pu être chargé.");
+      }
+      $("#parkourBest").textContent = String(parkourBest);
+
+      function queueParkourWave(distance) {
+        const obstacleLane = Math.floor(Math.random() * 3);
+        const availableFruitLanes = [0, 1, 2].filter(lane => lane !== obstacleLane);
+        const fruitLane = availableFruitLanes[Math.floor(Math.random() * availableFruitLanes.length)];
+        parkourObjects.push({ distance, lane: obstacleLane, kind: "obstacle", checked: false });
+        for (let index = 0; index < 3; index += 1) {
+          parkourObjects.push({ distance: distance + 15 + index * 8, lane: fruitLane, kind: "fruit", checked: false });
+        }
+      }
+
+      function drawParkour() {
+        const context = parkourContext;
+        const width = parkourCanvas.width;
+        const height = parkourCanvas.height;
+        const horizon = 94;
+        const roadBottom = height + 12;
+        const roadTopWidth = 62;
+        const roadBottomWidth = 500;
+        const sky = context.createLinearGradient(0, 0, 0, height);
+        sky.addColorStop(0, "#75cce4");
+        sky.addColorStop(.38, "#c8edcf");
+        sky.addColorStop(.39, "#83bc78");
+        sky.addColorStop(1, "#387858");
+        context.fillStyle = sky;
+        context.fillRect(0, 0, width, height);
+        context.fillStyle = "rgba(255, 237, 153, .86)";
+        context.beginPath();
+        context.arc(520, 48, 23, 0, Math.PI * 2);
+        context.fill();
+
+        context.fillStyle = "#477e67";
+        context.beginPath();
+        context.moveTo(0, horizon + 24);
+        context.lineTo(92, horizon - 22);
+        context.lineTo(194, horizon + 26);
+        context.lineTo(310, horizon - 31);
+        context.lineTo(438, horizon + 22);
+        context.lineTo(552, horizon - 12);
+        context.lineTo(width, horizon + 20);
+        context.lineTo(width, roadBottom);
+        context.lineTo(0, roadBottom);
+        context.closePath();
+        context.fill();
+
+        context.fillStyle = "#32424a";
+        context.beginPath();
+        context.moveTo(width / 2 - roadTopWidth, horizon);
+        context.lineTo(width / 2 + roadTopWidth, horizon);
+        context.lineTo(width / 2 + roadBottomWidth / 2, roadBottom);
+        context.lineTo(width / 2 - roadBottomWidth / 2, roadBottom);
+        context.closePath();
+        context.fill();
+        context.strokeStyle = "rgba(255, 242, 190, .8)";
+        context.lineWidth = 3;
+        context.beginPath();
+        context.moveTo(width / 2 - roadTopWidth, horizon);
+        context.lineTo(width / 2 - roadBottomWidth / 2, roadBottom);
+        context.moveTo(width / 2 + roadTopWidth, horizon);
+        context.lineTo(width / 2 + roadBottomWidth / 2, roadBottom);
+        context.stroke();
+
+        for (let laneLine = 1; laneLine < 3; laneLine += 1) {
+          const topX = width / 2 - roadTopWidth + roadTopWidth * 2 * laneLine / 3;
+          const bottomX = width / 2 - roadBottomWidth / 2 + roadBottomWidth * laneLine / 3;
+          for (let marker = 0; marker < 8; marker += 1) {
+            const offset = ((marker * 34 - parkourDistance * 1.7) % parkourViewDistance + parkourViewDistance) % parkourViewDistance;
+            const ratio = offset / parkourViewDistance;
+            const y = horizon + ratio * (roadBottom - horizon);
+            const x = topX + (bottomX - topX) * ratio;
+            const dashHeight = 2 + ratio * 13;
+            context.fillStyle = "rgba(255, 255, 255, .76)";
+            context.fillRect(x - (1 + ratio * 2), y, 2 + ratio * 4, dashHeight);
+          }
+        }
+
+        for (let tree = 0; tree < 7; tree += 1) {
+          const offset = ((tree * 39 - parkourDistance * 1.5) % parkourViewDistance + parkourViewDistance) % parkourViewDistance;
+          const ratio = offset / parkourViewDistance;
+          const y = horizon + ratio * (roadBottom - horizon);
+          const roadHalf = roadTopWidth + (roadBottomWidth / 2 - roadTopWidth) * ratio;
+          const size = 5 + ratio * 23;
+          [-1, 1].forEach(side => {
+            const x = width / 2 + side * (roadHalf + size * 1.3);
+            context.fillStyle = "#604c39";
+            context.fillRect(x - size * .1, y - size * .5, size * .2, size * .55);
+            context.fillStyle = tree % 2 ? "#236a53" : "#35805a";
+            context.beginPath();
+            context.arc(x, y - size * .62, size * .47, 0, Math.PI * 2);
+            context.fill();
+          });
+        }
+
+        parkourObjects.forEach(item => {
+          const remaining = item.distance - parkourDistance;
+          if (remaining < -4 || remaining > parkourViewDistance) return;
+          const ratio = 1 - remaining / parkourViewDistance;
+          const roadHalf = roadTopWidth + (roadBottomWidth / 2 - roadTopWidth) * ratio;
+          const x = width / 2 + (item.lane - 1) * roadHalf * .66;
+          const y = horizon + ratio * (roadBottom - horizon);
+          const size = 9 + ratio * 38;
+          context.save();
+          context.translate(x, y);
+          if (item.kind === "fruit") {
+            context.font = `${Math.round(size * 1.35)}px system-ui, sans-serif`;
+            context.textAlign = "center";
+            context.textBaseline = "middle";
+            context.shadowColor = "#ffcf3d";
+            context.shadowBlur = 12 * ratio;
+            context.fillText(["🍓", "🍊", "🍎"][Math.floor(item.distance / 8) % 3], 0, -size * .3);
+          } else {
+            context.fillStyle = "#d94e39";
+            context.fillRect(-size * .62, -size * .84, size * 1.24, size * .84);
+            context.fillStyle = "#ffcc67";
+            context.fillRect(-size * .7, -size * .9, size * 1.4, size * .18);
+            context.fillStyle = "rgba(255,255,255,.82)";
+            context.fillRect(-size * .42, -size * .66, size * .13, size * .38);
+            context.fillRect(size * .25, -size * .66, size * .13, size * .38);
+            context.fillStyle = "#3b2931";
+            context.fillRect(-size * .68, -size * .08, size * .2, size * .1);
+            context.fillRect(size * .48, -size * .08, size * .2, size * .1);
+          }
+          context.restore();
+        });
+
+        const jumpHeight = parkourJumpRemaining > 0 ? Math.sin((parkourJumpRemaining / .72) * Math.PI) * 55 : 0;
+        const playerX = width / 2 + (parkourLane - 1) * 145;
+        const playerY = height - 43 - jumpHeight;
+        const blinking = performance.now() < parkourInvulnerableUntil && Math.floor(performance.now() / 100) % 2 === 0;
+        context.fillStyle = "rgba(8, 24, 21, .3)";
+        context.beginPath();
+        context.ellipse(playerX, height - 28, 27 - jumpHeight * .15, 7 - jumpHeight * .04, 0, 0, Math.PI * 2);
+        context.fill();
+        if (!blinking) {
+          context.save();
+          context.translate(playerX, playerY);
+          const stride = Math.sin(parkourDistance * .22) * 7;
+          context.lineCap = "round";
+          context.strokeStyle = "#172b43";
+          context.lineWidth = 7;
+          context.beginPath();
+          context.moveTo(-4, 9);
+          context.lineTo(-8 + stride, 24);
+          context.lineTo(-15 + stride, 28);
+          context.moveTo(4, 9);
+          context.lineTo(9 - stride, 23);
+          context.lineTo(17 - stride, 27);
+          context.stroke();
+          context.strokeStyle = "#f3a264";
+          context.lineWidth = 5;
+          context.beginPath();
+          context.moveTo(-8, -8);
+          context.lineTo(-15 - stride, 5);
+          context.moveTo(8, -8);
+          context.lineTo(15 + stride, 4);
+          context.stroke();
+          context.fillStyle = "#ec704f";
+          context.beginPath();
+          context.ellipse(0, -2, 11, 16, 0, 0, Math.PI * 2);
+          context.fill();
+          context.fillStyle = "#ffd1a4";
+          context.beginPath();
+          context.arc(0, -23, 9, 0, Math.PI * 2);
+          context.fill();
+          context.fillStyle = "#263547";
+          context.beginPath();
+          context.arc(0, -26, 9, Math.PI, Math.PI * 2);
+          context.fill();
+          context.restore();
+        }
+
+        context.fillStyle = "rgba(5, 16, 34, .78)";
+        context.beginPath();
+        context.roundRect(12, 12, 172, 37, 12);
+        context.fill();
+        context.fillStyle = "#fff";
+        context.font = "700 15px system-ui, sans-serif";
+        context.textAlign = "left";
+        context.textBaseline = "middle";
+        context.fillText(`${Math.min(parkourGoal, Math.floor(parkourDistance))} m  ·  🍓 ${parkourFruitCount}`, 23, 31);
+      }
+
+      function updateParkourStats() {
+        const distance = Math.min(parkourGoal, Math.floor(parkourDistance));
+        $("#parkourLevel").textContent = String(Math.min(3, Math.floor(parkourDistance / 600) + 1));
+        $("#parkourDistance").textContent = String(distance);
+        $("#parkourFruitCount").textContent = String(parkourFruitCount);
+        $("#parkourLives").textContent = `${"❤️".repeat(parkourLives)}${"🖤".repeat(3 - parkourLives)}`;
+        $("#parkourProgressFill").style.width = `${distance / parkourGoal * 100}%`;
+        $("#parkourProgressTrack").setAttribute("aria-valuenow", String(distance));
+      }
+
+      function finishParkour(success) {
+        if (!parkourActive) return;
+        parkourActive = false;
+        parkourStart.disabled = false;
+        parkourStart.textContent = "Rejouer le parcours";
+        parkourCanvas.hidden = true;
+        parkourIntro.hidden = false;
+        parkourIntro.querySelector("strong").textContent = success ? "Parcours terminé !" : "Fin du parcours";
+        parkourIntro.querySelector("span:last-child").textContent = success
+          ? `Tu as franchi 1 800 m et ramassé ${parkourFruitCount} fruits.`
+          : parkourLives === 0
+            ? `Tu as parcouru ${Math.floor(parkourDistance)} m. Change de voie ou saute pour terminer les 3 niveaux.`
+            : `Tu as parcouru ${Math.floor(parkourDistance)} m et ramassé ${parkourFruitCount} fruits. Il en faut 5 pour réussir les 3 niveaux.`;
+        if (parkourDistance > parkourBest) {
+          parkourBest = Math.floor(parkourDistance);
+          $("#parkourBest").textContent = String(parkourBest);
+          try {
+            localStorage.setItem(parkourBestStorageKey, String(parkourBest));
+          } catch (error) {
+            console.error("Impossible d’enregistrer le record du Parcours des fruits.", error);
+            showToast("Le record du parcours n’a pas pu être enregistré.");
+          }
+        }
+        if (!success) {
+          $("#parkourStatus").textContent = parkourLives === 0
+            ? `Plus de vies : ${Math.floor(parkourDistance)} m parcourus. Essaie encore !`
+            : `Il te manque des fruits : ${parkourFruitCount} sur 5. Tu peux retenter le parcours.`;
+          return;
+        }
+        const reward = awardEffortPoints("fruit-runner", 5);
+        $("#parkourStatus").textContent = reward.duplicate
+          ? "Parcours réussi ! La récompense a déjà été obtenue aujourd’hui."
+          : !reward.saved
+            ? "Parcours réussi ! La récompense n’a pas pu être enregistrée."
+            : reward.awarded
+              ? `Parcours réussi ! +${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""} gagnés.`
+              : "Parcours réussi ! Ta limite quotidienne de points d’effort est atteinte.";
+      }
+
+      function runParkourFrame(timestamp) {
+        if (!parkourActive) return;
+        const delta = Math.min(.05, (timestamp - (parkourPreviousFrame || timestamp)) / 1000);
+        parkourPreviousFrame = timestamp;
+        const previousLevel = Math.min(3, Math.floor(parkourDistance / 600) + 1);
+        parkourDistance += (25 + Math.min(parkourDistance / 100, 4) + (previousLevel - 1) * 4) * delta;
+        const currentLevel = Math.min(3, Math.floor(parkourDistance / 600) + 1);
+        if (currentLevel > previousLevel) {
+          $("#parkourStatus").textContent = `Niveau ${currentLevel}/3 ! La piste accélère, continue !`;
+        }
+        parkourJumpRemaining = Math.max(0, parkourJumpRemaining - delta);
+        while (parkourNextWave < parkourDistance + parkourViewDistance) {
+          queueParkourWave(parkourNextWave);
+          parkourNextWave += 54 + Math.random() * 16 - (currentLevel - 1) * 8;
+        }
+        const now = performance.now();
+        parkourObjects.forEach(item => {
+          const remaining = item.distance - parkourDistance;
+          if (item.checked || remaining > parkourContactDistance + 2 || remaining < parkourContactDistance - 2) return;
+          item.checked = true;
+          if (item.kind === "fruit") {
+            if (item.lane === parkourLane) {
+              parkourFruitCount += 1;
+              $("#parkourStatus").textContent = `Bien joué, ${parkourFruitCount} fruit${parkourFruitCount > 1 ? "s" : ""} ramassé${parkourFruitCount > 1 ? "s" : ""} !`;
+            }
+          } else if (item.lane === parkourLane && parkourJumpRemaining <= .08 && now >= parkourInvulnerableUntil) {
+            parkourLives = Math.max(0, parkourLives - 1);
+            parkourInvulnerableUntil = now + 1100;
+            $("#parkourStatus").textContent = parkourLives
+              ? `Obstacle ! Il te reste ${parkourLives} vie${parkourLives > 1 ? "s" : ""}.`
+              : "Aïe ! Plus de vies, le parcours est terminé.";
+          }
+        });
+        parkourObjects = parkourObjects.filter(item => item.distance > parkourDistance + parkourContactDistance - 3);
+        updateParkourStats();
+        drawParkour();
+        if (parkourLives === 0) {
+          finishParkour(false);
+          return;
+        }
+        if (parkourDistance >= parkourGoal) {
+          finishParkour(parkourFruitCount >= 5);
+          return;
+        }
+        parkourFrame = requestAnimationFrame(runParkourFrame);
+      }
+
+      function startParkour() {
+        if (parkourActive) return;
+        parkourActive = true;
+        parkourPreviousFrame = 0;
+        parkourDistance = 0;
+        parkourFruitCount = 0;
+        parkourLives = 3;
+        parkourLane = 1;
+        parkourJumpRemaining = 0;
+        parkourInvulnerableUntil = 0;
+        parkourObjects = [];
+        parkourNextWave = 82;
+        $("#parkourLevel").textContent = "1";
+        updateParkourStats();
+        $("#parkourStatus").textContent = "Niveau 1/3 : change de voie, saute et ramasse les fruits.";
+        parkourCanvas.hidden = false;
+        parkourIntro.hidden = true;
+        parkourStart.disabled = true;
+        parkourStart.textContent = "En cours…";
+        drawParkour();
+        parkourFrame = requestAnimationFrame(runParkourFrame);
+      }
+
+      function parkourAction(action) {
+        if (!parkourActive) return;
+        if (action === "left") parkourLane = Math.max(0, parkourLane - 1);
+        if (action === "right") parkourLane = Math.min(2, parkourLane + 1);
+        if (action === "jump" && parkourJumpRemaining <= 0) parkourJumpRemaining = .72;
+        drawParkour();
+      }
+      parkourStart.addEventListener("click", startParkour);
+      $$("[data-parkour-action]").forEach(button => {
+        button.addEventListener("click", () => parkourAction(button.dataset.parkourAction));
+      });
+      window.addEventListener("keydown", event => {
+        if (!parkourActive || location.hash.slice(1) !== "minijeux") return;
+        if (event.key === "ArrowLeft" || event.key.toLowerCase() === "a") {
+          event.preventDefault();
+          parkourAction("left");
+        } else if (event.key === "ArrowRight" || event.key.toLowerCase() === "d") {
+          event.preventDefault();
+          parkourAction("right");
+        } else if (event.key === "ArrowUp" || event.key === " " || event.key.toLowerCase() === "w") {
+          event.preventDefault();
+          parkourAction("jump");
+        }
+      });
+      window.addEventListener("blur", () => { parkourPreviousFrame = 0; });
+      if (!parkourContext) {
+        console.error("Le Parcours des fruits ne peut pas démarrer : le contexte graphique Canvas n’est pas disponible.");
+        $("#parkourStatus").textContent = "Le jeu ne peut pas démarrer sur ce navigateur.";
+        parkourStart.disabled = true;
+      }
+
       const fruitDropCanvas = $("#fruitDropCanvas");
       const fruitDropContext = fruitDropCanvas.getContext("2d");
       const fruitDropStart = $("#fruitDropStart");
       const fruitDropIntro = $("#fruitDropIntro");
       const fruitDropColumns = 7;
       const fruitDropRows = 9;
-      const fruitDropCell = 42;
-      const fruitDropOffsetX = 22;
-      const fruitDropOffsetY = 48;
+      const fruitDropCell = 48;
+      const fruitDropOffsetX = 20;
+      const fruitDropOffsetY = 42;
       const fruitDropTypes = ["🍓", "🍊", "🍇", "🍋", "🍏"];
       let fruitDropActive = false;
       let fruitDropFrame = 0;
@@ -3803,6 +4676,7 @@
       let fruitDropPiece = null;
       let fruitDropNextType = fruitDropTypes[0];
       let fruitDropScore = 0;
+      let fruitDropLevel = 1;
       let fruitDropMatches = 0;
       let fruitDropRewardHandled = false;
 
@@ -3810,28 +4684,35 @@
         return fruitDropTypes[Math.floor(Math.random() * fruitDropTypes.length)];
       }
 
+      function updateFruitDropReward() {
+        const progress = Math.min(60, fruitDropScore);
+        $("#fruitDropRewardScore").textContent = String(progress);
+        $("#fruitDropRewardFill").style.width = `${progress / 60 * 100}%`;
+        $("#fruitDropRewardTrack").setAttribute("aria-valuenow", String(progress));
+      }
+
       function drawFruitDropTile(context, x, y, fruit, size, isFalling = false) {
         const radius = size * .39;
         const fruitGlow = { "🍓": "#ff657c", "🍊": "#ffad4c", "🍇": "#bd8bff", "🍋": "#ffe36b", "🍏": "#8be68a" }[fruit] || "#ffc978";
         const tileGradient = context.createRadialGradient(x - radius * .35, y - radius * .4, 1, x, y, radius * 1.2);
-        tileGradient.addColorStop(0, isFalling ? "rgba(255,255,255,.55)" : "rgba(255,255,255,.22)");
-        tileGradient.addColorStop(.24, `${fruitGlow}88`);
-        tileGradient.addColorStop(1, "rgba(8,12,30,.82)");
+        tileGradient.addColorStop(0, isFalling ? "rgba(255,255,255,.8)" : "rgba(255,255,255,.38)");
+        tileGradient.addColorStop(.22, `${fruitGlow}cc`);
+        tileGradient.addColorStop(1, "rgba(23,16,48,.94)");
         context.fillStyle = tileGradient;
-        context.shadowColor = `${fruitGlow}66`;
-        context.shadowBlur = isFalling ? 16 : 9;
+        context.shadowColor = `${fruitGlow}aa`;
+        context.shadowBlur = isFalling ? 22 : 14;
         context.beginPath();
         context.arc(x, y, radius, 0, Math.PI * 2);
         context.fill();
         context.shadowBlur = 0;
-        context.strokeStyle = isFalling ? "rgba(255,235,174,.96)" : `${fruitGlow}99`;
-        context.lineWidth = isFalling ? 2.5 : 1.3;
+        context.strokeStyle = isFalling ? "rgba(255,244,200,1)" : `${fruitGlow}dd`;
+        context.lineWidth = isFalling ? 3 : 2;
         context.stroke();
         context.font = `${Math.floor(size * .66)}px system-ui, sans-serif`;
         context.textAlign = "center";
         context.textBaseline = "middle";
-        context.shadowColor = "rgba(0,0,0,.4)";
-        context.shadowBlur = 4;
+        context.shadowColor = `${fruitGlow}88`;
+        context.shadowBlur = isFalling ? 12 : 7;
         context.fillText(fruit, x, y + 1);
         context.shadowBlur = 0;
       }
@@ -3840,50 +4721,56 @@
         const context = fruitDropContext;
         if (!context) return;
         const background = context.createLinearGradient(0, 0, 0, fruitDropCanvas.height);
-        background.addColorStop(0, "#38254e");
-        background.addColorStop(.48, "#172c4a");
-        background.addColorStop(1, "#0b1c31");
+        background.addColorStop(0, "#51284f");
+        background.addColorStop(.42, "#332756");
+        background.addColorStop(1, "#121c42");
         context.fillStyle = background;
         context.fillRect(0, 0, fruitDropCanvas.width, fruitDropCanvas.height);
-        const ambientGlow = context.createRadialGradient(330, 55, 4, 330, 55, 190);
-        ambientGlow.addColorStop(0, "rgba(255, 170, 95, .3)");
-        ambientGlow.addColorStop(1, "rgba(255, 170, 95, 0)");
-        context.fillStyle = ambientGlow;
-        context.fillRect(0, 0, fruitDropCanvas.width, fruitDropCanvas.height);
+        [
+          { x: 90, y: 80, radius: 185, color: "rgba(255, 97, 144, .27)" },
+          { x: 410, y: 375, radius: 190, color: "rgba(112, 111, 255, .25)" },
+          { x: 455, y: 90, radius: 110, color: "rgba(255, 203, 112, .14)" }
+        ].forEach(glow => {
+          const ambientGlow = context.createRadialGradient(glow.x, glow.y, 3, glow.x, glow.y, glow.radius);
+          ambientGlow.addColorStop(0, glow.color);
+          ambientGlow.addColorStop(1, "rgba(255, 170, 95, 0)");
+          context.fillStyle = ambientGlow;
+          context.fillRect(0, 0, fruitDropCanvas.width, fruitDropCanvas.height);
+        });
         for (let index = 0; index < 24; index += 1) {
           const x = (index * 83 + 31) % fruitDropCanvas.width;
           const y = (index * 127 + 17) % fruitDropCanvas.height;
-          context.fillStyle = index % 3 ? "rgba(207, 220, 255, .16)" : "rgba(255, 216, 145, .3)";
+          context.fillStyle = index % 3 ? "rgba(224, 202, 255, .24)" : "rgba(255, 205, 143, .46)";
           context.beginPath();
-          context.arc(x, y, index % 5 === 0 ? 1.7 : 1, 0, Math.PI * 2);
+          context.arc(x, y, index % 5 === 0 ? 2 : 1.2, 0, Math.PI * 2);
           context.fill();
         }
 
         const boardWidth = fruitDropColumns * fruitDropCell;
         const boardHeight = fruitDropRows * fruitDropCell;
         const boardGradient = context.createLinearGradient(fruitDropOffsetX, fruitDropOffsetY, fruitDropOffsetX + boardWidth, fruitDropOffsetY + boardHeight);
-        boardGradient.addColorStop(0, "rgba(13, 27, 55, .96)");
-        boardGradient.addColorStop(1, "rgba(24, 27, 54, .96)");
+        boardGradient.addColorStop(0, "rgba(24, 25, 65, .98)");
+        boardGradient.addColorStop(1, "rgba(30, 25, 67, .98)");
         context.fillStyle = boardGradient;
         context.beginPath();
         context.roundRect(fruitDropOffsetX - 5, fruitDropOffsetY - 5, boardWidth + 10, boardHeight + 10, 15);
         context.fill();
-        context.strokeStyle = "rgba(255, 194, 125, .48)";
-        context.lineWidth = 1.5;
+        context.strokeStyle = "rgba(255, 181, 207, .74)";
+        context.lineWidth = 2;
         context.stroke();
         for (let row = 0; row < fruitDropRows; row += 1) {
           for (let column = 0; column < fruitDropColumns; column += 1) {
             const x = fruitDropOffsetX + column * fruitDropCell;
             const y = fruitDropOffsetY + row * fruitDropCell;
             const cellGradient = context.createLinearGradient(x, y, x + fruitDropCell, y + fruitDropCell);
-            cellGradient.addColorStop(0, (row + column) % 2 ? "rgba(75, 96, 139, .42)" : "rgba(50, 76, 120, .46)");
-            cellGradient.addColorStop(1, "rgba(19, 34, 66, .72)");
+            cellGradient.addColorStop(0, (row + column) % 2 ? "rgba(98, 79, 148, .72)" : "rgba(70, 77, 146, .76)");
+            cellGradient.addColorStop(1, "rgba(31, 37, 91, .94)");
             context.fillStyle = cellGradient;
             context.beginPath();
             context.roundRect(x + 2, y + 2, fruitDropCell - 4, fruitDropCell - 4, 9);
             context.fill();
-            context.strokeStyle = "rgba(206, 220, 255, .1)";
-            context.lineWidth = 1;
+            context.strokeStyle = "rgba(204, 184, 255, .24)";
+            context.lineWidth = 1.2;
             context.stroke();
             const fruit = fruitDropBoard[row]?.[column];
             if (fruit) drawFruitDropTile(context, x + fruitDropCell / 2, y + fruitDropCell / 2, fruit, fruitDropCell);
@@ -3897,26 +4784,28 @@
         }
 
         const sideX = fruitDropOffsetX + boardWidth + 22;
-        context.fillStyle = "rgba(5,16,34,.78)";
+        context.fillStyle = "rgba(27,21,62,.94)";
         context.beginPath();
-        context.roundRect(sideX, fruitDropOffsetY + 10, 92, 112, 14);
+        context.roundRect(sideX, fruitDropOffsetY + 10, 100, 122, 16);
         context.fill();
-        context.strokeStyle = "rgba(137,197,255,.4)";
+        context.strokeStyle = "rgba(220,169,255,.62)";
+        context.lineWidth = 1.5;
         context.stroke();
-        context.fillStyle = "#d8e8ff";
-        context.font = "700 12px system-ui, sans-serif";
+        context.fillStyle = "#ffe6b4";
+        context.font = "800 13px system-ui, sans-serif";
         context.textAlign = "center";
         context.textBaseline = "middle";
-        context.fillText("À SUIVRE", sideX + 46, fruitDropOffsetY + 34);
-        drawFruitDropTile(context, sideX + 46, fruitDropOffsetY + 82, fruitDropNextType, 44);
-        context.fillStyle = "rgba(255,231,173,.9)";
-        context.font = "700 12px system-ui, sans-serif";
-        context.fillText("3 identiques", sideX + 46, fruitDropOffsetY + 154);
-        context.fillText("= +30 pts", sideX + 46, fruitDropOffsetY + 173);
+        context.fillText("À SUIVRE", sideX + 50, fruitDropOffsetY + 36);
+        drawFruitDropTile(context, sideX + 50, fruitDropOffsetY + 86, fruitDropNextType, 48);
+        context.fillStyle = "rgba(255,238,210,.94)";
+        context.font = "800 12px system-ui, sans-serif";
+        context.fillText("3 identiques", sideX + 50, fruitDropOffsetY + 164);
+        context.fillStyle = "#ffca94";
+        context.fillText("= +30 pts", sideX + 50, fruitDropOffsetY + 184);
 
-        context.fillStyle = "rgba(255,255,255,.64)";
-        context.font = "11px system-ui, sans-serif";
-        context.fillText("Atteins 60 points", sideX + 46, fruitDropOffsetY + 214);
+        context.fillStyle = "rgba(232,222,255,.86)";
+        context.font = "700 11px system-ui, sans-serif";
+        context.fillText("Atteins 60 points", sideX + 50, fruitDropOffsetY + 229);
       }
 
       function fruitDropCanPlace(column, row) {
@@ -3995,11 +4884,17 @@
           settleFruitDropColumns();
         }
         if (cleared) {
+          const previousLevel = fruitDropLevel;
           fruitDropScore += cleared * 10;
+          fruitDropLevel = Math.min(5, Math.floor(fruitDropScore / 60) + 1);
+          $("#fruitDropLevel").textContent = String(fruitDropLevel);
           $("#fruitDropScore").textContent = String(fruitDropScore);
           $("#fruitDropMatches").textContent = String(fruitDropMatches);
+          updateFruitDropReward();
           if (!fruitDropRewardHandled && fruitDropScore < 60) {
-            $("#fruitDropStatus").textContent = `${cleared} fruits alignés ! Continue jusqu’à 60 points.`;
+            $("#fruitDropStatus").textContent = `${cleared} fruits alignés ! ${fruitDropLevel > previousLevel ? `Niveau ${fruitDropLevel} ! Les fruits tombent plus vite. ` : ""}Continue jusqu’à 60 points.`;
+          } else if (fruitDropLevel > previousLevel) {
+            $("#fruitDropStatus").textContent = `Niveau ${fruitDropLevel} ! Les fruits tombent plus vite. Continue les alignements !`;
           }
           checkFruitDropReward();
         }
@@ -4012,10 +4907,10 @@
         fruitDropPiece = null;
         fruitDropCanvas.hidden = true;
         fruitDropIntro.hidden = false;
-        fruitDropIntro.querySelector("strong").textContent = "La corbeille est pleine !";
+        fruitDropIntro.querySelector("strong").textContent = fruitDropScore >= 60 ? "Bien joué, partie terminée !" : "La corbeille est pleine !";
         fruitDropIntro.querySelector("span:last-child").textContent = fruitDropScore >= 60
-          ? `Partie terminée avec ${fruitDropScore} points. Tu peux relancer une partie.`
-          : `Partie terminée avec ${fruitDropScore} points. Fais des groupes de 3 fruits identiques pour marquer plus de points.`;
+          ? `Tu as marqué ${fruitDropScore} points ! Tu peux relancer une partie ou retenter ta chance demain pour une nouvelle récompense.`
+          : `Tu as marqué ${fruitDropScore} points. Fais des groupes de 3 fruits identiques ou plus pour continuer à marquer des points.`;
         fruitDropStart.disabled = false;
         fruitDropStart.textContent = "Rejouer";
         $("#fruitDropStatus").textContent = `Fin de partie : ${fruitDropScore} points et ${fruitDropMatches} alignements.${fruitDropScore >= 60 ? " Objectif de récompense atteint." : ""}`;
@@ -4060,8 +4955,9 @@
         if (!fruitDropActive) return;
         fruitDropAccumulator += Math.min(60, timestamp - (fruitDropLastFrame || timestamp));
         fruitDropLastFrame = timestamp;
-        if (fruitDropAccumulator >= 620) {
-          fruitDropAccumulator %= 620;
+        const fallInterval = Math.max(300, 620 - (fruitDropLevel - 1) * 70);
+        if (fruitDropAccumulator >= fallInterval) {
+          fruitDropAccumulator %= fallInterval;
           if (fruitDropCanPlace(fruitDropPiece.column, fruitDropPiece.row + 1)) {
             fruitDropPiece.row += 1;
             drawFruitDrop();
@@ -4076,12 +4972,15 @@
         if (fruitDropActive) return;
         fruitDropBoard = Array.from({ length: fruitDropRows }, () => Array(fruitDropColumns).fill(null));
         fruitDropScore = 0;
+        fruitDropLevel = 1;
         fruitDropMatches = 0;
         fruitDropRewardHandled = false;
         fruitDropNextType = randomFruitDropType();
+        $("#fruitDropLevel").textContent = "1";
         $("#fruitDropScore").textContent = "0";
         $("#fruitDropMatches").textContent = "0";
         $("#fruitDropNext").textContent = fruitDropNextType;
+        updateFruitDropReward();
         $("#fruitDropStatus").textContent = "C’est parti ! Aligne les fruits identiques.";
         fruitDropIntro.hidden = true;
         fruitDropCanvas.hidden = false;
@@ -4137,10 +5036,16 @@
             fruitDropLastFrame = 0;
             fruitDropAccumulator = 0;
           }
+          if (parkourActive) {
+            cancelAnimationFrame(parkourFrame);
+            parkourFrame = 0;
+            parkourPreviousFrame = 0;
+          }
           return;
         }
         if (jumpFruitActive && !jumpFruitFrame) jumpFruitFrame = requestAnimationFrame(runJumpFruitFrame);
         if (fruitDropActive && !fruitDropFrame) fruitDropFrame = requestAnimationFrame(runFruitDropFrame);
+        if (parkourActive && !parkourFrame) parkourFrame = requestAnimationFrame(runParkourFrame);
       });
 
       $("#bmiForm").addEventListener("submit", event => {

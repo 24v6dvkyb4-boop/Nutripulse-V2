@@ -653,6 +653,16 @@
     .parkour-intro > span:first-child { font-size: 34px; }
     .parkour-intro strong { font-size: 19px; }
     .parkour-intro span:last-child { max-width: 430px; color: #f1f8ff; font-size: 13px; line-height: 1.5; }
+    #minigamesPage .adventure-intro { position: relative; display: flex; min-height: 260px; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 5px; padding: 20px; isolation: isolate; text-align: left; }
+    #minigamesPage .adventure-intro::before, #minigamesPage .adventure-intro::after { display: none; }
+    #minigamesPage .adventure-intro .adventure-art { position: absolute; z-index: -2; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #minigamesPage .adventure-intro .adventure-shade { position: absolute; z-index: -1; inset: 0; background: linear-gradient(180deg, transparent 25%, rgba(3, 13, 30, .3) 52%, rgba(3, 13, 30, .95) 100%); pointer-events: none; }
+    #minigamesPage .adventure-intro strong { position: relative; color: #fff; font-size: clamp(20px, 3vw, 25px); line-height: 1.15; text-shadow: 0 2px 8px #08182a; }
+    #minigamesPage .adventure-intro > span:last-child { position: relative; max-width: 440px; color: #e8f7ff; font-size: 13px; line-height: 1.45; text-shadow: 0 2px 6px #08182a; }
+    #minigamesPage .adventure-intro[hidden] { display: none; }
+    @media (max-width: 560px) {
+      #minigamesPage .adventure-intro { min-height: 220px; padding: 16px; }
+    }
     .parkour-intro[hidden] { display: none; }
     .parkour-canvas { display: block; width: 100%; height: auto; margin-top: 12px; overflow: hidden; border: 1px solid rgba(130, 211, 255, .58); border-radius: 16px; background: #173c59; box-shadow: 0 10px 24px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.1); touch-action: none; }
     .parkour-canvas[hidden] { display: none; }
@@ -1675,7 +1685,7 @@
           <div class="faq-grid">
             <details class="faq-item"><summary>NutriPulse remplace-t-il un médecin ou un diététicien ?</summary><p>Non. Le site propose des idées générales de repas et d’activité ; il ne donne ni diagnostic ni conseil médical personnalisé. Pour un objectif de santé, une maladie, une grossesse ou une douleur, demande l’avis d’un professionnel de santé.</p></details>
             <details class="faq-item"><summary>Les calories et les portions sont-elles exactes ?</summary><p>Non, ce sont des estimations indicatives. Les valeurs réelles changent selon les marques, les ingrédients, les portions et la préparation. Elles ne remplacent pas un avis nutritionnel individualisé.</p></details>
-            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids pour une journée ; les calories sont facultatives. Valide chaque journée pour gagner 5 XP. Dès le dimanche, valide la semaine pour gagner 10 XP supplémentaires, une seule fois, si au moins une journée est validée. Les semaines précédentes restent accessibles. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
+            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids pour une journée ; les calories sont facultatives. Valide chaque journée pour gagner 5 XP. Dès le dimanche, valide la semaine pour gagner 10 XP supplémentaires, une seule fois, si au moins 6 journées sont validées. Les semaines précédentes restent accessibles. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
             <details class="faq-item"><summary>Où sont enregistrés mon profil, mon suivi et mes NTC ?</summary><p>Dans le stockage local du navigateur utilisé sur cet appareil. Le site ne crée pas de compte et son code n’envoie pas ces saisies vers un serveur NutriPulse. Les NTC sont des points virtuels sans valeur monétaire, non transférables et non synchronisés entre appareils. Ces données peuvent être perdues si le stockage du navigateur est effacé ou modifiées depuis ce navigateur ; sans serveur, NutriPulse ne peut pas empêcher toute triche.</p></details>
             <details class="faq-item"><summary>Comment effacer mes données enregistrées ?</summary><p>Dans les réglages de ton navigateur, efface les données du site (stockage local) pour NutriPulse. Cela supprimera aussi les informations de profil, d’hydratation et de suivi enregistrées dans ce navigateur.</p></details>
             <details class="faq-item"><summary>Les vidéos et les images viennent-elles de NutriPulse ?</summary><p>Les vidéos d’exercices s’ouvrent sur YouTube et certaines photos sont chargées depuis Unsplash. Ces services externes appliquent leurs propres règles de confidentialité. Adapte les exercices à tes capacités et arrête si tu ressens une douleur.</p></details>
@@ -2137,11 +2147,29 @@
                 <span class="fruit-game-stat">Hauteur : <strong id="jumpFruitHeight">0</strong> m</span>
                 <span class="fruit-game-stat">Record : <strong id="jumpFruitBest">0</strong> m</span>
               </div>
-              <canvas class="jump-fruit-canvas" id="jumpFruitCanvas" width="640" height="420" aria-label="Jump Fruit : saute de plateforme en plateforme avec les flèches gauche et droite." hidden></canvas>
-              <div class="fruit-game-intro jump-fruit-intro" id="jumpFruitIntro"><span aria-hidden="true">🍓</span><strong>Jusqu’où peux-tu monter ?</strong><span>Évite de tomber et bats ton record de hauteur.</span></div>
+              <canvas class="jump-fruit-canvas" id="jumpFruitCanvas" width="640" height="420" aria-label="Jump Fruit : maintiens le côté gauche ou droit du jeu, ou utilise les boutons de déplacement." hidden></canvas>
+              <div class="fruit-game-intro jump-fruit-intro adventure-intro" id="jumpFruitIntro">
+                <svg class="adventure-art" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="jumpSky" x2="0" y2="1"><stop stop-color="#293276"/><stop offset=".52" stop-color="#4295bb"/><stop offset="1" stop-color="#a7e8d2"/></linearGradient>
+                    <linearGradient id="jumpBerry" x2="1" y2="1"><stop stop-color="#ff8998"/><stop offset=".5" stop-color="#fb335e"/><stop offset="1" stop-color="#a90d40"/></linearGradient>
+                  </defs>
+                  <rect width="640" height="300" fill="url(#jumpSky)"/>
+                  <circle cx="505" cy="58" r="37" fill="#ffeaaa" opacity=".8"/><circle cx="505" cy="58" r="55" fill="#ffeaaa" opacity=".12"/>
+                  <g fill="#e6fdff" opacity=".66"><ellipse cx="92" cy="57" rx="57" ry="12"/><ellipse cx="132" cy="48" rx="36" ry="15"/><ellipse cx="356" cy="91" rx="62" ry="12"/></g>
+                  <path d="M0 225 100 135 175 202 270 105 359 213 452 119 545 209 640 146v154H0Z" fill="#376a8c" opacity=".62"/>
+                  <path d="M0 247 113 181 211 242 330 157 433 243 547 172 640 235v65H0Z" fill="#255670" opacity=".8"/>
+                  <g stroke="#c6ffdb" stroke-width="3"><path d="M45 178h114l-8 12H54Z" fill="#2f966c"/><path d="M234 120h108l-8 12h-92Z" fill="#3ba97b"/><path d="M431 169h110l-9 12h-92Z" fill="#318f6f"/><path d="M362 67h91l-6 10h-79Z" fill="#48b48a"/></g>
+                  <path d="M168 176c31-53 53-64 75-62" fill="none" stroke="#fff9cc" stroke-width="3" stroke-dasharray="6 8" opacity=".8"/>
+                  <g transform="translate(181 109) rotate(-12)"><path d="M-30-10C-31-40 29-40 30-10 30 14 8 38 0 42-8 38-30 14-30-10Z" fill="url(#jumpBerry)" stroke="#ffe0db" stroke-width="3"/><path d="M0-29c-13-17-24-11-25-10 6 8 13 13 25 13 11 0 20-5 25-13-9-3-19-2-25 10Z" fill="#47d78b"/><g fill="#ffe4a3"><ellipse cx="-15" cy="-6" rx="2" ry="4"/><ellipse cx="8" cy="-8" rx="2" ry="4"/><ellipse cx="-5" cy="10" rx="2" ry="4"/><ellipse cx="15" cy="11" rx="2" ry="4"/></g><circle cx="-10" cy="-12" r="2.5" fill="#261329"/><circle cx="9" cy="-12" r="2.5" fill="#261329"/><path d="M-5-3q5 5 10 0" fill="none" stroke="#611c35" stroke-width="2" stroke-linecap="round"/></g>
+                  <g fill="#fff3b7"><path d="m390 32 3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/><circle cx="290" cy="43" r="3"/><circle cx="576" cy="107" r="3"/></g>
+                </svg>
+                <div class="adventure-shade" aria-hidden="true"></div>
+                <strong>Prends de la hauteur !</strong><span>Rebondis de plateforme en plateforme, évite les ronces et bats ton record.</span>
+              </div>
               <div class="fruit-game-controls">
                 <button class="primary-button" id="jumpFruitStart" type="button">Jouer à Jump Fruit</button>
-                <span>Déplacement : ← → ou boutons</span>
+                <span>Maintiens le côté gauche ou droit du jeu, ou utilise les boutons ← →. Le saut est automatique.</span>
               </div>
               <div class="jump-fruit-controls" aria-label="Commandes de déplacement">
                 <button type="button" data-jump-direction="-1" aria-label="Aller à gauche">←</button>
@@ -2161,7 +2189,27 @@
               </div>
               <div class="parkour-progress" id="parkourProgressTrack" role="progressbar" aria-label="Progression du parcours" aria-valuemin="0" aria-valuemax="1800" aria-valuenow="0"><span id="parkourProgressFill"></span></div>
               <canvas class="parkour-canvas" id="parkourCanvas" width="640" height="360" aria-label="Parcours des fruits : trois voies, évite les obstacles en changeant de voie ou en sautant et ramasse les fruits." hidden></canvas>
-              <div class="parkour-intro" id="parkourIntro"><span aria-hidden="true">🍓 🏃 🍊</span><strong>Prêt·e pour le parcours ?</strong><span>Utilise ← → pour changer de voie et ↑ ou Espace pour sauter. Sur téléphone, touche les boutons sous le jeu.</span></div>
+              <div class="parkour-intro adventure-intro" id="parkourIntro">
+                <svg class="adventure-art" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                  <defs>
+                    <linearGradient id="parkourSky" x2="0" y2="1"><stop stop-color="#206f9d"/><stop offset=".58" stop-color="#92e5cc"/><stop offset="1" stop-color="#e7f6a0"/></linearGradient>
+                    <linearGradient id="parkourRoad" x2="0" y2="1"><stop stop-color="#b58a54"/><stop offset="1" stop-color="#594d55"/></linearGradient>
+                  </defs>
+                  <rect width="640" height="300" fill="url(#parkourSky)"/>
+                  <circle cx="513" cy="54" r="35" fill="#fff2b0"/><circle cx="513" cy="54" r="52" fill="#fff2b0" opacity=".18"/>
+                  <path d="M0 180 106 88 190 166 294 83 389 175 474 101 563 171 640 113v187H0Z" fill="#469478" opacity=".75"/>
+                  <path d="M0 205q112-75 216-35t217-8q114-32 207 17v121H0Z" fill="#368e61"/>
+                  <path d="M275 139h90L595 300H45Z" fill="url(#parkourRoad)" stroke="#d6b983" stroke-width="5"/>
+                  <path d="m300 143-75 157m115-157 75 157" stroke="#fff6c4" stroke-width="4" stroke-dasharray="14 12" opacity=".75"/>
+                  <g fill="#164a46"><path d="M50 206h13v-67H50Z"/><path d="M523 197h13v-72h-13Z"/></g>
+                  <g fill="#45b66e" stroke="#baf4ab" stroke-width="3"><circle cx="56" cy="132" r="34"/><circle cx="529" cy="117" r="37"/><circle cx="110" cy="166" r="23"/><circle cx="584" cy="156" r="25"/></g>
+                  <g transform="translate(235 185)"><circle r="19" fill="#f95369" stroke="#ffe1ce" stroke-width="3"/><path d="M-2-18q-2-12 9-14-1 9-9 14" fill="#57d77a"/><circle cx="-6" cy="-4" r="4" fill="#ffc5bc" opacity=".8"/></g>
+                  <g transform="translate(403 162)"><circle r="16" fill="#ffb535" stroke="#fff0b0" stroke-width="3"/><path d="M0-16q2-9 11-9-3 8-11 9" fill="#4fc575"/></g>
+                  <g transform="translate(320 217)"><ellipse cy="27" rx="28" ry="8" fill="#193634" opacity=".35"/><circle cy="-23" r="13" fill="#ffd7a7"/><path d="M-15-6q15-9 30 0l6 30h-42Z" fill="#ffca42" stroke="#fff1ba" stroke-width="3"/><path d="m-12 3-17 13m41-13 17-11M-8 23l-11 20m27-20 13 20" fill="none" stroke="#f8e6d3" stroke-width="7" stroke-linecap="round"/><path d="M-12-29q12-14 24 0" fill="#263e62"/></g>
+                </svg>
+                <div class="adventure-shade" aria-hidden="true"></div>
+                <strong>À toi la piste !</strong><span>Change de voie, saute les obstacles et récolte les fruits sur 3 niveaux.</span>
+              </div>
               <div class="fruit-game-controls">
                 <button class="primary-button" id="parkourStart" type="button">Lancer le parcours</button>
                 <span>3 niveaux · 1 800 m et 5 fruits</span>
@@ -2261,7 +2309,7 @@
               <div class="followup-progress-stat"><span>Semaine complétée</span><strong id="followupGlobalPct">0%</strong></div>
               <div class="followup-progress-track" role="progressbar" aria-label="Progression de la semaine" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="followupGlobalTrack"><div class="followup-progress-fill" id="followupGlobalBar"></div></div>
               <div class="followup-progress-stat"><span>XP cette semaine</span><strong id="followupWeekXp">0 XP</strong></div>
-              <p class="followup-muted">5 XP par journée validée, puis 10 XP de bonus hebdomadaire.</p>
+              <p class="followup-muted">5 XP par journée validée, puis 10 XP de bonus dès 6 journées validées.</p>
             </section>
           </div>
 
@@ -2279,7 +2327,7 @@
               <p id="followupValidateHint" class="followup-muted" role="status" aria-live="polite">Valide chaque journée sous son formulaire. Le poids suffit, les calories sont facultatives.</p>
               <div class="followup-validate-box">
                 <button class="followup-validate" id="followupWeekBonus" type="button">🏆 Valider ma semaine · +10 XP</button>
-                <p id="followupWeekBonusHint" role="status" aria-live="polite">Dès dimanche, valide ta semaine pour gagner 10 XP en plus. Une journée validée suffit.</p>
+                <p id="followupWeekBonusHint" role="status" aria-live="polite">Dès dimanche, valide ta semaine pour gagner 10 XP en plus avec au moins 6 journées validées.</p>
               </div>
             </div>
           </section>
@@ -2860,6 +2908,7 @@
       ];
       const followupDayNames = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
       const followupWeeklyBonusXp = 10;
+      const followupWeeklyBonusMinimumDays = 6;
       const followupStorageKey = "nutripulse-pro-dashboard-v3";
       const followupLegacyStorageKey = "nutripulse-pro-dashboard-v2";
       const followupBlankDays = () => Array.from({ length: 7 }, () => ({ w: "", c: "" }));
@@ -3289,14 +3338,14 @@
           ? `${validatedCount} journée${validatedCount === 1 ? "" : "s"} validée${validatedCount === 1 ? "" : "s"} · ${week.xpEarned} XP. Valide chaque jour sous son formulaire. Poids requis, calories facultatives.`
           : "Les journées peuvent être validées pendant la semaine en cours.";
         const weekEnded = followupDateKey(followupDateAt(6)) <= followupDateKey(new Date());
-        $("#followupWeekBonus").disabled = week.weeklyBonusClaimed || !weekEnded || validatedCount === 0;
+        $("#followupWeekBonus").disabled = week.weeklyBonusClaimed || !weekEnded || validatedCount < followupWeeklyBonusMinimumDays;
         $("#followupWeekBonus").textContent = week.weeklyBonusClaimed ? "✓ Bonus de semaine obtenu" : `🏆 Valider ma semaine · +${followupWeeklyBonusXp} XP`;
         $("#followupWeekBonusHint").textContent = week.weeklyBonusClaimed
           ? `Bonus de ${followupWeeklyBonusXp} XP déjà ajouté pour cette semaine.`
           : !weekEnded
-            ? `Dès dimanche, gagne ${followupWeeklyBonusXp} XP en plus avec au moins une journée validée.`
-            : validatedCount === 0
-              ? "Il faut au moins une journée validée pour obtenir le bonus."
+            ? `Dès dimanche, gagne ${followupWeeklyBonusXp} XP en plus avec au moins ${followupWeeklyBonusMinimumDays} journées validées (${validatedCount} / ${followupWeeklyBonusMinimumDays}).`
+            : validatedCount < followupWeeklyBonusMinimumDays
+              ? `Il faut au moins ${followupWeeklyBonusMinimumDays} journées validées pour obtenir le bonus (${validatedCount} / ${followupWeeklyBonusMinimumDays}).`
               : `Valide ta semaine pour gagner ${followupWeeklyBonusXp} XP en plus, une seule fois.`;
         $("#followupPrevWeek").disabled = false;
         $("#followupNextWeek").disabled = followupState.weekStart >= currentWeekStart;
@@ -3364,8 +3413,8 @@
       $("#followupWeekBonus").addEventListener("click", () => {
         const week = currentFollowupWeek();
         if (week.weeklyBonusClaimed || followupDateKey(followupDateAt(6)) > followupDateKey(new Date()) ||
-            !week.days.some(day => day.validated)) {
-          showToast("Le bonus est disponible dès dimanche, avec au moins une journée validée, une seule fois par semaine.");
+            week.days.filter(day => day.validated).length < followupWeeklyBonusMinimumDays) {
+          showToast(`Le bonus est disponible dès dimanche, avec au moins ${followupWeeklyBonusMinimumDays} journées validées, une seule fois par semaine.`);
           return;
         }
         const previousState = JSON.stringify(followupState);
@@ -4158,6 +4207,8 @@
       let jumpFruitFrame = 0;
       let jumpFruitPreviousFrame = 0;
       let jumpFruitDirection = 0;
+      let jumpFruitCanvasDirection = 0;
+      let jumpFruitCanvasPointer = null;
       let jumpFruitKeys = { left: false, right: false };
       let jumpFruitPlayer = null;
       let jumpFruitPlatforms = [];
@@ -4371,6 +4422,8 @@
         if (!jumpFruitActive) return;
         jumpFruitActive = false;
         jumpFruitDirection = 0;
+        jumpFruitCanvasDirection = 0;
+        jumpFruitCanvasPointer = null;
         jumpFruitKeys = { left: false, right: false };
         jumpFruitStart.disabled = false;
         jumpFruitStart.textContent = "Rejouer";
@@ -4413,7 +4466,7 @@
         jumpFruitPreviousFrame = timestamp;
         const previousY = jumpFruitPlayer.y;
         const direction = jumpFruitKeys.left === jumpFruitKeys.right
-          ? jumpFruitDirection
+          ? jumpFruitDirection || jumpFruitCanvasDirection
           : jumpFruitKeys.left ? -1 : 1;
         jumpFruitPlayer.x += direction * 5.2 * step;
         if (jumpFruitPlayer.x < -18) jumpFruitPlayer.x = jumpFruitWidth + 18;
@@ -4499,6 +4552,8 @@
         jumpFruitActive = true;
         jumpFruitPreviousFrame = 0;
         jumpFruitDirection = 0;
+        jumpFruitCanvasDirection = 0;
+        jumpFruitCanvasPointer = null;
         jumpFruitKeys = { left: false, right: false };
         jumpFruitScore = 0;
         jumpFruitLevel = 1;
@@ -4522,6 +4577,28 @@
       }
 
       jumpFruitStart.addEventListener("click", startJumpFruit);
+      function updateJumpFruitCanvasDirection(event) {
+        const rect = jumpFruitCanvas.getBoundingClientRect();
+        jumpFruitCanvasDirection = event.clientX < rect.left + rect.width / 2 ? -1 : 1;
+      }
+      jumpFruitCanvas.addEventListener("pointerdown", event => {
+        if (!jumpFruitActive || (event.pointerType !== "touch" && event.pointerType !== "pen") || jumpFruitCanvasPointer !== null) return;
+        event.preventDefault();
+        jumpFruitCanvasPointer = event.pointerId;
+        updateJumpFruitCanvasDirection(event);
+        jumpFruitCanvas.setPointerCapture(event.pointerId);
+      });
+      jumpFruitCanvas.addEventListener("pointermove", event => {
+        if (event.pointerId === jumpFruitCanvasPointer) updateJumpFruitCanvasDirection(event);
+      });
+      function stopJumpFruitCanvasDirection(event) {
+        if (event.pointerId !== jumpFruitCanvasPointer) return;
+        jumpFruitCanvasPointer = null;
+        jumpFruitCanvasDirection = 0;
+      }
+      jumpFruitCanvas.addEventListener("pointerup", stopJumpFruitCanvasDirection);
+      jumpFruitCanvas.addEventListener("pointercancel", stopJumpFruitCanvasDirection);
+      jumpFruitCanvas.addEventListener("lostpointercapture", stopJumpFruitCanvasDirection);
       $$("[data-jump-direction]").forEach(button => {
         const direction = Number(button.dataset.jumpDirection);
         button.addEventListener("pointerdown", event => {
@@ -4559,6 +4636,8 @@
       window.addEventListener("blur", () => {
         jumpFruitKeys = { left: false, right: false };
         jumpFruitDirection = 0;
+        jumpFruitCanvasDirection = 0;
+        jumpFruitCanvasPointer = null;
       });
       if (!jumpFruitContext) {
         console.error("Jump Fruit ne peut pas démarrer : le contexte graphique Canvas n’est pas disponible.");
@@ -5297,6 +5376,8 @@
             jumpFruitPreviousFrame = 0;
             jumpFruitKeys = { left: false, right: false };
             jumpFruitDirection = 0;
+            jumpFruitCanvasDirection = 0;
+            jumpFruitCanvasPointer = null;
           }
           if (fruitDropActive) {
             cancelAnimationFrame(fruitDropFrame);

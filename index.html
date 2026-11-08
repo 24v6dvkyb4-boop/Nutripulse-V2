@@ -196,10 +196,11 @@
     .ntc-wallet-chip .ntc-coin-mark { width: 28px; height: 28px; font-size: 8px; }
     .profile { display: flex; align-items: center; gap: 10px; text-align: left; }
     .avatar {
+      position: relative;
       display: grid;
       width: 43px;
       height: 43px;
-      overflow: hidden;
+      overflow: visible;
       place-items: center;
       border: 2px solid #8fc1ff;
       border-radius: 50%;
@@ -208,6 +209,7 @@
       font-size: 21px;
     }
     .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .avatar > #profileAvatarImage { border-radius: 50%; }
     .profile-copy { display: grid; line-height: 1.25; }
     .profile-copy small { color: var(--muted); font-size: 12px; }
     .icon-button { position: relative; padding: 8px; font-size: 22px; }
@@ -987,6 +989,9 @@
     .followup-validate-box { text-align: center; }
     .followup-validate { width: 100%; padding: 10px 12px; border: 1px solid rgba(255, 183, 62, .8); border-radius: 99px; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); box-shadow: 0 0 13px rgba(255, 140, 12, .3); cursor: pointer; font-size: 12px; font-weight: 800; }
     .followup-validate:disabled { cursor: default; filter: saturate(.55); opacity: .7; }
+    .followup-day-validate { width: 100%; min-height: 44px; margin-top: 12px; padding: 8px; border: 1px solid rgba(255, 183, 62, .8); border-radius: 10px; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); font-size: 12px; font-weight: 800; cursor: pointer; touch-action: manipulation; }
+    .followup-day-validate:disabled { border-color: rgba(130, 190, 235, .35); color: #c5d5ee; background: #1a304a; cursor: default; }
+    .followup-day-validate:focus-visible, .followup-validate:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
     .followup-validate-box p { margin: 7px 0 0; color: #c5d5ee; font-size: 10px; }
     .followup-bottom-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(270px, .85fr); gap: 12px; }
     .followup-summary h2, .followup-performance h2 { margin-bottom: 10px; }
@@ -1148,6 +1153,7 @@
       .exercise-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .exercise-filter { width: 100%; padding-inline: 8px; font-size: 14px; }
       .nutrition-aside, .video-grid { grid-template-columns: 1fr; }
+      .shop-grid { grid-template-columns: 1fr; }
       .home-guide-grid { grid-template-columns: 1fr; gap: 8px; }
       .home-guide-card { min-height: 72px; }
       .exercise-video-grid { grid-template-columns: 1fr; }
@@ -1259,8 +1265,10 @@
       #followupPage .followup-week { padding: 14px; }
       #followupPage .followup-week-heading { align-items: flex-start; flex-direction: column; }
       #followupPage .followup-week-switch { width: 100%; justify-content: space-between; }
-      #followupPage .followup-days { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      #followupPage .followup-week-switch button { width: 44px; height: 44px; flex: 0 0 44px; }
+      #followupPage .followup-days { grid-template-columns: 1fr; }
       #followupPage .followup-day { min-height: 176px; }
+      #followupPage .followup-day input { min-height: 48px; font-size: 16px; }
       #followupPage .followup-validate-box { align-items: stretch; flex-direction: column; }
       #followupPage .followup-validate { width: 100%; }
       #followupPage .followup-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1343,9 +1351,32 @@
     .minigames-panel + .minigames-panel { margin-top: 14px; }
     .fruit-game-stat strong { color: #ffe4a3; }
     .fruit-game-status { line-height: 1.5; }
+    .shop-intro { margin: 0 0 14px; color: var(--muted); }
+    .shop-wallet { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; padding: 14px 18px; border: 1px solid rgba(130, 220, 255, .72); border-radius: 16px; background: linear-gradient(120deg, rgba(91, 56, 15, .55), rgba(15, 29, 55, .9)); box-shadow: 0 0 5px rgba(112, 218, 255, .72), 0 0 16px rgba(53, 178, 255, .34), 0 8px 22px rgba(0, 0, 0, .28), inset 0 0 0 1px rgba(191, 239, 255, .28); }
+    .shop-wallet strong { color: #ffe4a3; font-size: 21px; }
+    .shop-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .shop-section-title { margin: 20px 0 10px; font-size: 21px; }
+    .shop-item { display: grid; align-content: start; gap: 10px; min-width: 0; padding: 16px; border: 1px solid rgba(130, 220, 255, .72); border-radius: 18px; background: linear-gradient(145deg, rgba(10, 29, 57, .96), rgba(5, 15, 32, .98)); box-shadow: 0 0 5px rgba(112, 218, 255, .72), 0 0 16px rgba(53, 178, 255, .34), 0 0 28px rgba(34, 157, 255, .14), 0 8px 22px rgba(0, 0, 0, .28), inset 0 0 0 1px rgba(191, 239, 255, .28); }
+    .shop-item h2 { margin: 0; font-size: 18px; }
+    .shop-item p { min-height: 42px; margin: 0; color: var(--muted); font-size: 13px; }
+    .shop-item-preview { display: grid; min-height: 106px; place-items: center; overflow: hidden; border: 1px solid rgba(255, 255, 255, .22); border-radius: 14px; background: linear-gradient(135deg, var(--shop-preview-a), var(--shop-preview-b)); }
+    .shop-item-preview span { display: grid; width: 58px; height: 58px; place-items: center; border: 2px solid rgba(255, 255, 255, .85); border-radius: 50%; background: rgba(5, 15, 32, .68); box-shadow: 0 0 24px var(--shop-preview-glow); font-size: 28px; }
+    .shop-item-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .shop-item-price { color: #ffe4a3; font-weight: 850; white-space: nowrap; }
+    .shop-item button { min-height: 38px; padding: 7px 12px; border: 1px solid rgba(137, 197, 255, .58); border-radius: 10px; color: #fff; background: linear-gradient(145deg, #173d6b, #0a1a33); font-weight: 750; cursor: pointer; }
+    .shop-item button:disabled { color: #b6c4d8; cursor: default; opacity: .7; }
+    .shop-notice { margin: 14px 0 0; color: #c4d4ea; font-size: 12px; line-height: 1.5; }
+    body[data-shop-theme="ocean"] .app::before { background: radial-gradient(ellipse at 70% 5%, rgba(0, 200, 238, .16), transparent 44%), linear-gradient(180deg, #061a2c, #082d45); }
+    body[data-shop-theme="sunset"] .app::before { background: radial-gradient(ellipse at 78% 6%, rgba(255, 134, 20, .2), transparent 42%), linear-gradient(180deg, #24152b, #351e35); }
+    body[data-shop-theme="forest"] .app::before { background: radial-gradient(ellipse at 75% 4%, rgba(99, 239, 116, .14), transparent 44%), linear-gradient(180deg, #0b211f, #102d2a); }
+    body[data-shop-theme="galaxy"] .app::before { background: radial-gradient(ellipse at 75% 4%, rgba(190, 123, 255, .2), transparent 42%), linear-gradient(180deg, #17132d, #24163d); }
+    #shopPage .shop-banner { isolation: isolate; border: 1px solid rgba(130, 220, 255, .72); background: linear-gradient(0deg, rgba(3, 10, 25, .78), transparent 74%), linear-gradient(rgba(126, 179, 231, .22), rgba(126, 179, 231, .22)), url("assets/exercise-banner.png") center 48% / cover no-repeat; box-shadow: 0 0 7px rgba(112, 218, 255, .7), 0 0 20px rgba(53, 178, 255, .28), 0 12px 34px rgba(2, 8, 24, .38); }
+    #shopPage .shop-banner h1 span { color: #fff; }
+    #shopPage .shop-banner::after { position: absolute; inset: 5px; border: 1px solid rgba(220, 240, 255, .38); content: ""; pointer-events: none; }
     body.nutrition-view .topbar,
     body.exercise-view .topbar,
-    body.followup-view .topbar {
+    body.followup-view .topbar,
+    body.shop-view .topbar {
       position: absolute;
       top: 24px;
       right: 21px;
@@ -1358,7 +1389,9 @@
     body.exercise-view .topbar .search-wrap,
     body.exercise-view .topbar .top-spacer,
     body.followup-view .topbar .search-wrap,
-    body.followup-view .topbar .top-spacer { display: none; }
+    body.followup-view .topbar .top-spacer,
+    body.shop-view .topbar .search-wrap,
+    body.shop-view .topbar .top-spacer { display: none; }
     body.nutrition-view .topbar .ntc-wallet-chip,
     body.nutrition-view .topbar .profile,
     body.nutrition-view .topbar .icon-button,
@@ -1367,7 +1400,10 @@
     body.exercise-view .topbar .icon-button,
     body.followup-view .topbar .ntc-wallet-chip,
     body.followup-view .topbar .profile,
-    body.followup-view .topbar .icon-button {
+    body.followup-view .topbar .icon-button,
+    body.shop-view .topbar .ntc-wallet-chip,
+    body.shop-view .topbar .profile,
+    body.shop-view .topbar .icon-button {
       border: 1px solid rgba(238, 246, 255, .48);
       border-radius: 999px;
       background: rgba(5, 16, 34, .78);
@@ -1376,13 +1412,16 @@
     }
     body.nutrition-view .topbar .ntc-wallet-chip,
     body.exercise-view .topbar .ntc-wallet-chip,
-    body.followup-view .topbar .ntc-wallet-chip { padding: 5px 11px 5px 6px; }
+    body.followup-view .topbar .ntc-wallet-chip,
+    body.shop-view .topbar .ntc-wallet-chip { padding: 5px 11px 5px 6px; }
     body.nutrition-view .topbar .profile,
     body.exercise-view .topbar .profile,
-    body.followup-view .topbar .profile { min-height: 43px; padding: 4px 11px 4px 5px; }
+    body.followup-view .topbar .profile,
+    body.shop-view .topbar .profile { min-height: 43px; padding: 4px 11px 4px 5px; }
     body.nutrition-view .topbar .icon-button,
     body.exercise-view .topbar .icon-button,
-    body.followup-view .topbar .icon-button { min-width: 43px; min-height: 43px; padding: 8px; }
+    body.followup-view .topbar .icon-button,
+    body.shop-view .topbar .icon-button { min-width: 43px; min-height: 43px; padding: 8px; }
     #nutritionPage .nutrition-banner { margin: -16px -21px 16px; background-position: center center; }
     #exercisePage .exercise-banner { margin: -16px -21px 16px; padding-bottom: 44px; background-position: center 50%; }
     #followupPage .followup-banner { margin: -16px -21px 16px; background-position: center 48%; }
@@ -1391,7 +1430,8 @@
     @media (max-width: 560px) {
       body.nutrition-view .topbar,
       body.exercise-view .topbar,
-      body.followup-view .topbar {
+      body.followup-view .topbar,
+      body.shop-view .topbar {
         top: 8px;
         right: 12px;
         left: 12px;
@@ -1399,13 +1439,16 @@
       }
       body.nutrition-view .topbar .ntc-wallet-chip,
       body.exercise-view .topbar .ntc-wallet-chip,
-      body.followup-view .topbar .ntc-wallet-chip { padding: 3px 6px 3px 4px; }
+      body.followup-view .topbar .ntc-wallet-chip,
+      body.shop-view .topbar .ntc-wallet-chip { padding: 3px 6px 3px 4px; }
       body.nutrition-view .topbar .profile,
       body.exercise-view .topbar .profile,
-      body.followup-view .topbar .profile { min-height: 37px; padding: 0 4px; }
+      body.followup-view .topbar .profile,
+      body.shop-view .topbar .profile { min-height: 37px; padding: 0 4px; }
       body.nutrition-view .topbar .icon-button,
       body.exercise-view .topbar .icon-button,
-      body.followup-view .topbar .icon-button { min-width: 37px; min-height: 37px; padding: 6px; }
+      body.followup-view .topbar .icon-button,
+      body.shop-view .topbar .icon-button { min-width: 37px; min-height: 37px; padding: 6px; }
       #nutritionPage .nutrition-banner,
       #exercisePage .exercise-banner,
       #followupPage .followup-banner {
@@ -1433,6 +1476,7 @@
         <a class="nav-link" href="#exercices"><span class="nav-icon"><img src="assets/nav-dumbbell.png" alt=""></span>Exercices</a>
         <a class="nav-link" href="#suivi"><span class="nav-icon"><img src="assets/nav-chart.png" alt=""></span>Mon suivi</a>
         <a class="nav-link" href="#minijeux"><span class="nav-icon" aria-hidden="true">🕹️</span>Mini-jeux</a>
+        <a class="nav-link" href="#boutique"><span class="nav-icon" aria-hidden="true">🛍️</span>Boutique</a>
       </nav>
       <div class="side-bottom">
         <section class="goal-summary side-goal-summary" aria-label="Mon objectif">
@@ -1631,7 +1675,7 @@
           <div class="faq-grid">
             <details class="faq-item"><summary>NutriPulse remplace-t-il un médecin ou un diététicien ?</summary><p>Non. Le site propose des idées générales de repas et d’activité ; il ne donne ni diagnostic ni conseil médical personnalisé. Pour un objectif de santé, une maladie, une grossesse ou une douleur, demande l’avis d’un professionnel de santé.</p></details>
             <details class="faq-item"><summary>Les calories et les portions sont-elles exactes ?</summary><p>Non, ce sont des estimations indicatives. Les valeurs réelles changent selon les marques, les ingrédients, les portions et la préparation. Elles ne remplacent pas un avis nutritionnel individualisé.</p></details>
-            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids pour une journée ; les calories sont facultatives et tu peux laisser ce champ vide si tu ne les connais pas. Valide ensuite la semaine : chaque journée avec un poids renseigné rapporte 5 XP. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
+            <details class="faq-item"><summary>Comment fonctionne Mon suivi et comment gagner des badges ?</summary><p>Renseigne ton poids pour une journée ; les calories sont facultatives. Valide chaque journée pour gagner 5 XP. Dès le dimanche, valide la semaine pour gagner 10 XP supplémentaires, une seule fois, si au moins une journée est validée. Les semaines précédentes restent accessibles. Les badges se débloquent après 10, 25, 50, 75, 100 et 150 journées validées.</p></details>
             <details class="faq-item"><summary>Où sont enregistrés mon profil, mon suivi et mes NTC ?</summary><p>Dans le stockage local du navigateur utilisé sur cet appareil. Le site ne crée pas de compte et son code n’envoie pas ces saisies vers un serveur NutriPulse. Les NTC sont des points virtuels sans valeur monétaire, non transférables et non synchronisés entre appareils. Ces données peuvent être perdues si le stockage du navigateur est effacé ou modifiées depuis ce navigateur ; sans serveur, NutriPulse ne peut pas empêcher toute triche.</p></details>
             <details class="faq-item"><summary>Comment effacer mes données enregistrées ?</summary><p>Dans les réglages de ton navigateur, efface les données du site (stockage local) pour NutriPulse. Cela supprimera aussi les informations de profil, d’hydratation et de suivi enregistrées dans ce navigateur.</p></details>
             <details class="faq-item"><summary>Les vidéos et les images viennent-elles de NutriPulse ?</summary><p>Les vidéos d’exercices s’ouvrent sur YouTube et certaines photos sont chargées depuis Unsplash. Ces services externes appliquent leurs propres règles de confidentialité. Adapte les exercices à tes capacités et arrête si tu ressens une douleur.</p></details>
@@ -2183,6 +2227,20 @@
         </div>
       </section>
 
+      <section class="page-view" id="shopPage" data-page-view="boutique" aria-labelledby="shopTitle" hidden>
+        <header class="feature-banner shop-banner">
+          <h1 id="shopTitle">La <span>boutique</span></h1>
+          <p>Personnalise ton espace NutriPulse avec tes NutriCoins.</p>
+        </header>
+        <section class="shop-wallet" aria-label="Ton solde boutique">
+          <span>Ton solde NutriCoin</span>
+          <strong><span id="shopBalance">0</span> NTC</strong>
+        </section>
+        <p class="shop-intro">Choisis un thème avec tes NTC. Tout est décoratif : aucun article ne modifie les jeux, ton suivi ou tes objectifs.</p>
+        <div class="shop-grid" id="shopGrid" aria-live="polite"></div>
+        <p class="shop-notice" id="shopStatus" role="status" aria-live="polite">Les achats utilisent des NutriCoins virtuels et restent enregistrés dans ce navigateur. Aucun paiement réel n’est proposé.</p>
+      </section>
+
       <section class="page-view" id="followupPage" data-page-view="suivi" aria-labelledby="followupTitle" hidden>
         <header class="feature-banner followup-banner">
           <h1 id="followupTitle">Mon <span>suivi</span></h1>
@@ -2203,7 +2261,7 @@
               <div class="followup-progress-stat"><span>Semaine complétée</span><strong id="followupGlobalPct">0%</strong></div>
               <div class="followup-progress-track" role="progressbar" aria-label="Progression de la semaine" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="followupGlobalTrack"><div class="followup-progress-fill" id="followupGlobalBar"></div></div>
               <div class="followup-progress-stat"><span>XP cette semaine</span><strong id="followupWeekXp">0 XP</strong></div>
-              <p class="followup-muted">5 XP par journée validée.</p>
+              <p class="followup-muted">5 XP par journée validée, puis 10 XP de bonus hebdomadaire.</p>
             </section>
           </div>
 
@@ -2218,9 +2276,10 @@
             </div>
             <div class="followup-week-area">
               <div class="followup-days" id="followupDays"></div>
+              <p id="followupValidateHint" class="followup-muted" role="status" aria-live="polite">Valide chaque journée sous son formulaire. Le poids suffit, les calories sont facultatives.</p>
               <div class="followup-validate-box">
-                <button class="followup-validate" id="followupValidate" type="button">✓ Valider ma semaine</button>
-                <p id="followupValidateHint">Le poids suffit pour valider une journée. Calories facultatives : laisse vide si tu ne les connais pas.</p>
+                <button class="followup-validate" id="followupWeekBonus" type="button">🏆 Valider ma semaine · +10 XP</button>
+                <p id="followupWeekBonusHint" role="status" aria-live="polite">Dès dimanche, valide ta semaine pour gagner 10 XP en plus. Une journée validée suffit.</p>
               </div>
             </div>
           </section>
@@ -2458,6 +2517,156 @@
       }
       renderNtcWallet();
 
+      const shopStorageKey = "nutripulse-shop-v1";
+      const shopItems = [
+        { id: "ocean", name: "Océan", icon: "🌊", price: 8, description: "Une ambiance fraîche aux couleurs de l’eau.", colors: ["#075985", "#06b6d4", "#67e8f9"] },
+        { id: "sunset", name: "Coucher de soleil", icon: "🌅", price: 8, description: "Des lueurs chaudes pour ton espace.", colors: ["#9a3412", "#db2777", "#fdba74"] },
+        { id: "forest", name: "Forêt", icon: "🌿", price: 10, description: "Un décor calme inspiré de la nature.", colors: ["#14532d", "#16a34a", "#86efac"] },
+        { id: "galaxy", name: "Galaxie", icon: "🌌", price: 12, description: "Une ambiance cosmique violette.", colors: ["#4c1d95", "#7c3aed", "#c4b5fd"] }
+      ];
+      const shopItemIds = new Set(["pulse", ...shopItems.map(item => item.id)]);
+      const retiredShopBadgeIds = new Set(["badge-star", "badge-fox", "badge-panda", "badge-flame", "badge-strawberry"]);
+      let shopState = { owned: ["pulse"], equipped: "pulse" };
+      try {
+        const storedShop = JSON.parse(localStorage.getItem(shopStorageKey) || "null");
+        if (storedShop !== null) {
+          if (!storedShop || !Array.isArray(storedShop.owned) ||
+              storedShop.owned.some(id => typeof id !== "string" || (!shopItemIds.has(id) && !retiredShopBadgeIds.has(id))) ||
+              typeof storedShop.equipped !== "string" || !shopItemIds.has(storedShop.equipped) ||
+              !storedShop.owned.includes(storedShop.equipped)) {
+            throw new Error("Format de la boutique NutriPulse invalide.");
+          }
+          shopState = {
+            owned: [...new Set(["pulse", ...storedShop.owned.filter(id => !retiredShopBadgeIds.has(id))])],
+            equipped: storedShop.equipped
+          };
+          if (storedShop.owned.some(id => retiredShopBadgeIds.has(id)) || Object.prototype.hasOwnProperty.call(storedShop, "equippedBadge")) {
+            try {
+              localStorage.setItem(shopStorageKey, JSON.stringify(shopState));
+            } catch (error) {
+              console.error("Impossible de retirer les anciens badges de la boutique.", error);
+              showToast("Les anciens badges sont masqués, mais n’ont pas pu être retirés du stockage.");
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Impossible de charger la boutique NutriPulse.", error);
+        showToast("Les articles de la boutique n’ont pas pu être chargés.");
+      }
+
+      function saveShopState() {
+        try {
+          localStorage.setItem(shopStorageKey, JSON.stringify(shopState));
+          return true;
+        } catch (error) {
+          console.error("Impossible d’enregistrer la boutique NutriPulse.", error);
+          showToast("Les achats n’ont pas pu être enregistrés dans ce navigateur.");
+          return false;
+        }
+      }
+
+      function applyShopTheme() {
+        if (shopState.equipped === "pulse") document.body.removeAttribute("data-shop-theme");
+        else document.body.dataset.shopTheme = shopState.equipped;
+      }
+
+      function makeShopCard(item) {
+        const owned = shopState.owned.includes(item.id);
+        const equipped = shopState.equipped === item.id;
+        const card = document.createElement("article");
+        card.className = "shop-item";
+        const preview = document.createElement("div");
+        preview.className = "shop-item-preview";
+        preview.style.setProperty("--shop-preview-a", item.colors[0]);
+        preview.style.setProperty("--shop-preview-b", item.colors[1]);
+        preview.style.setProperty("--shop-preview-glow", item.colors[2]);
+        const previewIcon = document.createElement("span");
+        previewIcon.setAttribute("aria-hidden", "true");
+        previewIcon.textContent = item.icon;
+        preview.append(previewIcon);
+        const title = document.createElement("h2");
+        title.textContent = `Thème ${item.name}`;
+        const description = document.createElement("p");
+        description.textContent = item.description;
+        const footer = document.createElement("div");
+        footer.className = "shop-item-footer";
+        const price = document.createElement("span");
+        price.className = "shop-item-price";
+        price.textContent = owned ? "Possédé" : `${item.price} NTC`;
+        const button = document.createElement("button");
+        button.type = "button";
+        button.dataset.shopItem = item.id;
+        button.textContent = equipped ? "Équipé" : owned ? "Équiper" : "Acheter";
+        button.disabled = equipped;
+        footer.append(price, button);
+        card.append(preview, title, description, footer);
+        return card;
+      }
+
+      function renderShop() {
+        $("#shopBalance").textContent = String(ntcState.balance);
+        const grid = $("#shopGrid");
+        grid.replaceChildren();
+        shopItems.forEach(item => grid.append(makeShopCard(item)));
+        $("#shopStatus").textContent = `Thème actif : ${shopState.equipped === "pulse" ? "NutriPulse classique" : shopItems.find(item => item.id === shopState.equipped).name}. Les NTC n’ont aucune valeur monétaire.`;
+      }
+
+      function buyShopCosmetic(item) {
+        const alreadyOwned = shopState.owned.includes(item.id);
+        if (!alreadyOwned && ntcState.balance < item.price) {
+          const missing = item.price - ntcState.balance;
+          $("#shopStatus").textContent = `Il te manque ${missing} NTC pour acheter le thème ${item.name}. Gagne des NTC en jouant aux mini-jeux.`;
+          return;
+        }
+        const previousShopState = JSON.stringify(shopState);
+        const previousBalance = ntcState.balance;
+        if (!alreadyOwned) {
+          shopState.owned.push(item.id);
+          if (!saveShopState()) {
+            shopState = JSON.parse(previousShopState);
+            return;
+          }
+          ntcState.balance -= item.price;
+          if (!saveNtcState()) {
+            shopState = JSON.parse(previousShopState);
+            if (!saveShopState()) console.error("Impossible de restaurer l’inventaire après l’échec de l’achat.");
+            ntcState.balance = previousBalance;
+            renderNtcWallet();
+            return;
+          }
+        }
+        shopState.equipped = item.id;
+        if (!saveShopState()) {
+          shopState = JSON.parse(previousShopState);
+          if (!alreadyOwned) {
+            ntcState.balance = previousBalance;
+            if (!saveNtcState()) console.error("Impossible de restaurer le solde NutriCoin après l’échec de la boutique.");
+          }
+          applyShopTheme();
+          renderShop();
+          return;
+        }
+        applyShopTheme();
+        renderShop();
+        $("#shopStatus").textContent = alreadyOwned
+          ? `Le thème ${item.name} est maintenant équipé.`
+          : `Thème ${item.name} acheté et équipé !`;
+      }
+
+      $("#shopGrid").addEventListener("click", event => {
+        const button = event.target.closest("button[data-shop-item]");
+        if (!button) return;
+        const item = shopItems.find(candidate => candidate.id === button.dataset.shopItem);
+        if (!item) {
+          console.error("Article de boutique inconnu.", button.dataset.shopItem);
+          showToast("Cet article n’est pas disponible.");
+          return;
+        }
+        buyShopCosmetic(item);
+      });
+      applyShopTheme();
+      renderShop();
+
       function applyProfile() {
         $("#profileNameDisplay").textContent = profile.name;
         const image = $("#profileAvatarImage");
@@ -2650,6 +2859,7 @@
         { name: "Lion", days: 150 }
       ];
       const followupDayNames = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
+      const followupWeeklyBonusXp = 10;
       const followupStorageKey = "nutripulse-pro-dashboard-v3";
       const followupLegacyStorageKey = "nutripulse-pro-dashboard-v2";
       const followupBlankDays = () => Array.from({ length: 7 }, () => ({ w: "", c: "" }));
@@ -2697,6 +2907,7 @@
       if (typeof followupState.weekStart !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(followupState.weekStart)) {
         followupState.weekStart = followupMondayOf(new Date());
       }
+      if (followupState.weekStart !== followupMondayOf(new Date())) followupState.weekStart = followupMondayOf(new Date());
       if (!followupState.weeks || typeof followupState.weeks !== "object") followupState.weeks = {};
       if (!Number.isFinite(followupState.lifetime)) followupState.lifetime = 0;
       if (!Number.isFinite(followupState.xpTotal)) followupState.xpTotal = Number(followupState.xp) || 0;
@@ -2726,11 +2937,13 @@
           const day = week.days[index];
           return {
             w: day && day.w !== undefined && day.w !== null ? String(day.w) : "",
-            c: day && day.c !== undefined && day.c !== null ? String(day.c) : ""
+            c: day && day.c !== undefined && day.c !== null ? String(day.c) : "",
+            validated: day?.validated === true || (day?.validated === undefined && week.validated && isFollowupDayValid(day))
           };
         });
         week.validated = Boolean(week.validated);
         week.xpEarned = Number(week.xpEarned) || 0;
+        week.weeklyBonusClaimed = week.weeklyBonusClaimed === true;
         return week;
       }
 
@@ -2793,23 +3006,30 @@
             input.step = field.step;
             input.placeholder = field.key === "c" ? "Facultatif" : "--";
             input.value = value[field.key];
-            input.disabled = week.validated || followupDateKey(date) > followupDateKey(new Date());
+            input.disabled = value.validated || followupDateKey(date) > followupDateKey(new Date());
             input.dataset.dayIndex = String(index);
             input.dataset.dayField = field.key;
             input.setAttribute("aria-label", `${field.label} ${followupDayNames[index]}`);
             input.addEventListener("input", () => {
               const week = currentFollowupWeek();
-              const previousValue = week.days[index][field.key];
+              const previousState = JSON.stringify(followupState);
               week.days[index][field.key] = input.value;
               if (!refreshFollowup()) {
-                week.days[index][field.key] = previousValue;
-                input.value = previousValue;
+                followupState = JSON.parse(previousState);
+                input.value = followupState.weeks[followupState.weekStart].days[index][field.key];
                 refreshFollowup();
               }
             });
             label.append(icon, labelText);
             card.append(label, input);
           });
+          const validate = document.createElement("button");
+          validate.type = "button";
+          validate.className = "followup-day-validate";
+          validate.dataset.dayIndex = String(index);
+          validate.setAttribute("aria-label", `Valider la journée de ${followupDayNames[index]}`);
+          validate.addEventListener("click", () => validateFollowupDay(index));
+          card.append(validate);
           root.append(card);
         });
       }
@@ -3019,7 +3239,7 @@
         svg.setAttribute("aria-label", `Évolution du poids cette semaine : ${points.map(point => `${followupDayNames[point.index]}, ${point.weight.toFixed(1).replace(".", ",")} kg`).join("; ")}.`);
       }
 
-      function refreshFollowup() {
+      function refreshFollowup(shouldSave = true) {
         const week = currentFollowupWeek();
         const days = week.days;
         const validDays = days.filter((day, index) =>
@@ -3064,26 +3284,37 @@
         $("#followupWeekTitle").textContent = `Semaine du ${followupDateAt(0).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })} au ${followupDateAt(6).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}`;
         const currentWeekStart = followupMondayOf(new Date());
         const isCurrentWeek = followupState.weekStart === currentWeekStart;
-        $("#followupValidate").disabled = week.validated || !isCurrentWeek;
-        $("#followupValidate").textContent = week.validated ? "✓ Semaine validée" : "✓ Valider ma semaine";
-        $("#followupValidateHint").textContent = week.validated
-          ? `${week.xpEarned} XP gagnés. Cette semaine est déjà validée.`
-          : isCurrentWeek
-            ? "Renseigne le poids ; les calories sont facultatives."
-            : "Seule la semaine en cours peut être validée pour gagner des XP.";
+        const validatedCount = days.filter(day => day.validated).length;
+        $("#followupValidateHint").textContent = isCurrentWeek
+          ? `${validatedCount} journée${validatedCount === 1 ? "" : "s"} validée${validatedCount === 1 ? "" : "s"} · ${week.xpEarned} XP. Valide chaque jour sous son formulaire. Poids requis, calories facultatives.`
+          : "Les journées peuvent être validées pendant la semaine en cours.";
+        const weekEnded = followupDateKey(followupDateAt(6)) <= followupDateKey(new Date());
+        $("#followupWeekBonus").disabled = week.weeklyBonusClaimed || !weekEnded || validatedCount === 0;
+        $("#followupWeekBonus").textContent = week.weeklyBonusClaimed ? "✓ Bonus de semaine obtenu" : `🏆 Valider ma semaine · +${followupWeeklyBonusXp} XP`;
+        $("#followupWeekBonusHint").textContent = week.weeklyBonusClaimed
+          ? `Bonus de ${followupWeeklyBonusXp} XP déjà ajouté pour cette semaine.`
+          : !weekEnded
+            ? `Dès dimanche, gagne ${followupWeeklyBonusXp} XP en plus avec au moins une journée validée.`
+            : validatedCount === 0
+              ? "Il faut au moins une journée validée pour obtenir le bonus."
+              : `Valide ta semaine pour gagner ${followupWeeklyBonusXp} XP en plus, une seule fois.`;
         $("#followupPrevWeek").disabled = false;
         $("#followupNextWeek").disabled = followupState.weekStart >= currentWeekStart;
         $$(".followup-day").forEach((card, index) => {
           const complete = isFollowupDayValid(days[index]) &&
             followupDateKey(followupDateAt(index)) <= followupDateKey(new Date());
           card.classList.toggle("complete", complete);
-          $(".followup-day-status", card).textContent = complete ? "✓ Journée renseignée" : "À renseigner";
+          const future = followupDateKey(followupDateAt(index)) > followupDateKey(new Date());
+          $(".followup-day-status", card).textContent = days[index].validated ? "✓ Journée validée" : future ? "À venir" : complete ? "Prête à valider" : "À renseigner";
+          const button = $(".followup-day-validate", card);
+          button.disabled = days[index].validated || future || !isCurrentWeek;
+          button.textContent = days[index].validated ? "✓ Validée" : future ? "À venir" : "Valider ce jour";
         });
         $$(".followup-badge").forEach((button, index) => {
           button.classList.toggle("unlocked", followupState.lifetime >= followupBadgeData[index].days);
         });
         drawFollowupWeightChart(days);
-        return saveFollowup();
+        return !shouldSave || saveFollowup();
       }
 
       function moveFollowupWeek(delta) {
@@ -3098,39 +3329,73 @@
 
       $("#followupPrevWeek").addEventListener("click", () => moveFollowupWeek(-1));
       $("#followupNextWeek").addEventListener("click", () => moveFollowupWeek(1));
-      $("#followupValidate").addEventListener("click", () => {
+      function validateFollowupDay(index) {
         const week = currentFollowupWeek();
         if (followupState.weekStart !== followupMondayOf(new Date())) {
           showToast("Seule la semaine en cours peut être validée pour gagner des XP.");
           return;
         }
-        const count = week.days.filter((day, index) =>
-          isFollowupDayValid(day) && followupDateKey(followupDateAt(index)) <= followupDateKey(new Date())).length;
-        if (!count) {
-          showToast("Renseigne au moins une journée avant de valider.");
-          return;
-        }
-        if (week.validated) {
-          showToast("Cette semaine est déjà validée.");
+        const day = week.days[index];
+        if (day.validated || !isFollowupDayValid(day) || followupDateKey(followupDateAt(index)) > followupDateKey(new Date())) {
+          const message = "Renseigne un poids entre 1 et 400 kg ; les calories sont facultatives (0 à 15 000).";
+          $("#followupValidateHint").textContent = message;
+          showToast(message);
           return;
         }
         const previousState = JSON.stringify(followupState);
-        week.validated = true;
-        week.xpEarned = count * 5;
-        followupState.lifetime += count;
-        followupState.xpTotal += week.xpEarned;
+        day.validated = true;
+        const earned = 5;
+        week.xpEarned += earned;
+        followupState.lifetime += 1;
+        followupState.xpTotal += earned;
         if (!refreshFollowup()) {
           followupState = JSON.parse(previousState);
           buildFollowupDays();
           refreshFollowup();
-          showToast("La semaine n’a pas pu être enregistrée : aucun XP n’a été attribué.");
+          showToast("La validation n’a pas pu être enregistrée : aucun XP n’a été attribué.");
           return;
         }
-        showToast(`Semaine validée : ${count} journée${count === 1 ? "" : "s"}, +${week.xpEarned} XP !`);
+        buildFollowupDays();
+        refreshFollowup(false);
+        const message = `Journée validée : +${earned} XP !`;
+        $("#followupValidateHint").textContent = message;
+        showToast(message);
+      }
+      $("#followupWeekBonus").addEventListener("click", () => {
+        const week = currentFollowupWeek();
+        if (week.weeklyBonusClaimed || followupDateKey(followupDateAt(6)) > followupDateKey(new Date()) ||
+            !week.days.some(day => day.validated)) {
+          showToast("Le bonus est disponible dès dimanche, avec au moins une journée validée, une seule fois par semaine.");
+          return;
+        }
+        const previousState = JSON.stringify(followupState);
+        week.weeklyBonusClaimed = true;
+        week.xpEarned += followupWeeklyBonusXp;
+        followupState.xpTotal += followupWeeklyBonusXp;
+        if (!refreshFollowup()) {
+          followupState = JSON.parse(previousState);
+          refreshFollowup(false);
+          const message = "Le bonus n’a pas pu être enregistré : aucun XP n’a été ajouté.";
+          $("#followupWeekBonusHint").textContent = message;
+          showToast(message);
+          return;
+        }
+        showToast(`Semaine validée : +${followupWeeklyBonusXp} XP de bonus !`);
       });
       renderFollowupBadges();
       buildFollowupDays();
       refreshFollowup();
+      let followupLastDay = followupDateKey(new Date());
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) return;
+        const today = followupDateKey(new Date());
+        if (today === followupLastDay) return;
+        const previousWeek = followupMondayOf(new Date(`${followupLastDay}T12:00:00`));
+        if (followupState.weekStart === previousWeek) followupState.weekStart = followupMondayOf(new Date());
+        followupLastDay = today;
+        buildFollowupDays();
+        refreshFollowup();
+      });
 
       const dailyChallenges = [
         { emoji: "🚶", title: "Marche quelques minutes", description: "Fais une petite marche à ton rythme, dehors ou à l’intérieur." },
@@ -3225,6 +3490,7 @@
         ["nutrition", $("#nutritionPage")],
         ["exercices", $("#exercisePage")],
         ["minijeux", $("#minigamesPage")],
+        ["boutique", $("#shopPage")],
         ["suivi", $("#followupPage")]
       ]);
       const mobileBackButton = $("#mobileBackButton");
@@ -3276,8 +3542,10 @@
         document.body.classList.toggle("faq-view", route === "faq");
         document.body.classList.toggle("contact-view", route === "contact");
         document.body.classList.toggle("minigames-view", route === "minijeux");
+        document.body.classList.toggle("shop-view", route === "boutique");
         $("#homeView").hidden = Boolean(currentPage);
         routeViews.forEach(view => { view.hidden = view !== currentPage; });
+        if (route === "boutique") renderShop();
         $$(".side-nav .nav-link").forEach(link => {
           const active = link.hash.slice(1) === route;
           link.classList.toggle("active", active);

@@ -6124,6 +6124,46 @@
           instructions: "Lave et équeute les fraises. Mixe-en la moitié avec le sucre et le jus de citron, coupe le reste en morceaux et mélange. Ajoute la menthe ciselée et laisse reposer au frais avant de servir."
         },
         {
+          name: "Fondant au chocolat", aliases: ["fondant chocolat", "cœur coulant chocolat", "coeur coulant"], servings: 6, category: "Dessert", tags: ["Dessert", "Féculent"],
+          ingredients: [["Chocolat noir", "200 g"], ["Beurre", "100 g"], ["Œufs", "3"], ["Sucre", "80 g"], ["Farine", "50 g"]],
+          instructions: "Préchauffe le four à 200 °C. Fais fondre le chocolat avec le beurre. Fouette les œufs et le sucre, incorpore le chocolat puis la farine. Répartis dans des ramequins beurrés et cuis 8 à 10 minutes pour garder le cœur fondant."
+        },
+        {
+          name: "Clafoutis aux abricots", aliases: ["clafoutis abricot", "clafoutis abricots"], servings: 6, category: "Dessert", tags: ["Dessert", "Fruit"],
+          ingredients: [["Abricots", "500 g"], ["Œufs", "3"], ["Farine", "100 g"], ["Lait", "250 ml"], ["Sucre", "80 g"], ["Beurre", "20 g"]],
+          instructions: "Préchauffe le four à 180 °C et beurre un plat. Dispose les abricots dénoyautés et coupés en deux. Mélange les œufs, le sucre, la farine et le lait, verse sur les fruits et cuis 35 à 40 minutes."
+        },
+        {
+          name: "Crumble poires et chocolat", aliases: ["crumble poire chocolat", "crumble poires chocolat"], servings: 6, category: "Dessert", tags: ["Dessert", "Fruit", "Féculent"],
+          ingredients: [["Poires", "5"], ["Chocolat noir", "100 g"], ["Farine", "120 g"], ["Beurre froid", "80 g"], ["Sucre", "70 g"]],
+          instructions: "Préchauffe le four à 180 °C. Coupe les poires en dés et le chocolat en morceaux, puis répartis-les dans un plat. Sable la farine avec le beurre et le sucre, émiette sur les fruits et cuis 25 à 30 minutes."
+        },
+        {
+          name: "Boules d’énergie dattes-cacao", aliases: ["energy balls", "boules dattes cacao", "boules d’energie"], servings: 12, category: "Dessert", tags: ["Dessert", "Fruit"],
+          ingredients: [["Dattes dénoyautées", "150 g"], ["Flocons d’avoine", "80 g"], ["Cacao non sucré", "2 c. à soupe"], ["Purée d’amandes", "1 c. à soupe"], ["Eau", "1 à 2 c. à soupe"]],
+          instructions: "Mixe les dattes avec les flocons d’avoine, le cacao et la purée d’amandes. Ajoute un peu d’eau si nécessaire pour obtenir une pâte qui se tient. Forme 12 boules et place-les au frais au moins 30 minutes."
+        },
+        {
+          name: "Smoothie fraise-banane", aliases: ["smoothie fraise banane", "smoothie aux fraises", "smoothie fruité"], servings: 2, category: "Boisson", tags: ["Smoothie", "Fruit"],
+          ingredients: [["Fraises", "200 g"], ["Bananes", "2"], ["Yaourt nature", "150 g"], ["Lait", "100 ml"]],
+          instructions: "Lave et équeute les fraises. Coupe les bananes en rondelles, puis mixe tous les ingrédients jusqu’à obtenir une boisson lisse. Ajoute un peu de lait si tu la préfères plus fluide."
+        },
+        {
+          name: "Smoothie mangue-ananas", aliases: ["smoothie mangue ananas", "smoothie exotique"], servings: 2, category: "Boisson", tags: ["Smoothie", "Fruit"],
+          ingredients: [["Mangue", "1"], ["Ananas", "150 g"], ["Lait de coco", "150 ml"], ["Jus de citron vert", "1 c. à soupe"]],
+          instructions: "Pèle et coupe la mangue en morceaux. Mixe-la avec l’ananas, le lait de coco et le jus de citron vert jusqu’à obtenir une texture homogène. Sers bien frais."
+        },
+        {
+          name: "Smoothie protéiné banane-skyr", aliases: ["smoothie proteine banane", "smoothie protéiné banane", "smoothie au skyr"], servings: 2, category: "Boisson", tags: ["Smoothie", "Protéiné", "Fruit"],
+          ingredients: [["Banane", "1"], ["Skyr nature", "200 g"], ["Lait", "120 ml"], ["Flocons d’avoine", "30 g"], ["Beurre de cacahuète", "1 c. à café"]],
+          instructions: "Coupe la banane en morceaux. Mixe-la avec le skyr, le lait, les flocons d’avoine et le beurre de cacahuète jusqu’à obtenir une texture crémeuse. Sers immédiatement."
+        },
+        {
+          name: "Smoothie protéiné cacao-vanille", aliases: ["smoothie protéiné cacao", "smoothie proteine chocolat", "smoothie protéiné chocolat"], servings: 2, category: "Boisson", tags: ["Smoothie", "Protéiné"],
+          ingredients: [["Lait", "250 ml"], ["Skyr nature", "150 g"], ["Banane", "1"], ["Cacao non sucré", "1 c. à soupe"], ["Protéines en poudre à la vanille", "20 g"]],
+          instructions: "Mixe le lait, le skyr, la banane, le cacao et les protéines en poudre jusqu’à ce que le mélange soit lisse et mousseux. Ajuste la quantité de lait selon la texture souhaitée et sers frais."
+        },
+        {
           name: "Boulettes de lentilles", aliases: ["boulettes lentilles", "galettes de lentilles"], servings: 4, category: "Plat", tags: ["Légume", "Végétarien"],
           ingredients: [["Lentilles cuites", "300 g"], ["Oignon", "1"], ["Œuf", "1"], ["Chapelure", "60 g"], ["Cumin", "1 c. à café"]],
           instructions: "Écrase les lentilles avec l’oignon finement haché. Ajoute l’œuf, le cumin et la chapelure, forme des boulettes et fais-les dorer à la poêle avec un filet d’huile pendant 8 à 10 minutes."
@@ -6304,6 +6344,8 @@
         return [
           recipe.strMeal,
           ...(recipe.recipeAliases || []),
+          recipe.strCategory,
+          ...(recipe.recipeTags || []),
           ...Array.from({ length: 20 }, (_, index) => recipe[`strIngredient${index + 1}`] || "")
         ].map(normalizeRecipeQuery).filter(Boolean);
       }

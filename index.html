@@ -802,10 +802,10 @@
     .nutrition-banner h1 span { color: #ffd078; }
     .nutrition-banner p { max-width: 520px; margin-bottom: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, .95); }
     #nutritionPage .feature-panel { background: linear-gradient(145deg, #0b2040, #07162d); backdrop-filter: none; }
-    #nutritionPage .meal-card, #nutritionPage .recipe-card { background: linear-gradient(145deg, #0a1f40, #061329); }
+    #nutritionPage .meal-card { background: linear-gradient(145deg, #0a1f40, #061329); }
     #nutritionPage .tip-banner { background: linear-gradient(110deg, #102d4b, #07162d 58%); }
     #nutritionPage .feature-panel { border-color: rgba(130, 220, 255, .72); box-shadow: 0 0 5px rgba(112, 218, 255, .68), 0 0 16px rgba(53, 178, 255, .3), 0 0 26px rgba(34, 157, 255, .12), 0 8px 22px rgba(0, 0, 0, .28), inset 0 0 0 1px rgba(191, 239, 255, .24); }
-    #nutritionPage .meal-card, #nutritionPage .recipe-card { border-color: rgba(130, 220, 255, .62); box-shadow: 0 0 4px rgba(112, 218, 255, .45), 0 0 12px rgba(53, 178, 255, .2), 0 8px 18px rgba(0, 0, 0, .28); }
+    #nutritionPage .meal-card { border-color: rgba(130, 220, 255, .62); box-shadow: 0 0 4px rgba(112, 218, 255, .45), 0 0 12px rgba(53, 178, 255, .2), 0 8px 18px rgba(0, 0, 0, .28); }
     #nutritionPage .recipe-result-button { border-color: rgba(130, 220, 255, .56); box-shadow: inset 0 0 10px rgba(53, 178, 255, .07), 0 0 8px rgba(53, 178, 255, .1); }
     #nutritionPage .recipe-result-button:hover, #nutritionPage .recipe-result-button[aria-pressed="true"] { border-color: #b6edff; box-shadow: 0 0 7px rgba(112, 218, 255, .58), 0 0 14px rgba(53, 178, 255, .24); }
     #nutritionPage .recipe-search-form input, #nutritionPage .recipe-people-count input { border-color: rgba(130, 190, 235, .62); box-shadow: inset 0 0 10px rgba(53, 178, 255, .07); }
@@ -832,10 +832,21 @@
     .supplement-sources { margin: 12px 0 0; color: #d3def0; font-size: 12px; line-height: 1.55; }
     .supplement-sources a { color: #b7ecff; text-decoration: underline; }
     .meal-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .recipe-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
     .meal-card, .recipe-card, .video-card { min-width: 0; overflow: hidden; border: 1px solid rgba(87, 149, 230, .66); border-radius: 16px; background: linear-gradient(145deg, rgba(10, 31, 64, .96), rgba(4, 14, 33, .96)); box-shadow: 0 8px 18px rgba(0, 0, 0, .28); }
+    #nutritionPage .recipe-card { background: linear-gradient(145deg, #0a1f40, #061329); }
+    #nutritionPage .recipe-card { border-color: rgba(130, 220, 255, .62); box-shadow: 0 0 4px rgba(112, 218, 255, .45), 0 0 12px rgba(53, 178, 255, .2), 0 8px 18px rgba(0, 0, 0, .28); }
     .meal-card { padding: 8px; }
+    .recipe-card { display: flex; flex-direction: column; }
     .meal-card h3 { margin: 0 0 7px; font-size: 14px; }
     .food-photo { display: block; width: 100%; height: 104px; object-fit: cover; border-radius: 11px; }
+    .recipe-card .food-photo { height: 116px; border-radius: 0; }
+    .recipe-copy { display: flex; flex: 1; flex-direction: column; padding: 9px; }
+    .recipe-copy h3 { margin: 0; font-size: 14px; line-height: 1.3; }
+    .recipe-copy > p { margin: 5px 0 8px; color: var(--muted); font-size: 11px; }
+    .recipe-details { margin-top: auto; border-top: 1px solid rgba(137, 197, 255, .2); color: #eaf2ff; font-size: 12px; }
+    .recipe-details summary { padding: 8px 0 0; color: #ffc027; font-weight: 700; cursor: pointer; }
+    .recipe-details p { margin: 7px 0 0; color: #d6e2f5; line-height: 1.5; }
     .meal-card p { margin: 7px 0 0; color: #d7e4f8; font-size: 12px; }
     .meal-macros { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 6px; color: #f2f6ff; font-size: 11px; font-weight: 650; }
     .nutrition-aside { display: grid; gap: 14px; }
@@ -848,15 +859,6 @@
     .nutrition-bar { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: center; font-size: 12px; }
     .nutrition-bar .progress-track { grid-column: 1 / -1; height: 8px; }
     .nutrition-bar .progress-fill { background: linear-gradient(90deg, #ff6900, #ffc027); }
-    .recipe-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-    .recipe-card { display: flex; flex-direction: column; }
-    .recipe-card .food-photo { height: 116px; border-radius: 0; }
-    .recipe-copy { display: flex; flex: 1; flex-direction: column; padding: 9px; }
-    .recipe-copy h3 { margin: 0; font-size: 14px; line-height: 1.3; }
-    .recipe-copy > p { margin: 5px 0 8px; color: var(--muted); font-size: 11px; }
-    .recipe-details { margin-top: auto; border-top: 1px solid rgba(137, 197, 255, .2); color: #eaf2ff; font-size: 12px; }
-    .recipe-details summary { padding: 8px 0 0; color: #ffc027; font-weight: 700; cursor: pointer; }
-    .recipe-details p { margin: 7px 0 0; color: #d6e2f5; line-height: 1.5; }
     .recipe-search-form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: end; }
     .recipe-search-form .field { font-size: 13px; }
     .recipe-search-form .field input, .recipe-people-count input { min-height: 40px; padding: 7px 10px; font-size: 15px; }
@@ -870,9 +872,11 @@
     .recipe-search-note { margin: 9px 0 0; color: #d6e2f5; font-size: 12px; line-height: 1.5; }
     .recipe-search-status { min-height: 22px; margin: 10px 0 0; color: #ffd078; font-size: 13px; }
     .recipe-result-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 9px; margin-top: 10px; }
+    #worldRecipeResults { max-height: 360px; overflow-y: auto; padding-right: 4px; }
     .recipe-result-button { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 9px; align-items: center; width: 100%; padding: 8px; border: 1px solid rgba(87, 149, 230, .66); border-radius: 12px; color: var(--text); background: rgba(3, 14, 32, .88); text-align: left; cursor: pointer; }
     .recipe-result-button:hover, .recipe-result-button[aria-pressed="true"] { border-color: #ffc027; background: rgba(24, 43, 69, .96); }
     .recipe-result-button img { width: 58px; height: 58px; border-radius: 8px; object-fit: cover; }
+    .recipe-result-icon { display: grid; width: 58px; height: 58px; place-items: center; border-radius: 8px; background: rgba(53, 178, 255, .12); font-size: 26px; }
     .recipe-result-button strong { display: block; font-size: 13px; line-height: 1.35; }
     .recipe-result-button small { display: block; margin-top: 3px; color: #c5d5ee; font-size: 11px; }
     .recipe-search-detail { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(137, 197, 255, .25); }
@@ -900,11 +904,12 @@
     .tip-banner { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding: 13px 16px; border: 1px solid rgba(255, 174, 47, .72); border-radius: 18px; background: linear-gradient(110deg, rgba(255, 126, 8, .2), rgba(6, 21, 46, .92) 47%); box-shadow: 0 0 19px rgba(255, 119, 17, .18); }
     .tip-banner > span { font-size: 30px; }
     .tip-banner p { margin: 0; color: #e7eefb; font-size: 13px; }
-    .exercise-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; }
+    .exercise-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 10px; padding: 12px 14px; border: 1px solid rgba(130, 220, 255, .4); border-radius: 16px; background: rgba(6, 22, 43, .72); }
+    .exercise-filter-heading { flex: 0 0 100%; margin: 0 0 2px; color: #d3def0; font-size: 13px; font-weight: 700; }
     .exercise-filter { min-height: 44px; padding: 8px 19px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 99px; color: #eaf2ff; background: rgba(10, 30, 65, .9); box-shadow: inset 0 0 10px rgba(53, 178, 255, .08), 0 0 8px rgba(53, 178, 255, .12); cursor: pointer; font-size: 15px; font-weight: 700; }
     .exercise-filter[aria-pressed="true"] { border-color: #ffc027; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); box-shadow: 0 0 13px rgba(255, 140, 12, .55); font-weight: 800; }
     .exercise-filter:disabled { border-color: rgba(130, 170, 210, .28); color: #8799b4; background: rgba(7, 18, 35, .76); box-shadow: none; cursor: not-allowed; }
-    .exercise-unlock-hint { min-height: 20px; margin: -7px 0 12px; color: #b7c9e2; font-size: 12px; }
+    .exercise-unlock-hint { min-height: 20px; margin: 0 0 16px; color: #b7c9e2; font-size: 12px; }
     .exercise-section { margin: 0 0 16px; }
     .exercise-section-title { display: flex; align-items: center; gap: 9px; margin: 0 0 8px; font-size: clamp(18px, 2vw, 23px); font-style: italic; }
     .exercise-section-title span { font-size: 26px; filter: drop-shadow(0 0 7px rgba(255, 153, 27, .7)); }
@@ -947,6 +952,119 @@
     .rest-timer-actions .primary-button, .rest-timer-reset { min-height: 44px; }
     .rest-timer-status { min-height: 1.5em; margin: 10px 0 0 !important; color: #b7ecff !important; font-weight: 700; }
     .rest-timer-note { margin: 10px 0 0 !important; font-size: 12px !important; }
+    .workout-session-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0; }
+    .workout-session-controls .primary-button, .workout-finish-button, .workout-add-button { min-height: 44px; }
+    .workout-finish-button, .workout-remove-button, .workout-rest-button { padding: 8px 12px; border: 1px solid rgba(130, 220, 255, .6); border-radius: 10px; color: #eaf5ff; background: #102b4b; font: inherit; font-weight: 700; cursor: pointer; }
+    .workout-finish-button { border-color: rgba(255, 192, 39, .75); color: #18121a; background: linear-gradient(180deg, #ffd24c, #ff8510); }
+    .workout-finish-button:disabled, .workout-remove-button:disabled { opacity: .5; cursor: not-allowed; }
+    .workout-session-status, .workout-reward-status { margin: 0; color: #b7ecff; font-size: 13px; }
+    .workout-calorie-settings { display: grid; grid-template-columns: minmax(200px, 250px) minmax(0, 1fr); gap: 12px; align-items: end; margin: 12px 0; padding: 12px; border: 1px solid rgba(130, 220, 255, .3); border-radius: 12px; background: rgba(3, 14, 32, .42); }
+    .workout-calorie-settings label { display: grid; gap: 5px; color: #dceaff; font-size: 12px; font-weight: 700; }
+    .workout-calorie-settings input { width: 100%; min-height: 42px; padding: 8px; border: 1px solid rgba(130, 190, 235, .62); border-radius: 9px; color: #f3f7ff; background: #07182e; font: inherit; }
+    .workout-calorie-settings p { margin: 0; color: #c5d5ee; font-size: 12px; line-height: 1.45; }
+    .workout-session-clock { margin-left: auto; color: #fff; font-size: clamp(22px, 4vw, 30px); font-weight: 800; font-variant-numeric: tabular-nums; }
+    .workout-exercise-fields { margin: 12px 0; padding: 12px; border: 1px solid rgba(130, 220, 255, .35); border-radius: 14px; }
+    .workout-exercise-fields legend { padding: 0 6px; color: #b7ecff; font-weight: 750; }
+    .workout-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(145px, 1fr)); gap: 10px; align-items: end; }
+    .workout-exercise-fields input, .workout-exercise-fields select { width: 100%; min-height: 42px; margin-top: 5px; padding: 8px; border: 1px solid rgba(130, 190, 235, .62); border-radius: 9px; color: #f3f7ff; background: #07182e; font: inherit; }
+    .workout-exercise-fields input:disabled, .workout-exercise-fields select:disabled { opacity: .55; }
+    .workout-add-button { margin-top: 10px; }
+    .workout-draft-list, .workout-history-list, .workout-record-list { display: grid; gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+    .workout-draft-item, .workout-history-item, .workout-record-item { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding: 10px; border: 1px solid rgba(130, 190, 235, .32); border-radius: 11px; background: rgba(3, 14, 32, .62); }
+    .workout-draft-copy, .workout-history-copy { display: grid; gap: 3px; min-width: 0; }
+    .workout-draft-copy small, .workout-history-copy small, .workout-record-item small { color: #c5d5ee; }
+    .workout-item-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+    .workout-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 9px; margin-top: 14px; }
+    .workout-stat { min-width: 0; padding: 12px; border: 1px solid rgba(130, 220, 255, .38); border-radius: 13px; background: rgba(5, 20, 40, .72); }
+    .workout-stat small { display: block; color: #c5d5ee; font-size: 11px; }
+    .workout-stat strong { display: block; margin-top: 5px; color: #fff; font-size: 18px; overflow-wrap: anywhere; }
+    .workout-tracking-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+    .workout-chart { display: flex; min-height: 170px; align-items: end; gap: 8px; overflow-x: auto; padding: 12px 4px 2px; border-bottom: 1px solid rgba(137, 197, 255, .3); }
+    .workout-chart-empty { align-self: center; color: #c5d5ee; font-size: 12px; }
+    .workout-chart-column { display: grid; min-width: 42px; height: 140px; flex: 1 0 42px; grid-template-rows: 1fr auto; justify-items: center; gap: 5px; }
+    .workout-chart-bar-wrap { display: flex; width: 100%; height: 100%; align-items: end; justify-content: center; }
+    .workout-chart-bar { width: min(28px, 72%); min-height: 3px; border-radius: 6px 6px 2px 2px; background: linear-gradient(180deg, #8be6ff, #168cff); box-shadow: 0 0 9px rgba(53, 178, 255, .35); }
+    .workout-chart-column small { color: #c5d5ee; font-size: 10px; white-space: nowrap; }
+    .workout-history { max-height: 420px; overflow-y: auto; margin-top: 14px; }
+    .workout-history-item { align-items: flex-start; }
+    .workout-program { margin-top: 14px; border-top: 1px solid rgba(137, 197, 255, .25); padding-top: 12px; }
+    .workout-program summary { color: #b7ecff; font-weight: 750; cursor: pointer; }
+    .workout-program-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 7px; margin: 10px 0 0; padding: 0; list-style: none; }
+    .workout-program-list li { padding: 8px; border-radius: 9px; background: rgba(3, 14, 32, .62); color: #eaf2ff; font-size: 12px; }
+    .exercise-catalog-intro { color: #c5d5ee; font-size: 13px; line-height: 1.55; }
+    .exercise-catalog-filters { display: grid; grid-template-columns: minmax(180px, 2fr) repeat(2, minmax(150px, 1fr)); gap: 10px; margin: 14px 0; }
+    .exercise-catalog-filters label { display: grid; gap: 5px; color: #dceaff; font-size: 12px; font-weight: 700; }
+    .exercise-catalog-filters input, .exercise-catalog-filters select { width: 100%; min-height: 44px; padding: 8px 10px; border: 1px solid rgba(130, 190, 235, .62); border-radius: 10px; color: #f3f7ff; background: #07182e; font: inherit; }
+    .exercise-catalog-count { min-height: 20px; margin: 0 0 10px; color: #b7ecff; font-size: 12px; }
+    .exercise-catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 11px; }
+    .exercise-catalog-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(130, 220, 255, .4); border-radius: 14px; background: linear-gradient(145deg, rgba(10, 31, 64, .97), rgba(4, 14, 33, .97)); }
+    .exercise-catalog-card img { display: block; width: 100%; flex: 0 0 auto; aspect-ratio: 1.7; object-fit: cover; background: #0a1728; }
+    .exercise-catalog-card-body { display: flex; flex: 1; flex-direction: column; gap: 7px; padding: 11px; }
+    .exercise-catalog-card h3 { margin: 0; font-size: 15px; }
+    .exercise-catalog-meta { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; color: #d2e0f3; font-size: 11px; }
+    .exercise-catalog-actions { display: flex; gap: 7px; margin-top: auto; padding-top: 4px; }
+    .exercise-catalog-actions button { min-height: 40px; flex: 1; padding: 7px 9px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 9px; color: #eaf5ff; background: #102b4b; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .exercise-catalog-actions .exercise-detail-trigger { border-color: rgba(255, 183, 62, .75); color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); }
+    .exercise-catalog-empty { grid-column: 1 / -1; padding: 18px; border: 1px dashed rgba(130, 220, 255, .45); border-radius: 12px; color: #c5d5ee; text-align: center; }
+    .exercise-detail-panel { margin-top: 18px; padding: 16px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 16px; background: linear-gradient(145deg, rgba(9, 29, 59, .98), rgba(4, 14, 33, .98)); box-shadow: 0 0 18px rgba(53, 178, 255, .15); }
+    .exercise-detail-panel[hidden] { display: none; }
+    .exercise-detail-heading { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px; }
+    .exercise-detail-heading h3 { margin: 0 0 6px; font-size: clamp(20px, 3vw, 26px); }
+    .exercise-detail-heading p { margin: 0; color: #c5d5ee; font-size: 12px; }
+    .exercise-detail-close { min-height: 40px; padding: 7px 12px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 9px; color: #eaf5ff; background: #102b4b; cursor: pointer; }
+    .exercise-detail-layout { display: grid; grid-template-columns: minmax(240px, .9fr) minmax(0, 1.3fr); gap: 16px; margin-top: 14px; }
+    .exercise-detail-visual { position: relative; height: clamp(240px, 38vw, 390px); min-height: 240px; overflow: hidden; border: 1px solid rgba(130, 220, 255, .35); border-radius: 13px; background: #07182e; }
+    .exercise-detail-visual img { display: block; width: 100%; height: 100%; max-height: 390px; object-fit: cover; }
+    .exercise-detail-visual img[hidden] { display: none; }
+    .exercise-model-stage { position: absolute; inset: 0; min-height: 280px; background: radial-gradient(circle at 50% 35%, #173657, #07111f 75%); }
+    .exercise-model-stage[hidden], .exercise-model-controls[hidden] { display: none; }
+    .exercise-model-stage canvas { display: block; width: 100%; height: 100%; }
+    .exercise-detail-static-note { position: absolute; right: 8px; bottom: 8px; left: 8px; padding: 7px 9px; border-radius: 8px; color: #fff; background: rgba(2, 10, 24, .86); font-size: 11px; }
+    .exercise-detail-static-note[hidden] { display: none; }
+    .exercise-detail-copy { display: grid; align-content: start; gap: 12px; }
+    .exercise-detail-copy h4 { margin: 0 0 5px; color: #b7ecff; font-size: 14px; }
+    .exercise-detail-copy p, .exercise-detail-copy li { color: #e0e9f7; font-size: 13px; line-height: 1.55; }
+    .exercise-detail-copy p { margin: 0; }
+    .exercise-detail-copy ul { display: grid; gap: 4px; margin: 0; padding-left: 20px; }
+    .exercise-model-controls { display: grid; gap: 8px; }
+    .exercise-model-control-row, .exercise-model-view-buttons { display: flex; flex-wrap: wrap; gap: 7px; }
+    .exercise-model-controls button { min-height: 40px; padding: 7px 10px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 9px; color: #eaf5ff; background: #102b4b; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .exercise-model-controls button[aria-pressed="true"] { border-color: #ffc027; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); }
+    .exercise-model-controls button:disabled { opacity: .55; cursor: not-allowed; }
+    .exercise-model-status { min-height: 18px; color: #b7ecff !important; font-size: 12px !important; }
+    .exercise-guided-timer { display: grid; gap: 10px; padding: 12px; border: 1px solid rgba(130, 220, 255, .4); border-radius: 12px; background: rgba(3, 14, 32, .62); }
+    .exercise-guided-timer h4 { margin: 0 !important; }
+    .exercise-guided-timer-plan, .exercise-guided-timer-status, .exercise-guided-timer-help { margin: 0 !important; color: #c5d5ee !important; font-size: 12px !important; line-height: 1.45; }
+    .exercise-coach-announcement { min-height: 1.4em; margin: 0 !important; color: #ffe2a6 !important; font-size: 12px !important; font-weight: 750; line-height: 1.45; }
+    .exercise-guided-timer-display { color: #fff; font-size: clamp(26px, 5vw, 36px); font-weight: 850; font-variant-numeric: tabular-nums; text-align: center; text-shadow: 0 0 12px rgba(53, 178, 255, .35); }
+    .exercise-guided-timer-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; }
+    .exercise-guided-timer-fields label { display: grid; gap: 4px; color: #dceaff; font-size: 11px; font-weight: 700; }
+    .exercise-guided-timer-fields input { width: 100%; min-width: 0; min-height: 40px; padding: 7px; border: 1px solid rgba(130, 190, 235, .62); border-radius: 9px; color: #f3f7ff; background: #07182e; font: inherit; }
+    .exercise-guided-timer-fields input:disabled { opacity: .58; }
+    .exercise-guided-timer-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+    .exercise-guided-timer-actions button { min-height: 40px; padding: 7px 10px; border: 1px solid rgba(130, 220, 255, .55); border-radius: 9px; color: #eaf5ff; background: #102b4b; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .exercise-guided-timer-actions .exercise-guided-timer-start { border-color: rgba(255, 183, 62, .75); color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); }
+    .exercise-guided-timer-actions button:disabled { opacity: .5; cursor: not-allowed; }
+    .exercise-muscle-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+    .exercise-muscle-chip { padding: 5px 8px; border-radius: 99px; color: #fff; background: #55414a; font-size: 11px; font-weight: 750; }
+    .exercise-muscle-chip.primary { background: #a63d46; }
+    .exercise-muscle-chip.secondary { background: #a46525; }
+    .exercise-muscle-legend { display: flex; flex-wrap: wrap; gap: 8px 12px; margin-top: 7px; color: #d7e3f2; font-size: 11px; }
+    .exercise-muscle-legend[hidden], .exercise-guided-timer-actions button[hidden] { display: none; }
+    .exercise-muscle-legend span { display: inline-flex; align-items: center; gap: 5px; }
+    .exercise-muscle-legend i { width: 10px; height: 10px; border-radius: 50%; background: #ff3138; box-shadow: 0 0 8px rgba(255, 49, 56, .65); }
+    .exercise-muscle-legend .secondary i { background: #ff9a36; box-shadow: 0 0 8px rgba(255, 154, 54, .55); }
+    .exercise-attribution { color: #aebdd2 !important; font-size: 11px !important; }
+    .exercise-attribution a { color: #9cddff; }
+    .exercise-detail-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .exercise-detail-links a { min-height: 42px; display: inline-flex; align-items: center; justify-content: center; padding: 8px 12px; border: 1px solid rgba(255, 183, 62, .75); border-radius: 10px; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff8510); font: inherit; font-size: 12px; font-weight: 800; text-decoration: none; cursor: pointer; }
+    @media (max-width: 560px) {
+      .workout-tracking-grid { grid-template-columns: 1fr; }
+      .workout-session-clock { width: 100%; margin-left: 0; }
+      .workout-calorie-settings { grid-template-columns: 1fr; }
+      .exercise-catalog-filters, .exercise-detail-layout { grid-template-columns: 1fr; }
+      .exercise-detail-visual { height: 280px; min-height: 0; }
+    }
     #exercisePage .feature-panel, #exercisePage .video-card { border-color: rgba(130, 220, 255, .68); box-shadow: 0 0 5px rgba(112, 218, 255, .55), 0 0 15px rgba(53, 178, 255, .24), 0 8px 20px rgba(0, 0, 0, .3), inset 0 0 0 1px rgba(191, 239, 255, .18); }
     #exercisePage .exercise-section { position: relative; padding: 14px; border: 1px solid rgba(130, 220, 255, .48); border-radius: 20px; background: linear-gradient(145deg, rgba(8, 25, 50, .56), rgba(4, 14, 33, .48)); box-shadow: inset 0 0 12px rgba(53, 178, 255, .06), 0 0 10px rgba(53, 178, 255, .1); }
     #exercisePage .exercise-section-title { text-shadow: 0 0 12px rgba(112, 218, 255, .18); }
@@ -1173,7 +1291,8 @@
     @media (max-width: 1050px) {
       .nutrition-layout { grid-template-columns: 1fr; }
       .nutrition-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .meal-grid, .recipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .meal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .recipe-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .video-grid, .exercise-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .exercise-video-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .home-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1185,7 +1304,8 @@
     @media (max-width: 560px) {
       .feature-banner { min-height: 154px; padding: 18px 14px; background-position: center, 60% center; }
       .feature-banner p { max-width: 34ch; font-size: 14px; }
-      .exercise-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .exercise-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; padding: 12px; }
+      .exercise-filter-heading { grid-column: 1 / -1; }
       .exercise-filter { width: 100%; padding-inline: 8px; font-size: 14px; }
       .nutrition-aside, .video-grid { grid-template-columns: 1fr; }
       .shop-grid { grid-template-columns: 1fr; }
@@ -1334,19 +1454,14 @@
       background: linear-gradient(145deg, rgba(9, 25, 50, .98), rgba(5, 15, 32, .98));
     }
     #nutritionPage .meal-card,
-    #nutritionPage .recipe-card,
     #nutritionPage .nutrition-aside > .feature-panel {
       background: linear-gradient(145deg, #0b1c36, #071329);
     }
     #nutritionPage .feature-heading { font-size: 20px; }
-    #nutritionPage .meal-card h3,
-    #nutritionPage .recipe-copy h3 { font-size: 16px; }
-    #nutritionPage .meal-card p,
-    #nutritionPage .recipe-copy > p { color: #e0e9f7; font-size: 13px; line-height: 1.45; }
+    #nutritionPage .meal-card h3 { font-size: 16px; }
+    #nutritionPage .meal-card p { color: #e0e9f7; font-size: 13px; line-height: 1.45; }
     #nutritionPage .meal-macros { font-size: 12px; }
     #nutritionPage .nutrition-note { color: #e0e9f7; font-size: 13px; }
-    #nutritionPage .recipe-details { font-size: 13px; }
-    #nutritionPage .recipe-details p { color: #e0e9f7; line-height: 1.55; }
     #nutritionPage .nutrition-bar { font-size: 13px; }
     #nutritionPage .water-add { font-size: 14px; }
     body:not(.light) #homeView .panel:not(.daily-challenge) {
@@ -1376,6 +1491,8 @@
     .exercise-watch-button { display: block; width: 100%; margin-top: 10px; padding: 8px 10px; border: 1px solid rgba(130, 220, 255, .62); border-radius: 10px; color: #e8f7ff; background: rgba(45, 154, 230, .13); font-size: 12px; font-weight: 750; cursor: pointer; }
     .exercise-watch-button:hover:not(:disabled) { background: rgba(45, 154, 230, .25); }
     .exercise-watch-button:disabled { color: #b9c9e0; cursor: default; opacity: .8; }
+    .workout-video-prefill-button { display: block; width: 100%; margin-top: 8px; padding: 8px 10px; border: 1px solid rgba(255, 192, 39, .7); border-radius: 10px; color: #191018; background: linear-gradient(180deg, #ffd24c, #ff9410); font-size: 12px; font-weight: 800; cursor: pointer; }
+    .workout-video-prefill-button[hidden] { display: none; }
     .exercise-watch-progress { height: 7px; margin-top: 7px; overflow: hidden; border-radius: 99px; background: rgba(12, 31, 57, .95); }
     .exercise-watch-progress[hidden] { display: none; }
     .exercise-watch-progress > span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #39d8ff, #718dff, #bd7bff); box-shadow: 0 0 9px rgba(81, 191, 255, .55); transition: width .3s ease; }
@@ -1856,11 +1973,11 @@
           <div class="nutrition-main">
             <section class="feature-panel french-recipe-panel" aria-labelledby="worldRecipesTitle">
               <h2 class="feature-heading" id="worldRecipesTitle"><span aria-hidden="true">👩‍🍳</span> Chercher une recette</h2>
-              <p class="recipe-search-note">Cherche parmi les recettes en français NutriPulse par nom ou par ingrédient.</p>
+              <p class="recipe-search-note">Tape le nom d’une recette ou un ingrédient pour trouver une entrée, un plat, un dessert, un smoothie ou un porridge.</p>
               <form class="recipe-search-form" id="worldRecipeForm">
                 <label class="field" for="worldRecipeQuery">Nom de la recette
                   <span class="recipe-autocomplete-wrap">
-                    <input id="worldRecipeQuery" name="query" type="search" minlength="1" maxlength="80" placeholder="Ex. paella, pâte à choux, poulet…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="worldRecipeSuggestions" required>
+                    <input id="worldRecipeQuery" name="query" type="search" minlength="1" maxlength="80" placeholder="Ex. avocat, porridge, smoothie, lasagnes…" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="worldRecipeSuggestions" required>
                     <span class="recipe-autocomplete-list" id="worldRecipeSuggestions" role="listbox" hidden></span>
                   </span>
                 </label>
@@ -1890,25 +2007,25 @@
               <div class="meal-grid">
                 <article class="meal-card">
                   <h3>☀️ Petit-déjeuner</h3>
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Bol de petit-déjeuner équilibré avec fruits et céréales" loading="lazy">
+                  <img class="food-photo" src="assets/meal-breakfast.jpg" alt="Bol de petit-déjeuner équilibré avec fruits et céréales" loading="lazy">
                   <p>Œuf, avocat, pain complet et fruits</p>
                   <div class="meal-macros"><span>🔥 env. 390 kcal</span><span>💪 env. 18 g prot.</span></div>
                 </article>
                 <article class="meal-card">
                   <h3>☀️ Déjeuner</h3>
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Salade complète colorée avec légumes et protéines" loading="lazy">
+                  <img class="food-photo" src="assets/meal-lunch.jpg" alt="Salade complète colorée avec légumes et protéines" loading="lazy">
                   <p>Poulet, quinoa et légumes de saison</p>
                   <div class="meal-macros"><span>🔥 env. 520 kcal</span><span>💪 env. 35 g prot.</span></div>
                 </article>
                 <article class="meal-card">
                   <h3>🌙 Dîner</h3>
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Assiette de légumes frais, céréales et protéines" loading="lazy">
+                  <img class="food-photo" src="assets/meal-dinner.jpg" alt="Assiette de légumes frais, céréales et protéines" loading="lazy">
                   <p>Quinoa, pois chiches et légumes de saison</p>
                   <div class="meal-macros"><span>🔥 env. 500 kcal</span><span>💪 env. 32 g prot.</span></div>
                 </article>
                 <article class="meal-card">
                   <h3>🍎 Collation</h3>
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Yaourt et fruits frais pour une collation" loading="lazy">
+                  <img class="food-photo" src="assets/meal-snack.jpg" alt="Yaourt et fruits frais pour une collation" loading="lazy">
                   <p>Crudités, houmous et un fruit de saison</p>
                   <div class="meal-macros"><span>🔥 env. 210 kcal</span><span>💪 env. 10 g prot.</span></div>
                 </article>
@@ -1920,51 +2037,51 @@
               <h2 class="feature-heading" id="recipesTitle"><span aria-hidden="true">👩‍🍳</span> Des recettes simples et équilibrées</h2>
               <div class="recipe-grid">
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Bowl coloré de quinoa, légumes et avocat" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-bowl-quinoa.jpg" alt="Bowl coloré de quinoa, légumes et avocat" loading="lazy">
                   <div class="recipe-copy"><h3>Bowl quinoa &amp; avocat</h3><p>20 min · déjeuner · env. 480 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Ingrédients : quinoa cuit, avocat, pois chiches, tomates, concombre et citron. Assemble les ingrédients, assaisonne avec citron et huile d’olive, puis sers frais.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Pancakes aux fruits rouges" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-toast-avocado.jpg" alt="Pancakes aux fruits rouges" loading="lazy">
                   <div class="recipe-copy"><h3>Toast œuf &amp; avocat</h3><p>15 min · petit-déjeuner · env. 360 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Ingrédients : pain complet, œuf, avocat et tomates. Fais cuire l’œuf, écrase l’avocat avec un peu de citron et sers sur le pain grillé avec les tomates.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Salade de poulet et de légumes frais" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-chicken-salad.jpg" alt="Salade de poulet et de légumes frais" loading="lazy">
                   <div class="recipe-copy"><h3>Salade poulet &amp; légumes</h3><p>25 min · déjeuner · env. 440 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Ingrédients : poulet, salade, tomates, concombre, maïs et pain complet. Fais cuire le poulet à cœur, coupe les légumes et accompagne d’une vinaigrette légère.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Omelette aux légumes et aux épinards" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-green-bowl.jpg" alt="Omelette aux légumes et aux épinards" loading="lazy">
                   <div class="recipe-copy"><h3>Bowl de légumes verts</h3><p>15 min · repas léger · env. 350 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Ingrédients : lentilles, épinards, concombre et citron. Réchauffe les lentilles, ajoute les légumes frais et assaisonne avec du citron et un filet d’huile d’olive.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1528825871115-3581a5387919?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Bananes mûres utilisées pour un porridge" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-banana-porridge.jpg" alt="Bananes mûres utilisées pour un porridge" loading="lazy">
                   <div class="recipe-copy"><h3>Porridge banane &amp; cannelle</h3><p>10 min · petit-déjeuner · env. 350 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 50 g de flocons d’avoine, 200 ml de lait ou boisson végétale, 1 banane et une pincée de cannelle. Fais cuire l’avoine dans le lait 5 minutes en remuant. Sers avec la banane coupée et la cannelle.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Yaourt avec fruits frais et graines" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-yogurt-fruit.jpg" alt="Yaourt avec fruits frais et graines" loading="lazy">
                   <div class="recipe-copy"><h3>Yaourt grec, fruits &amp; graines</h3><p>5 min · collation · env. 280 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 150 g de yaourt grec nature, 1 pomme ou une poignée de fruits rouges, 20 g de flocons d’avoine et 1 cuillère à café de graines. Coupe les fruits, puis ajoute-les au yaourt avec l’avoine et les graines.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Filet de saumon accompagné de légumes" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-salmon-broccoli.jpg" alt="Filet de saumon accompagné de légumes" loading="lazy">
                   <div class="recipe-copy"><h3>Saumon, brocoli &amp; riz</h3><p>30 min · dîner · env. 520 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 120 g de saumon, 60 g de riz cru, 150 g de brocoli, citron et 1 cuillère à café d’huile d’olive. Fais cuire le riz et le brocoli. Enfourne le saumon avec le citron à 190 °C pendant 12 à 15 minutes, puis sers ensemble.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Curry de légumes et pois chiches" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-chickpea-curry.jpg" alt="Curry de légumes et pois chiches" loading="lazy">
                   <div class="recipe-copy"><h3>Curry de pois chiches</h3><p>25 min · déjeuner végétarien · env. 430 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 120 g de pois chiches cuits, 150 g de tomates concassées, 50 ml de lait de coco, épinards et curry doux. Fais mijoter les tomates, le lait de coco et les épices 10 minutes. Ajoute les pois chiches et les épinards, puis cuis encore 5 minutes. Accompagne d’un peu de riz si tu le souhaites.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Pâtes servies avec des légumes et des tomates" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-wholewheat-pasta.jpg" alt="Pâtes servies avec des légumes et des tomates" loading="lazy">
                   <div class="recipe-copy"><h3>Pâtes complètes tomate &amp; courgette</h3><p>25 min · déjeuner · env. 460 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 75 g de pâtes complètes crues, 1 petite courgette, 150 g de tomates concassées, ail et herbes. Fais cuire les pâtes. Fais revenir la courgette en dés, ajoute tomate, ail et herbes, laisse mijoter 10 minutes et mélange avec les pâtes.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Wrap garni de poulet et de légumes frais" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-chicken-wrap.jpg" alt="Wrap garni de poulet et de légumes frais" loading="lazy">
                   <div class="recipe-copy"><h3>Wrap poulet &amp; houmous</h3><p>15 min · déjeuner à emporter · env. 420 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 1 tortilla complète, 100 g de poulet cuit, 1 cuillère à soupe de houmous, salade, tomate et concombre. Étale le houmous sur la tortilla, ajoute le poulet et les légumes en lamelles, puis roule fermement.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Œufs et légumes cuisinés pour une omelette" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-spinach-omelette.jpg" alt="Œufs et légumes cuisinés pour une omelette" loading="lazy">
                   <div class="recipe-copy"><h3>Omelette épinards &amp; feta</h3><p>15 min · dîner léger · env. 330 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 2 œufs, une poignée d’épinards, 25 g de feta et poivre. Fais tomber les épinards dans une poêle. Ajoute les œufs battus, cuis à feu doux et parsème de feta émiettée avant de plier l’omelette.</p></details></div>
                 </article>
                 <article class="recipe-card">
-                  <img class="food-photo" src="https://images.unsplash.com/photo-1547592180-85f173990554?w=640&amp;auto=format&amp;fit=crop&amp;q=80" alt="Soupe de lentilles et de légumes" loading="lazy">
+                  <img class="food-photo" src="assets/recipe-lentil-soup.jpg" alt="Soupe de lentilles et de légumes" loading="lazy">
                   <div class="recipe-copy"><h3>Soupe de lentilles &amp; carottes</h3><p>35 min · dîner · env. 390 kcal</p><details class="recipe-details"><summary>Voir la recette</summary><p>Pour 1 personne : 70 g de lentilles sèches, 1 carotte, ½ oignon, 300 ml de bouillon et cumin. Fais revenir l’oignon et la carotte en dés, ajoute les lentilles et le bouillon, puis laisse mijoter environ 25 minutes jusqu’à ce que les lentilles soient tendres.</p></details></div>
                 </article>
               </div>
@@ -2058,6 +2175,7 @@
           <p class="rest-timer-note">En mode exercice + repos, adapte les durées à ton entraînement : ce chronomètre ne contrôle pas les vidéos. Le décompte continue pendant la navigation sur le site. Garde la page ouverte : aucune alerte sonore ou notification n’est garantie lorsque le téléphone est verrouillé.</p>
         </section>
         <div class="exercise-filters" role="group" aria-label="Filtrer les séances">
+          <p class="exercise-filter-heading">Filtrer les séances par niveau</p>
           <button class="exercise-filter" type="button" data-exercise-filter="beginner" aria-pressed="true">Débutant</button>
           <button class="exercise-filter" type="button" data-exercise-filter="intermediate" aria-pressed="false">Intermédiaire</button>
           <button class="exercise-filter" type="button" data-exercise-filter="advanced" aria-pressed="false">Avancé</button>
@@ -2238,6 +2356,190 @@
         </section>
         </template>
         <p class="exercise-note">Les vidéos viennent de la chaîne officielle Gym Direct. Toutes les activités sont ouvertes aux femmes comme aux hommes : choisis le niveau qui te convient, adapte les mouvements et arrête-toi si tu ressens une douleur.</p>
+        <section class="feature-panel workout-logbook" aria-labelledby="workoutLogbookTitle">
+          <h2 class="feature-heading" id="workoutLogbookTitle"><span aria-hidden="true">🏋️</span> Carnet de musculation</h2>
+          <p>Enregistre tes exercices, tes charges et tes performances. Tes séances restent sauvegardées dans ce navigateur sur cet appareil.</p>
+          <div class="workout-calorie-settings">
+            <label for="workoutBodyWeight">Poids corporel pour estimer les calories (kg)
+              <input id="workoutBodyWeight" type="number" inputmode="decimal" min="20" max="350" step="0.1" placeholder="Facultatif">
+            </label>
+            <p>Calories indicatives selon la durée et les activités notées. Une séance ne mesure pas une perte de poids ; les variations immédiates sont souvent liées à l’eau.</p>
+          </div>
+          <div class="workout-session-controls">
+            <p class="workout-session-status" id="workoutSessionStatus" role="status" aria-live="polite">Commence une séance pour ajouter tes exercices.</p>
+            <span class="workout-session-clock" id="workoutSessionElapsed" role="timer" aria-label="Durée de la séance">00:00</span>
+            <button class="primary-button" id="workoutStartButton" type="button">Commencer ma séance</button>
+            <button class="workout-finish-button" id="workoutFinishButton" type="button" disabled>Terminer ma séance</button>
+          </div>
+          <form id="workoutExerciseForm">
+            <fieldset class="workout-exercise-fields" id="workoutExerciseFields" disabled>
+              <legend>Ajouter un exercice à la séance</legend>
+              <div class="workout-form-grid">
+                <label for="workoutCategory">Catégorie
+                  <select id="workoutCategory" required>
+                    <option value="">Choisir…</option>
+                    <option>Pectoraux</option><option>Dos</option><option>Épaules</option>
+                    <option>Biceps</option><option>Triceps</option><option>Abdominaux</option>
+                    <option>Jambes</option><option>Fessiers</option><option>Cardio</option>
+                    <option>Corps entier</option><option>Yoga / Pilates</option><option>Cardio-boxe</option>
+                  </select>
+                </label>
+                <label for="workoutExerciseName">Exercice
+                  <input id="workoutExerciseName" type="text" maxlength="60" list="workoutExerciseSuggestions" placeholder="Choisis ou écris un exercice" required>
+                  <datalist id="workoutExerciseSuggestions"></datalist>
+                </label>
+                <label for="workoutSets">Séries
+                  <input id="workoutSets" type="number" inputmode="numeric" min="1" max="50" step="1" value="3" required>
+                </label>
+                <label for="workoutReps">Répétitions
+                  <input id="workoutReps" type="number" inputmode="numeric" min="1" max="500" step="1" value="10" required>
+                </label>
+                <label for="workoutWeight">Poids (kg)
+                  <input id="workoutWeight" type="number" inputmode="decimal" min="0" max="1000" step="0.5" value="0" required>
+                </label>
+                <label for="workoutRest">Repos entre séries (secondes)
+                  <input id="workoutRest" type="number" inputmode="numeric" min="1" max="600" step="1" value="60" required>
+                </label>
+              </div>
+              <button class="primary-button workout-add-button" type="submit">Ajouter cet exercice</button>
+            </fieldset>
+          </form>
+          <ol class="workout-draft-list" id="workoutDraftList" aria-label="Exercices de la séance en cours"></ol>
+          <p class="workout-reward-status" id="workoutRewardStatus" role="status" aria-live="polite"></p>
+
+          <h3 class="feature-heading">Progression et statistiques</h3>
+          <div class="workout-stats-grid" aria-live="polite">
+            <div class="workout-stat"><small>Séances terminées</small><strong id="workoutSessionCount">0</strong></div>
+            <div class="workout-stat"><small>Temps total d’entraînement</small><strong id="workoutTotalTime">0 min</strong></div>
+            <div class="workout-stat"><small>Volume soulevé (kg × répétitions)</small><strong id="workoutTotalVolume">0 kg</strong></div>
+            <div class="workout-stat"><small>Calories estimées</small><strong id="workoutTotalCalories">—</strong></div>
+            <div class="workout-stat"><small>Record personnel</small><strong id="workoutTopRecord">—</strong></div>
+          </div>
+          <div class="workout-tracking-grid">
+            <section aria-labelledby="workoutChartTitle">
+              <h3 id="workoutChartTitle">Volume par séance</h3>
+              <div class="workout-chart" id="workoutProgressChart" role="img" aria-label="Graphique de progression des séances">
+                <span class="workout-chart-empty">Termine une séance pour afficher ta progression.</span>
+              </div>
+            </section>
+            <section aria-labelledby="workoutRecordsTitle">
+              <h3 id="workoutRecordsTitle">Records par exercice</h3>
+              <ul class="workout-record-list" id="workoutRecords"></ul>
+            </section>
+          </div>
+          <section class="workout-history" aria-labelledby="workoutHistoryTitle">
+            <h3 id="workoutHistoryTitle">Historique des entraînements</h3>
+            <ol class="workout-history-list" id="workoutHistory"></ol>
+          </section>
+          <details class="workout-program">
+            <summary>Exemple de programme hebdomadaire</summary>
+            <ul class="workout-program-list">
+              <li><strong>Lundi</strong> · Pectoraux et triceps</li>
+              <li><strong>Mardi</strong> · Dos et biceps</li>
+              <li><strong>Mercredi</strong> · Repos</li>
+              <li><strong>Jeudi</strong> · Jambes</li>
+              <li><strong>Vendredi</strong> · Épaules et abdominaux</li>
+              <li><strong>Samedi</strong> · Cardio</li>
+              <li><strong>Dimanche</strong> · Repos</li>
+            </ul>
+          </details>
+          <p class="exercise-note">Les animations disponibles se trouvent dans les fiches du catalogue. Elles montrent le mouvement réel, mais certains modèles sont des mannequins simplifiés sans charges d’entraînement. Les autres mouvements gardent une image fixe et un lien vidéo, sans animation fictive.</p>
+        </section>
+        <section class="feature-panel exercise-catalog" aria-labelledby="exerciseCatalogTitle">
+          <h2 class="feature-heading" id="exerciseCatalogTitle"><span aria-hidden="true">📚</span> Catalogue d’exercices</h2>
+          <p class="exercise-catalog-intro">Explore les mouvements par groupe musculaire ou par difficulté. Chaque fiche précise les muscles sollicités, les étapes, les erreurs fréquentes et la respiration, avec un chronomètre guidé pour les séries, répétitions ou durées et le repos. Les exercices marqués « Animation 3D » ouvrent une démonstration animée réelle ; certains utilisent un mannequin en bois simplifié sans charges visibles. Les autres restent illustrés par une image fixe et un lien vidéo.</p>
+          <div class="exercise-catalog-filters">
+            <label for="exerciseCatalogSearch">Rechercher un exercice
+              <input id="exerciseCatalogSearch" type="search" placeholder="Ex. squat, dos, gainage…">
+            </label>
+            <label for="exerciseCatalogCategory">Groupe musculaire
+              <select id="exerciseCatalogCategory">
+                <option value="">Tous les groupes</option>
+                <option>Pectoraux</option><option>Dos</option><option>Épaules</option>
+                <option>Biceps</option><option>Triceps</option><option>Abdominaux</option>
+                <option>Jambes</option><option>Fessiers</option><option>Cardio</option>
+              </select>
+            </label>
+            <label for="exerciseCatalogLevel">Difficulté
+              <select id="exerciseCatalogLevel">
+                <option value="">Tous les niveaux</option>
+                <option value="beginner">Débutant</option>
+                <option value="intermediate">Intermédiaire</option>
+                <option value="advanced">Avancé</option>
+              </select>
+            </label>
+          </div>
+          <p class="exercise-catalog-count" id="exerciseCatalogCount" role="status" aria-live="polite"></p>
+          <div class="exercise-catalog-grid" id="exerciseCatalogGrid"></div>
+          <section class="exercise-detail-panel" id="exerciseDetailPanel" aria-labelledby="exerciseDetailTitle" tabindex="-1" hidden>
+            <div class="exercise-detail-heading">
+              <div>
+                <h3 id="exerciseDetailTitle"></h3>
+                <p id="exerciseDetailMeta"></p>
+              </div>
+              <button class="exercise-detail-close" id="exerciseDetailClose" type="button">Fermer la fiche</button>
+            </div>
+            <div class="exercise-detail-layout">
+              <div class="exercise-detail-visual">
+                <img id="exerciseDetailImage" src="assets/exercise-hero.jpg" alt="">
+                <div class="exercise-model-stage" id="exerciseModelStage" hidden></div>
+                <span class="exercise-detail-static-note" id="exerciseDetailStaticNote">Image fixe — aucune animation 3D disponible pour ce mouvement.</span>
+              </div>
+              <div class="exercise-detail-copy">
+                <div class="exercise-model-controls" id="exerciseModelControls" hidden>
+                  <div class="exercise-model-control-row">
+                    <button id="exerciseModelPlay" type="button" aria-pressed="true">Ⅱ Pause</button>
+                    <button id="exerciseModelRepeat" type="button">↻ Répéter</button>
+                    <button id="exerciseModelRotate" type="button" aria-pressed="false">⟳ Rotation 360°</button>
+                  </div>
+                  <div class="exercise-model-view-buttons" role="group" aria-label="Vues du modèle 3D">
+                    <button type="button" data-exercise-view="front">Face</button>
+                    <button type="button" data-exercise-view="profile">Profil</button>
+                    <button type="button" data-exercise-view="back">Dos</button>
+                  </div>
+                </div>
+                <section class="exercise-guided-timer" aria-labelledby="exerciseGuidedTimerTitle">
+                  <h4 id="exerciseGuidedTimerTitle">Faire cet exercice maintenant</h4>
+                  <p class="exercise-guided-timer-plan" id="exerciseGuidedTimerPlan"></p>
+                  <p class="exercise-guided-timer-help">Quand une animation 3D est disponible, le mannequin montre sa pose de départ, suit le chronomètre, s’arrête au repos et repart après un décompte annoncé. Pour les répétitions, valide la fin de ta série : l’application ne détecte pas tes mouvements. Le chronomètre reste utilisable avec les exercices illustrés en image fixe.</p>
+                  <div class="exercise-guided-timer-display" id="exerciseGuidedTimerDisplay" role="timer" aria-label="Chronomètre de l’exercice">00:00</div>
+                  <div class="exercise-guided-timer-fields">
+                    <label for="exerciseGuidedTimerSets">Séries
+                      <input id="exerciseGuidedTimerSets" type="number" inputmode="numeric" min="1" max="30" step="1">
+                    </label>
+                    <label for="exerciseGuidedTimerPrep">Préparation (s)
+                      <input id="exerciseGuidedTimerPrep" type="number" inputmode="numeric" min="0" max="30" step="1" value="5">
+                    </label>
+                    <label for="exerciseGuidedTimerTarget">Répétitions / durée
+                      <input id="exerciseGuidedTimerTarget" type="text" maxlength="40">
+                    </label>
+                    <label for="exerciseGuidedTimerRest">Repos (secondes)
+                      <input id="exerciseGuidedTimerRest" type="number" inputmode="numeric" min="0" max="600" step="1">
+                    </label>
+                  </div>
+                  <div class="exercise-guided-timer-actions">
+                    <button class="exercise-guided-timer-start" id="exerciseGuidedTimerStart" type="button">▶ Démarrer la série</button>
+                    <button id="exerciseGuidedTimerCompleteSet" type="button">✓ Série terminée</button>
+                    <button id="exerciseGuidedTimerSkipRest" type="button" hidden>Passer le repos</button>
+                    <button id="exerciseGuidedTimerReset" type="button">↺ Réinitialiser</button>
+                  </div>
+                  <p class="exercise-guided-timer-status" id="exerciseGuidedTimerStatus" role="status" aria-live="polite"></p>
+                  <p class="exercise-coach-announcement" id="exerciseCoachAnnouncement" role="status" aria-live="assertive"></p>
+                </section>
+                <p class="exercise-model-status" id="exerciseModelStatus" role="status" aria-live="polite"></p>
+                <section><h4>Muscles sollicités</h4><p id="exerciseDetailMuscles"></p></section>
+                <section><h4>Repères musculaires</h4><div class="exercise-muscle-chips" id="exerciseDetailMuscleChips"></div><div class="exercise-muscle-legend" id="exerciseMuscleLegend" aria-label="Légende des zones musculaires" hidden><span><i aria-hidden="true"></i>Principal</span><span class="secondary"><i aria-hidden="true"></i>Secondaire</span></div><p class="exercise-model-status" id="exerciseMuscleHint"></p></section>
+                <section><h4>Exécution</h4><p id="exerciseDetailInstructions"></p></section>
+                <section><h4>Erreurs à éviter</h4><ul id="exerciseDetailErrors"></ul></section>
+                <section><h4>Respiration</h4><p id="exerciseDetailBreathing"></p></section>
+                <div class="exercise-detail-links">
+                  <a id="exerciseDetailVideo" href="#" target="_blank" rel="noopener noreferrer">Chercher une démonstration vidéo ↗</a>
+                </div>
+                <p class="exercise-attribution">Modèles humains CC0 via <a href="https://github.com/AssiamahS/opengym3d" target="_blank" rel="noopener noreferrer">OpenGym3D</a> (voir son <a href="https://assiamahs.github.io/opengym3d/exercises.json" target="_blank" rel="noopener noreferrer">catalogue et les licences</a>). Mannequin et animations Desk Break sous licence <a href="https://github.com/shlomorsh/desk-break/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT</a> (© 2026 Shlomy Reshef). Rendu avec <a href="https://github.com/mrdoob/three.js/blob/dev/LICENSE" target="_blank" rel="noopener noreferrer">Three.js (MIT)</a>.</p>
+              </div>
+            </div>
+          </section>
+        </section>
       </section>
 
       <section class="page-view" id="minigamesPage" data-page-view="minijeux" aria-labelledby="minigamesTitle" hidden>
@@ -2573,6 +2875,18 @@
     (() => {
       const $ = (selector, root = document) => root.querySelector(selector);
       const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const exercisePage = $("#exercisePage");
+      const workoutLogbook = $(".workout-logbook", exercisePage);
+      $(".rest-timer", exercisePage).after(workoutLogbook);
+
+      const exerciseCatalog = $(".exercise-catalog", exercisePage);
+      const exerciseFilters = $(".exercise-filters", exercisePage);
+      const exerciseUnlockHint = $("#exerciseUnlockHint", exercisePage);
+      const exerciseSessions = $('section[aria-labelledby="exerciseSessionsTitle"]', exercisePage);
+      const exerciseVideosNote = $$(".exercise-note", exercisePage)
+        .find(note => note.textContent.startsWith("Les vidéos viennent"));
+      exerciseCatalog.after(exerciseFilters, exerciseUnlockHint, exerciseSessions, exerciseVideosNote);
+
       const backdrop = $("#modalBackdrop");
       const modalBody = $("#modalBody");
       const toast = $("#toast");
@@ -2653,7 +2967,8 @@
         ["food-memory", 5],
         ["fruit-runner", 5],
         ["fruit-drop", 5],
-        ["daily-challenge", 5]
+        ["daily-challenge", 5],
+        ["workout-logbook", 10]
       ]);
       $$(".exercise-video-grid .video-card").forEach(card => {
         const preview = $(".video-preview", card);
@@ -3936,7 +4251,7 @@
       function tickRestTimer() {
         if (!restTimerRunning) return;
         const settings = timerSettings();
-        const now = Date.now();
+        const now = performance.now();
         let changed = false;
         while (restTimerRunning && now >= restTimerDeadline) {
           changed = true;
@@ -4007,7 +4322,7 @@
             return;
           }
           if (timerFinished) resetRestTimer();
-          restTimerDeadline = Date.now() + restTimerRemaining;
+          restTimerDeadline = performance.now() + restTimerRemaining;
           restTimerRunning = true;
           timerPaused = false;
           restTimerInterval = window.setInterval(tickRestTimer, 200);
@@ -4018,6 +4333,933 @@
       document.addEventListener("visibilitychange", () => {
         if (!document.hidden) tickRestTimer();
       });
+
+      const workoutStorageKey = "nutripulse-workout-logbook-v1";
+      const workoutCategories = ["Pectoraux", "Dos", "Épaules", "Biceps", "Triceps", "Abdominaux", "Jambes", "Fessiers", "Cardio", "Corps entier", "Yoga / Pilates", "Cardio-boxe"];
+      const workoutCalorieEstimateIsValid = estimate => estimate === undefined ||
+        Boolean(estimate && typeof estimate === "object" && Number.isInteger(estimate.min) &&
+          Number.isInteger(estimate.max) && estimate.min >= 0 && estimate.max >= estimate.min && estimate.max <= 10000);
+      const workoutExerciseIsValid = exercise => Boolean(exercise && typeof exercise === "object" && !Array.isArray(exercise) &&
+        workoutCategories.includes(exercise.category) && typeof exercise.name === "string" &&
+        exercise.name.trim().length > 0 && exercise.name.length <= 60 &&
+        Number.isInteger(exercise.sets) && exercise.sets >= 1 && exercise.sets <= 50 &&
+        Number.isInteger(exercise.reps) && exercise.reps >= 1 && exercise.reps <= 500 &&
+        Number.isFinite(exercise.weightKg) && exercise.weightKg >= 0 && exercise.weightKg <= 1000 &&
+        Number.isInteger(exercise.restSeconds) && exercise.restSeconds >= 1 && exercise.restSeconds <= 600);
+      const workoutSessionIsValid = session => Boolean(session && typeof session === "object" && !Array.isArray(session) &&
+        typeof session.id === "string" && session.id.length > 0 && session.id.length <= 100 &&
+        Number.isFinite(session.startedAt) && session.startedAt > 0 && session.startedAt <= 8640000000000000 &&
+        Number.isFinite(session.completedAt) && session.completedAt >= session.startedAt && session.completedAt <= 8640000000000000 &&
+        Array.isArray(session.exercises) && session.exercises.length > 0 && session.exercises.length <= 50 &&
+        session.exercises.every(workoutExerciseIsValid) && workoutCalorieEstimateIsValid(session.calorieEstimate));
+      const workoutActiveSessionIsValid = session => Boolean(session && typeof session === "object" && !Array.isArray(session) &&
+        Number.isFinite(session.startedAt) && session.startedAt > 0 && session.startedAt <= 8640000000000000 &&
+        Array.isArray(session.exercises) && session.exercises.length <= 50 &&
+        session.exercises.every(workoutExerciseIsValid));
+      let workoutLogbookState = { sessions: [], activeSession: null };
+      try {
+        const storedWorkout = JSON.parse(localStorage.getItem(workoutStorageKey) || "null");
+        if (storedWorkout !== null) {
+          if (!storedWorkout || storedWorkout.version !== 1 || !Array.isArray(storedWorkout.sessions) ||
+              !storedWorkout.sessions.every(workoutSessionIsValid) ||
+              (storedWorkout.activeSession !== null && !workoutActiveSessionIsValid(storedWorkout.activeSession))) {
+            throw new Error("Format du carnet d’entraînement invalide.");
+          }
+          workoutLogbookState = { sessions: storedWorkout.sessions, activeSession: storedWorkout.activeSession };
+        }
+      } catch (error) {
+        console.error("Impossible de charger le carnet d’entraînement.", error);
+        showToast("Le carnet enregistré n’a pas pu être chargé. Un nouveau carnet sera créé.");
+        $("#workoutSessionStatus").textContent = "Les anciennes données n’ont pas pu être lues ; les nouvelles séances seront enregistrées séparément.";
+      }
+
+      const workoutSessionStatus = $("#workoutSessionStatus");
+      const workoutSessionElapsed = $("#workoutSessionElapsed");
+      const workoutStartButton = $("#workoutStartButton");
+      const workoutFinishButton = $("#workoutFinishButton");
+      const workoutExerciseFields = $("#workoutExerciseFields");
+      const workoutExerciseForm = $("#workoutExerciseForm");
+      const workoutDraftList = $("#workoutDraftList");
+      const workoutRewardStatus = $("#workoutRewardStatus");
+      let workoutTimerInterval = 0;
+
+      function saveWorkoutLogbook() {
+        try {
+          localStorage.setItem(workoutStorageKey, JSON.stringify({ version: 1, ...workoutLogbookState }));
+          return true;
+        } catch (error) {
+          console.error("Impossible d’enregistrer le carnet d’entraînement.", error);
+          showToast("La séance n’a pas pu être enregistrée dans ce navigateur.");
+          return false;
+        }
+      }
+      function workoutVolume(exercises) {
+        return exercises.reduce((total, exercise) => total + exercise.sets * exercise.reps * exercise.weightKg, 0);
+      }
+      function workoutWeightText(weight) {
+        return `${weight.toLocaleString("fr-FR", { maximumFractionDigits: 1 })} kg`;
+      }
+      function workoutDurationText(seconds) {
+        const wholeSeconds = Math.floor(Math.max(0, seconds));
+        const wholeMinutes = Math.floor(wholeSeconds / 60);
+        const hours = Math.floor(wholeMinutes / 60);
+        const minutes = wholeMinutes % 60;
+        if (hours) return `${hours} h ${minutes} min`;
+        if (wholeSeconds > 0 && wholeMinutes === 0) return `${wholeSeconds} s`;
+        return `${wholeMinutes} min`;
+      }
+      function estimateWorkoutCalories(exercises, bodyWeightKg, durationSeconds) {
+        if (!Number.isFinite(bodyWeightKg) || bodyWeightKg < 20 || bodyWeightKg > 350 || durationSeconds <= 0 || !exercises.length) return null;
+        const metRanges = {
+          Cardio: [5, 9],
+          "Corps entier": [4, 7],
+          "Yoga / Pilates": [2, 4],
+          "Cardio-boxe": [5, 9]
+        };
+        const ranges = exercises.map(exercise => metRanges[exercise.category] || [3, 6]);
+        const minimumMet = ranges.reduce((sum, range) => sum + range[0], 0) / ranges.length;
+        const maximumMet = ranges.reduce((sum, range) => sum + range[1], 0) / ranges.length;
+        const caloriesFor = met => met * 3.5 * bodyWeightKg / 200 * durationSeconds / 60;
+        return {
+          min: Math.max(0, Math.round(caloriesFor(minimumMet) / 5) * 5),
+          max: Math.max(0, Math.round(caloriesFor(maximumMet) / 5) * 5)
+        };
+      }
+      function updateWorkoutClock() {
+        const active = workoutLogbookState.activeSession;
+        if (!active) {
+          workoutSessionElapsed.textContent = "00:00";
+          return;
+        }
+        const seconds = Math.floor(Math.max(0, Date.now() - active.startedAt) / 1000);
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor(seconds % 3600 / 60);
+        const remainder = seconds % 60;
+        workoutSessionElapsed.textContent = hours
+          ? `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(remainder).padStart(2, "0")}`
+          : `${String(minutes).padStart(2, "0")}:${String(remainder).padStart(2, "0")}`;
+      }
+      function renderWorkoutDraft() {
+        workoutDraftList.replaceChildren();
+        const active = workoutLogbookState.activeSession;
+        if (!active) return;
+        active.exercises.forEach((exercise, index) => {
+          const item = document.createElement("li");
+          item.className = "workout-draft-item";
+          const copy = document.createElement("span");
+          copy.className = "workout-draft-copy";
+          const title = document.createElement("strong");
+          title.textContent = `${exercise.name} · ${exercise.category}`;
+          const details = document.createElement("small");
+          details.textContent = `${exercise.sets} séries × ${exercise.reps} répétitions · ${workoutWeightText(exercise.weightKg)} · repos ${exercise.restSeconds} s`;
+          copy.append(title, details);
+          const actions = document.createElement("span");
+          actions.className = "workout-item-actions";
+          const restButton = document.createElement("button");
+          restButton.type = "button";
+          restButton.className = "workout-rest-button";
+          restButton.dataset.workoutAction = "rest";
+          restButton.dataset.workoutIndex = String(index);
+          restButton.textContent = `⏱ Repos ${exercise.restSeconds} s`;
+          const removeButton = document.createElement("button");
+          removeButton.type = "button";
+          removeButton.className = "workout-remove-button";
+          removeButton.dataset.workoutAction = "remove";
+          removeButton.dataset.workoutIndex = String(index);
+          removeButton.textContent = "Retirer";
+          actions.append(restButton, removeButton);
+          item.append(copy, actions);
+          workoutDraftList.append(item);
+        });
+      }
+      function renderWorkoutProgress() {
+        const sessions = workoutLogbookState.sessions;
+        const totalVolume = sessions.reduce((total, session) => total + workoutVolume(session.exercises), 0);
+        const totalDuration = sessions.reduce((total, session) => total + Math.floor((session.completedAt - session.startedAt) / 1000), 0);
+        const estimatedSessions = sessions.filter(session => session.calorieEstimate);
+        const calorieMinimum = estimatedSessions.reduce((total, session) => total + session.calorieEstimate.min, 0);
+        const calorieMaximum = estimatedSessions.reduce((total, session) => total + session.calorieEstimate.max, 0);
+        $("#workoutSessionCount").textContent = String(sessions.length);
+        $("#workoutTotalTime").textContent = workoutDurationText(totalDuration);
+        $("#workoutTotalVolume").textContent = workoutWeightText(Math.round(totalVolume * 10) / 10);
+        $("#workoutTotalCalories").textContent = estimatedSessions.length
+          ? `~${calorieMinimum}–${calorieMaximum} kcal`
+          : "Renseigne ton poids";
+
+        const records = new Map();
+        sessions.forEach(session => session.exercises.forEach(exercise => {
+          if (exercise.weightKg <= 0) return;
+          const key = `${exercise.category.toLocaleLowerCase("fr-FR")}:${exercise.name.trim().toLocaleLowerCase("fr-FR")}`;
+          const current = records.get(key);
+          if (!current || exercise.weightKg > current.weightKg) {
+            records.set(key, { name: exercise.name, category: exercise.category, weightKg: exercise.weightKg });
+          }
+        }));
+        const sortedRecords = [...records.values()].sort((first, second) => second.weightKg - first.weightKg);
+        $("#workoutTopRecord").textContent = sortedRecords.length
+          ? `${workoutWeightText(sortedRecords[0].weightKg)} · ${sortedRecords[0].name}`
+          : "—";
+        const recordsList = $("#workoutRecords");
+        recordsList.replaceChildren();
+        if (!sortedRecords.length) {
+          const empty = document.createElement("li");
+          empty.className = "workout-record-item";
+          empty.textContent = "Ajoute une charge pour commencer à suivre tes records.";
+          recordsList.append(empty);
+        } else {
+          sortedRecords.forEach(record => {
+            const item = document.createElement("li");
+            item.className = "workout-record-item";
+            const copy = document.createElement("span");
+            copy.className = "workout-draft-copy";
+            const name = document.createElement("strong");
+            name.textContent = record.name;
+            const category = document.createElement("small");
+            category.textContent = record.category;
+            const weight = document.createElement("strong");
+            weight.textContent = workoutWeightText(record.weightKg);
+            copy.append(name, category);
+            item.append(copy, weight);
+            recordsList.append(item);
+          });
+        }
+
+        const chart = $("#workoutProgressChart");
+        chart.replaceChildren();
+        const chartSessions = sessions.slice(0, 8).reverse();
+        if (!chartSessions.length) {
+          const empty = document.createElement("span");
+          empty.className = "workout-chart-empty";
+          empty.textContent = "Termine une séance pour afficher ta progression.";
+          chart.append(empty);
+        } else {
+          const maxVolume = Math.max(1, ...chartSessions.map(session => workoutVolume(session.exercises)));
+          chartSessions.forEach(session => {
+            const volume = workoutVolume(session.exercises);
+            const date = new Date(session.completedAt);
+            const column = document.createElement("div");
+            column.className = "workout-chart-column";
+            column.title = `${date.toLocaleDateString("fr-FR")} · ${workoutWeightText(volume)} de volume`;
+            const barWrap = document.createElement("span");
+            barWrap.className = "workout-chart-bar-wrap";
+            const bar = document.createElement("span");
+            bar.className = "workout-chart-bar";
+            bar.style.height = `${Math.max(3, volume / maxVolume * 100)}%`;
+            barWrap.append(bar);
+            const label = document.createElement("small");
+            label.textContent = date.toLocaleDateString("fr-FR", { day: "2-digit", month: "2-digit" });
+            column.append(barWrap, label);
+            chart.append(column);
+          });
+          chart.setAttribute("aria-label", `Volume soulevé pour les ${chartSessions.length} dernières séances.`);
+        }
+
+        const history = $("#workoutHistory");
+        history.replaceChildren();
+        if (!sessions.length) {
+          const empty = document.createElement("li");
+          empty.className = "workout-history-item";
+          empty.textContent = "Tes séances terminées apparaîtront ici.";
+          history.append(empty);
+        } else {
+          sessions.forEach(session => {
+            const item = document.createElement("li");
+            item.className = "workout-history-item";
+            const copy = document.createElement("span");
+            copy.className = "workout-history-copy";
+            const date = document.createElement("strong");
+            date.textContent = new Date(session.completedAt).toLocaleString("fr-FR", { dateStyle: "medium", timeStyle: "short" });
+            const exerciseSummary = document.createElement("small");
+            exerciseSummary.textContent = session.exercises.map(exercise =>
+              `${exercise.name} (${exercise.sets} × ${exercise.reps} · ${workoutWeightText(exercise.weightKg)})`).join(" · ");
+            const result = document.createElement("small");
+            const calorieText = session.calorieEstimate
+              ? ` · ~${session.calorieEstimate.min}–${session.calorieEstimate.max} kcal estimées`
+              : "";
+            result.textContent = `${session.exercises.length} exercice${session.exercises.length > 1 ? "s" : ""} · ${workoutDurationText(Math.floor((session.completedAt - session.startedAt) / 1000))} · volume ${workoutWeightText(workoutVolume(session.exercises))}${calorieText}`;
+            copy.append(date, exerciseSummary, result);
+            item.append(copy);
+            history.append(item);
+          });
+        }
+      }
+      function renderWorkoutLogbook() {
+        const active = workoutLogbookState.activeSession;
+        workoutExerciseFields.disabled = !active;
+        workoutStartButton.disabled = Boolean(active);
+        workoutFinishButton.disabled = !active || active.exercises.length === 0;
+        if (active) {
+          workoutSessionStatus.textContent = `${active.exercises.length} exercice${active.exercises.length > 1 ? "s" : ""} dans la séance en cours.`;
+        } else if (workoutLogbookState.sessions.length) {
+          workoutSessionStatus.textContent = "Prêt pour une nouvelle séance.";
+        }
+        renderWorkoutDraft();
+        renderWorkoutProgress();
+        updateWorkoutClock();
+      }
+      function startWorkoutRest(seconds) {
+        if (restTimerRunning) restTimerStart.click();
+        if (timerMode !== "rest") {
+          const restModeButton = timerModes.find(button => button.dataset.timerMode === "rest");
+          if (restModeButton) restModeButton.click();
+        }
+        restTimerSeconds.value = String(seconds);
+        resetRestTimer();
+        restTimerStart.click();
+        restTimerDisplay.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      workoutStartButton.addEventListener("click", () => {
+        if (workoutLogbookState.activeSession) return;
+        workoutLogbookState.activeSession = { startedAt: Date.now(), exercises: [] };
+        if (!saveWorkoutLogbook()) {
+          workoutLogbookState.activeSession = null;
+          return;
+        }
+        workoutRewardStatus.textContent = "";
+        renderWorkoutLogbook();
+        workoutTimerInterval = window.setInterval(updateWorkoutClock, 1000);
+      });
+      workoutExerciseForm.addEventListener("submit", event => {
+        event.preventDefault();
+        if (!workoutLogbookState.activeSession) return;
+        const exercise = {
+          category: $("#workoutCategory").value,
+          name: $("#workoutExerciseName").value.trim(),
+          sets: Number($("#workoutSets").value),
+          reps: Number($("#workoutReps").value),
+          weightKg: Number($("#workoutWeight").value),
+          restSeconds: Number($("#workoutRest").value)
+        };
+        if (!workoutExerciseForm.reportValidity()) return;
+        if (!workoutExerciseIsValid(exercise)) {
+          showToast("Vérifie les informations de l’exercice avant de l’ajouter.");
+          return;
+        }
+        workoutLogbookState.activeSession.exercises.push(exercise);
+        if (!saveWorkoutLogbook()) {
+          workoutLogbookState.activeSession.exercises.pop();
+          return;
+        }
+        workoutExerciseForm.reset();
+        renderWorkoutLogbook();
+      });
+      workoutDraftList.addEventListener("click", event => {
+        const button = event.target.closest("button[data-workout-action]");
+        if (!button || !workoutLogbookState.activeSession) return;
+        const index = Number(button.dataset.workoutIndex);
+        const exercise = workoutLogbookState.activeSession.exercises[index];
+        if (!exercise) return;
+        if (button.dataset.workoutAction === "rest") {
+          startWorkoutRest(exercise.restSeconds);
+          return;
+        }
+        if (button.dataset.workoutAction !== "remove") return;
+        const [removed] = workoutLogbookState.activeSession.exercises.splice(index, 1);
+        if (!saveWorkoutLogbook()) workoutLogbookState.activeSession.exercises.splice(index, 0, removed);
+        renderWorkoutLogbook();
+      });
+      workoutFinishButton.addEventListener("click", () => {
+        const active = workoutLogbookState.activeSession;
+        if (!active || active.exercises.length === 0) {
+          showToast("Ajoute au moins un exercice avant de terminer ta séance.");
+          return;
+        }
+        const bodyWeightInput = $("#workoutBodyWeight");
+        const bodyWeightText = bodyWeightInput.value.trim();
+        const bodyWeightKg = bodyWeightText === "" ? null : Number(bodyWeightText);
+        bodyWeightInput.setCustomValidity(bodyWeightKg === null ||
+          (Number.isFinite(bodyWeightKg) && bodyWeightKg >= 20 && bodyWeightKg <= 350)
+          ? ""
+          : "Entre un poids corporel entre 20 et 350 kg, ou laisse ce champ vide.");
+        if (!bodyWeightInput.reportValidity()) return;
+        const completedAt = Date.now();
+        const calorieEstimate = bodyWeightKg === null
+          ? null
+          : estimateWorkoutCalories(active.exercises, bodyWeightKg, (completedAt - active.startedAt) / 1000);
+        const session = {
+          id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`,
+          startedAt: active.startedAt,
+          completedAt,
+          exercises: active.exercises,
+          ...(calorieEstimate ? { calorieEstimate } : {})
+        };
+        const previousSessions = workoutLogbookState.sessions;
+        workoutLogbookState.sessions = [session, ...previousSessions];
+        workoutLogbookState.activeSession = null;
+        if (!saveWorkoutLogbook()) {
+          workoutLogbookState.sessions = previousSessions;
+          workoutLogbookState.activeSession = active;
+          renderWorkoutLogbook();
+          return;
+        }
+        window.clearInterval(workoutTimerInterval);
+        workoutTimerInterval = 0;
+        const previousXp = followupState.xpTotal;
+        followupState.xpTotal += 10;
+        if (saveFollowup()) {
+          refreshFollowup(false);
+          workoutRewardStatus.textContent = "Séance enregistrée : +10 XP NutriPulse.";
+        } else {
+          followupState.xpTotal = previousXp;
+          refreshFollowup(false);
+          workoutRewardStatus.textContent = "Séance enregistrée, mais les XP n’ont pas pu être sauvegardés.";
+        }
+        const reward = awardEffortPoints("workout-logbook", 10);
+        if (reward.awarded > 0) {
+          workoutRewardStatus.textContent += ` +${reward.awarded} points d’effort.`;
+        } else if (reward.duplicate) {
+          workoutRewardStatus.textContent += " Les points d’effort de séance ont déjà été attribués aujourd’hui.";
+        }
+        renderWorkoutLogbook();
+        workoutSessionStatus.textContent = "Séance terminée et enregistrée.";
+        showToast("Ta séance a été enregistrée.");
+      });
+      renderWorkoutLogbook();
+      if (workoutLogbookState.activeSession) workoutTimerInterval = window.setInterval(updateWorkoutClock, 1000);
+
+      const exerciseCatalogData = [
+        { id: "pompes", modelId: "push_up", name: "Pompes", category: "Pectoraux", level: "beginner", prescription: "3 × 6–12", image: "assets/exercise-pushups.jpg", muscles: "Pectoraux, triceps et épaules avant.", instructions: "Place les mains légèrement plus larges que les épaules et garde le corps aligné de la tête aux talons. Descends la poitrine vers le sol en contrôlant le mouvement, puis repousse le sol pour revenir.", errors: ["Laisser les hanches s’affaisser ou se relever.", "Écarter exagérément les coudes.", "Raccourcir l’amplitude si tu peux la faire sans douleur. "], breathing: "Inspire en descendant, souffle en repoussant.", query: "pompes technique débutant" },
+        { id: "developpe-couche", name: "Développé couché avec haltères", category: "Pectoraux", level: "intermediate", prescription: "3 × 8–12", image: "assets/exercise-curl.jpg", muscles: "Pectoraux, triceps et épaules avant.", instructions: "Allonge-toi sur un banc stable, pieds au sol et haltères au-dessus de la poitrine. Descends-les de chaque côté avec les poignets au-dessus des coudes, puis remonte sans entrechoquer les charges.", errors: ["Décoller les pieds ou cambrer fortement le dos.", "Laisser les poignets partir vers l’arrière.", "Choisir une charge qui empêche de contrôler la descente."], breathing: "Inspire en descendant les haltères, souffle en les remontant.", query: "développé couché haltères technique" },
+        { id: "developpe-incline", name: "Développé incliné", category: "Pectoraux", level: "advanced", prescription: "3 × 8–10", image: "assets/exercise-curl.jpg", muscles: "Haut des pectoraux, triceps et épaules avant.", instructions: "Règle le dossier sur une inclinaison modérée et stabilise tes pieds. Descends les haltères vers le haut de la poitrine, puis pousse-les vers le haut en gardant une trajectoire maîtrisée.", errors: ["Régler le banc trop verticalement.", "Laisser les coudes s’ouvrir à angle droit.", "Rebondir en bas du mouvement."], breathing: "Inspire pendant la descente, souffle pendant la poussée.", query: "développé incliné haltères technique" },
+        { id: "rowing-halteres", animationClip: "hinge-row-no-weight", modelView: "full", name: "Rowing penché au poids du corps", category: "Dos", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-curl.jpg", muscles: "Grand dorsal, milieu du dos et biceps.", instructions: "Penche le buste depuis les hanches, dos droit et bras relâchés. Tire les coudes vers l’arrière près du corps, rapproche doucement les omoplates, puis relâche lentement.", errors: ["Arrondir le dos.", "Donner un à-coup avec le bassin.", "Hausser les épaules vers les oreilles."], breathing: "Souffle en tirant les coudes, inspire en relâchant les bras.", query: "rowing penché au poids du corps" },
+        { id: "souleve-terre", name: "Soulevé de terre", category: "Dos", level: "advanced", prescription: "3 × 5–8", image: "assets/exercise-pushups.jpg", muscles: "Chaîne postérieure : fessiers, ischio-jambiers et muscles du dos.", instructions: "Place les pieds sous la barre et rapproche-la des tibias. Pousse dans le sol et tends les hanches et les genoux ensemble en gardant la barre près du corps ; repose-la en contrôlant la descente.", errors: ["Arrondir le bas du dos ou tirer brusquement.", "Éloigner la barre des jambes.", "Augmenter la charge au détriment de la posture."], breathing: "Inspire et gaine avant le départ, souffle après avoir passé la partie la plus difficile.", query: "soulevé de terre technique sécurité" },
+        { id: "tirage-vertical", name: "Tirage vertical à la poulie", category: "Dos", level: "intermediate", prescription: "3 × 8–12", image: "assets/exercise-deadlift.jpg", muscles: "Grand dorsal, haut du dos et biceps.", instructions: "Assieds-toi et bloque tes cuisses sous les supports. Tire la barre vers le haut de la poitrine en dirigeant les coudes vers le bas, puis remonte lentement sans hausser les épaules.", errors: ["Tirer la barre derrière la nuque.", "Basculer fortement le buste en arrière.", "Laisser la charge remonter d’un coup."], breathing: "Souffle en tirant, inspire en contrôlant la remontée.", query: "tirage vertical poulie technique" },
+        { id: "elevations-laterales", animationClip: "lateral-raise", modelView: "upper", name: "Élévations latérales", category: "Épaules", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-curl.jpg", muscles: "Deltoïdes latéraux et muscles stabilisateurs de l’épaule.", instructions: "Debout, tiens des charges légères près des cuisses et garde les coudes légèrement fléchis. Écarte les bras jusqu’à une hauteur confortable, puis redescends lentement.", errors: ["Balancer le buste pour lancer les haltères.", "Monter les épaules vers les oreilles.", "Prendre trop lourd ou dépasser une amplitude confortable."], breathing: "Souffle en levant les bras, inspire en les redescendant.", query: "élévations latérales haltères technique" },
+        { id: "elevations-frontales", animationClip: "front-raise", modelView: "upper", name: "Élévations frontales au poids du corps", category: "Épaules", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-shoulders.jpg", muscles: "Deltoïdes avant et muscles stabilisateurs de l’épaule.", instructions: "Debout, garde les bras tendus devant les cuisses. Lève-les jusqu’à hauteur des épaules, puis redescends doucement sans balancer le buste.", errors: ["Hausser les épaules.", "Cambrer le dos.", "Monter au-delà d’une amplitude confortable."], breathing: "Souffle en levant les bras, inspire en les redescendant.", query: "élévations frontales épaules" },
+        { id: "developpe-militaire", animationClip: "chair-shoulder-press", modelView: "upper", modelChair: true, name: "Développé épaules assis", category: "Épaules", level: "intermediate", prescription: "3 × 8–10", image: "assets/exercise-shoulders.jpg", muscles: "Deltoïdes et triceps.", instructions: "Assieds-toi avec le dos soutenu et les haltères à hauteur des épaules. Pousse-les au-dessus de la tête sans cambrer, puis ramène-les sous contrôle à la position de départ.", errors: ["Cambrer fortement le bas du dos.", "Verrouiller brutalement les coudes.", "Continuer malgré une douleur à l’épaule."], breathing: "Souffle en poussant, inspire en redescendant.", query: "développé épaules assis haltères technique" },
+        { id: "oiseau-halteres", animationClip: "hinge-reverse-fly", modelView: "upper", name: "Oiseau avec haltères", category: "Épaules", level: "advanced", prescription: "3 × 10–15", image: "assets/exercise-curl.jpg", muscles: "Arrière des épaules et haut du dos.", instructions: "Penche le buste depuis les hanches, dos neutre et genoux souples. Écarte les bras avec une légère flexion des coudes, puis redescends sans élan.", errors: ["Arrondir le dos.", "Transformer le mouvement en haussement d’épaules.", "Utiliser une charge trop lourde."], breathing: "Souffle en écartant les bras, inspire en revenant.", query: "oiseau haltères arrière épaules technique" },
+        { id: "curl-biceps", animationClip: "biceps-curl", modelView: "upper", name: "Curl biceps", category: "Biceps", level: "beginner", prescription: "3 × 8–12", image: "assets/exercise-curl.jpg", muscles: "Biceps et avant-bras.", instructions: "Tiens les haltères le long du corps, paumes vers l’avant et coudes près des côtes. Plie les coudes pour monter les charges sans déplacer les bras, puis redescends lentement.", errors: ["Balancer le dos pour aider la montée.", "Avancer les coudes.", "Laisser tomber les haltères à la descente."], breathing: "Souffle en montant, inspire en redescendant.", query: "curl biceps haltères technique" },
+        { id: "curl-marteau", name: "Curl marteau", category: "Biceps", level: "beginner", prescription: "3 × 8–12", image: "assets/exercise-curl.jpg", muscles: "Brachial, biceps et avant-bras.", instructions: "Garde les paumes face à face et les coudes près du buste. Monte une ou deux haltères sans tourner les poignets, puis redescends avec contrôle.", errors: ["Donner de l’élan avec le bassin.", "Écarter les coudes.", "Plier les poignets."], breathing: "Souffle en montant les haltères, inspire en les abaissant.", query: "curl marteau haltères technique" },
+        { id: "curl-incline", name: "Curl incliné", category: "Biceps", level: "advanced", prescription: "3 × 8–10", image: "assets/exercise-curl.jpg", muscles: "Biceps et avant-bras.", instructions: "Assieds-toi sur un banc incliné, bras relâchés de chaque côté. Plie les coudes sans les avancer et arrête l’amplitude si tu ressens une tension inconfortable à l’épaule.", errors: ["Laisser les épaules partir vers l’avant.", "Chercher une amplitude douloureuse.", "Utiliser une charge qui fait balancer les bras."], breathing: "Souffle pendant la flexion, inspire pendant l’extension contrôlée.", query: "curl incliné haltères technique" },
+        { id: "dips-banc", name: "Dips sur banc (amplitude réduite)", category: "Triceps", level: "beginner", prescription: "2–3 × 6–10", image: "assets/exercise-mobility.jpg", muscles: "Triceps, avec participation des épaules et des pectoraux.", instructions: "Pose les mains sur un support stable, rapproche les pieds et garde le dos près du banc. Plie les coudes sur une amplitude confortable, puis repousse pour revenir sans verrouiller brutalement.", errors: ["Descendre très bas si les épaules tirent.", "Écarter les coudes sur les côtés.", "Utiliser un support instable."], breathing: "Inspire en descendant, souffle en repoussant.", query: "dips banc triceps amplitude sécurité" },
+        { id: "kickback-triceps", animationClip: "triceps-kickback", modelView: "upper", name: "Kickback triceps au poids du corps", category: "Triceps", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-shoulders.jpg", muscles: "Triceps et muscles stabilisateurs des épaules.", instructions: "Fléchis légèrement les genoux et penche le buste avec le dos droit. Garde les coudes près des côtes et tends les avant-bras vers l’arrière, puis reviens lentement.", errors: ["Écarter les coudes.", "Arrondir le dos.", "Balancer les bras pour gagner de la vitesse."], breathing: "Souffle en tendant les bras, inspire en revenant.", query: "kickback triceps sans charge" },
+        { id: "extension-poulie", name: "Extension triceps à la poulie", category: "Triceps", level: "intermediate", prescription: "3 × 10–12", image: "assets/exercise-deadlift.jpg", muscles: "Triceps.", instructions: "Tiens la poignée, coudes près du corps et épaules relâchées. Tends les coudes vers le bas sans déplacer le haut des bras, puis remonte lentement.", errors: ["Balancer le torse.", "Écarter les coudes.", "Laisser la pile de poids claquer."], breathing: "Souffle en tendant les bras, inspire en revenant.", query: "extension triceps poulie technique" },
+        { id: "pompes-diamant", name: "Pompes prise serrée", category: "Triceps", level: "advanced", prescription: "3 × 5–10", image: "assets/exercise-curl.jpg", muscles: "Triceps et pectoraux.", instructions: "Place les mains sous les épaules, un peu plus rapprochées que pour une pompe classique. Garde le corps aligné, descends à une amplitude maîtrisée puis repousse le sol.", errors: ["Rapprocher les mains au point de gêner les poignets.", "Laisser les coudes s’ouvrir largement.", "Creuser le dos."], breathing: "Inspire en descendant, souffle en repoussant.", query: "pompes prise serrée triceps technique" },
+        { id: "crunch", animationClip: "gentle-curl-up", modelView: "floor", name: "Crunch contrôlé", category: "Abdominaux", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-squat.jpg", muscles: "Grand droit de l’abdomen.", instructions: "Allonge-toi, genoux fléchis et pieds au sol. Enroule doucement le haut du buste en rapprochant les côtes du bassin, puis redescends sans tirer sur la nuque.", errors: ["Tirer la tête avec les mains.", "Chercher à s’asseoir complètement.", "Bloquer la respiration."], breathing: "Souffle en enroulant le buste, inspire en revenant au sol.", query: "crunch abdominaux technique correcte" },
+        { id: "planche", animationClip: "plank-full", modelView: "floor", name: "Planche haute", category: "Abdominaux", level: "beginner", prescription: "3 × 15–40 s", image: "assets/exercise-breathing.jpg", muscles: "Sangle abdominale, épaules et muscles stabilisateurs.", instructions: "Place les mains sous les épaules et tends les jambes derrière toi. Garde une ligne droite de la tête aux talons, engage l’abdomen et arrête si la posture se dégrade.", errors: ["Laisser tomber ou monter les hanches.", "Bloquer la respiration.", "Tenir malgré une douleur au dos ou aux poignets."], breathing: "Respire régulièrement sans bloquer l’air, en gardant le tronc gainé.", query: "planche haute gainage" },
+        { id: "dead-bug", animationClip: "dead-bug", modelView: "floor", name: "Dead bug", category: "Abdominaux", level: "intermediate", prescription: "3 × 8–10 par côté", image: "assets/exercise-breathing.jpg", muscles: "Abdominaux profonds et muscles stabilisateurs du tronc.", instructions: "Allonge-toi sur le dos, bras vers le plafond et hanches/genoux fléchis. Garde le bas du dos confortable contre le sol et éloigne lentement un bras et la jambe opposée, puis reviens et alterne.", errors: ["Laisser le bas du dos se creuser.", "Accélérer au lieu de contrôler.", "Allonger trop loin si la posture se perd."], breathing: "Souffle en éloignant les membres, inspire en revenant.", query: "dead bug exercice abdominaux technique" },
+        { id: "crunch-velo", animationClip: "slow-bicycle-legs", modelView: "floor", name: "Pédalage de jambes allongé", category: "Abdominaux", level: "intermediate", prescription: "3 × 8–12 par côté", image: "assets/exercise-breathing.jpg", muscles: "Abdominaux et fléchisseurs de hanche.", instructions: "Allonge-toi sur le dos, tête posée et genoux levés. Tends lentement une jambe dans l’air tandis que l’autre genou se rapproche du buste, puis alterne en gardant le bas du dos stable.", errors: ["Accélérer et tirer sur la tête.", "Creuser le bas du dos.", "Tendre trop bas la jambe si le dos se décolle."], breathing: "Respire régulièrement en alternant les jambes.", query: "pédalage jambes allongé" },
+        { id: "planche-genoux", animationClip: "plank-on-knees", modelView: "floor", name: "Planche sur les genoux", category: "Abdominaux", level: "beginner", prescription: "3 × 15–30 s", image: "assets/exercise-breathing.jpg", muscles: "Abdominaux, épaules et fessiers.", instructions: "Place les mains sous les épaules et les genoux au sol. Aligne la tête, le bassin et les genoux, serre doucement l’abdomen et respire sans creuser le dos.", errors: ["Laisser tomber ou monter le bassin.", "Bloquer la respiration.", "Continuer malgré une douleur au dos ou aux poignets."], breathing: "Respire régulièrement en gardant le tronc engagé.", query: "planche sur les genoux" },
+        { id: "bear-crawl", modelId: "bear_crawl", name: "Marche de l’ours", category: "Abdominaux", level: "intermediate", prescription: "3 × 20–30 s", image: "assets/exercise-breathing.jpg", muscles: "Sangle abdominale, épaules, quadriceps et fessiers.", instructions: "À quatre pattes, décolle légèrement les genoux du sol et avance la main et le pied opposés sur une courte distance. Garde le tronc stable et les genoux près du sol, puis recule de façon contrôlée.", errors: ["Laisser le bassin se balancer.", "Lever les hanches trop haut.", "Allonger les pas au point de perdre le contrôle."], breathing: "Respire régulièrement sans bloquer l’air et garde le ventre gainé.", query: "bear crawl marche de l’ours technique" },
+        { id: "squat-poids-corps", animationClip: "sit-back-squat", modelView: "full", name: "Squat au poids du corps", category: "Jambes", level: "beginner", prescription: "3 × 8–15", image: "assets/exercise-run.jpg", muscles: "Quadriceps, fessiers et adducteurs.", instructions: "Place les pieds à une largeur confortable et garde le torse stable. Recule les hanches et plie les genoux dans une amplitude maîtrisée, puis pousse dans les pieds pour te relever.", errors: ["Laisser les genoux s’effondrer vers l’intérieur.", "Décoller les talons.", "Forcer une profondeur qui gêne les articulations."], breathing: "Inspire en descendant, souffle en te relevant.", query: "squat poids du corps technique débutant" },
+        { id: "fentes-arriere", animationClip: "reverse-lunge-knee-drive", modelView: "full", name: "Fente arrière avec montée de genou", category: "Jambes", level: "beginner", prescription: "3 × 8–10 par jambe", image: "assets/exercise-stretch.jpg", muscles: "Quadriceps, fessiers et ischio-jambiers.", instructions: "Recule un pied avec un petit pas et fléchis légèrement les deux genoux. Pousse sur le pied arrière pour revenir debout en montant le genou, puis alterne en gardant le genou avant au-dessus du pied.", errors: ["Perdre l’équilibre ou accélérer la descente.", "Laisser le genou avant s’effondrer vers l’intérieur.", "Faire un pas trop long ou descendre trop bas."], breathing: "Inspire en reculant, souffle en revenant debout et en montant le genou.", query: "fente arrière montée de genou technique" },
+        { id: "goblet-squat", animationClip: "sit-back-squat", modelView: "full", name: "Goblet squat", category: "Jambes", level: "intermediate", prescription: "3 × 8–12", image: "assets/exercise-curl.jpg", muscles: "Quadriceps, fessiers et tronc.", instructions: "Tiens un haltère contre la poitrine, coudes vers le bas. Descends en gardant les pieds stables et le torse gainé, puis pousse dans le sol pour remonter.", errors: ["Laisser l’haltère s’éloigner du torse.", "Arrondir le dos.", "Augmenter la charge avant de maîtriser le mouvement."], breathing: "Inspire en descendant, souffle en remontant.", query: "goblet squat haltère technique" },
+        { id: "montees-mollets", animationClip: "calf-raise", modelView: "full", modelChair: true, name: "Montées sur la pointe des pieds", category: "Jambes", level: "beginner", prescription: "3 × 12–20", image: "assets/exercise-run.jpg", muscles: "Mollets et muscles stabilisateurs des chevilles.", instructions: "Debout, tiens le dossier d’une chaise pour l’équilibre, monte lentement sur la pointe des pieds puis redescends jusqu’à poser les talons.", errors: ["Rebondir en bas du mouvement.", "S’appuyer sur un support instable.", "Forcer l’amplitude si les chevilles sont douloureuses."], breathing: "Souffle en montant, inspire en redescendant.", query: "montées mollets pointe pieds" },
+        { id: "glute-bridge", animationClip: "glute-bridge", modelView: "floor", name: "Pont fessier", category: "Fessiers", level: "beginner", prescription: "3 × 10–15", image: "assets/exercise-stretch.jpg", muscles: "Fessiers et ischio-jambiers.", instructions: "Allonge-toi sur le dos, genoux fléchis et pieds au sol. Pousse dans les pieds et serre les fessiers pour soulever le bassin sans cambrer, puis redescends lentement.", errors: ["Pousser principalement sur la pointe des pieds.", "Cambrer le dos en haut.", "Précipiter la descente."], breathing: "Souffle en levant le bassin, inspire en le redescendant.", query: "pont fessier exercice technique" },
+        { id: "extension-hanche-debout", animationClip: "back-leg-raise", modelView: "full", modelChair: true, name: "Extension de hanche debout", category: "Fessiers", level: "beginner", prescription: "3 × 10–15 par jambe", image: "assets/exercise-stretch.jpg", muscles: "Fessiers et ischio-jambiers.", instructions: "Tiens le dossier d’une chaise et penche légèrement le buste avec le dos droit. Tends doucement une jambe vers l’arrière sans cambrer, puis reviens sous contrôle.", errors: ["Cambrer le bas du dos.", "Balancer la jambe pour prendre de l’élan.", "Tourner le bassin vers l’extérieur."], breathing: "Souffle en tendant la jambe, inspire en revenant.", query: "extension hanche debout fessiers" },
+        { id: "abduction-hanche-debout", animationClip: "side-leg-raise", modelView: "full", modelChair: true, name: "Élévation latérale de jambe", category: "Fessiers", level: "beginner", prescription: "3 × 10–15 par jambe", image: "assets/exercise-stretch.jpg", muscles: "Moyen fessier et abducteurs de la hanche.", instructions: "Tiens le dossier d’une chaise, garde le buste droit et les orteils tournés vers l’avant. Lève une jambe tendue sur le côté, puis redescends lentement et change de côté.", errors: ["Pencher le buste pour compenser.", "Tourner les orteils vers le plafond.", "Balancer la jambe."], breathing: "Souffle en levant la jambe, inspire en la redescendant.", query: "élévation jambe côté fessiers" },
+        { id: "hip-thrust", name: "Hip thrust", category: "Fessiers", level: "intermediate", prescription: "3 × 8–12", image: "assets/exercise-stretch.jpg", muscles: "Fessiers et ischio-jambiers.", instructions: "Place le haut du dos contre un banc stable, pieds au sol. Pousse dans les talons pour lever le bassin, termine en contractant les fessiers sans hypercambrer, puis redescends.", errors: ["Utiliser un banc qui glisse.", "Projeter les côtes vers le haut et cambrer.", "Ajouter une charge sans protection ni contrôle."], breathing: "Souffle en montant le bassin, inspire en redescendant.", query: "hip thrust technique sécurité" },
+        { id: "souleve-terre-roumain", animationClip: "hip-hinge", modelView: "full", name: "Soulevé de terre roumain", category: "Fessiers", level: "advanced", prescription: "3 × 8–10", image: "assets/exercise-pushups.jpg", muscles: "Fessiers, ischio-jambiers et muscles du dos.", instructions: "Tiens les haltères près des cuisses, genoux légèrement fléchis. Recule les hanches en gardant le dos neutre et les charges proches des jambes, puis tends les hanches pour revenir debout.", errors: ["Transformer le mouvement en squat.", "Arrondir le dos ou éloigner les charges.", "Descendre plus bas que ta mobilité ne le permet."], breathing: "Inspire en reculant les hanches, souffle en revenant debout.", query: "soulevé de terre roumain haltères technique" },
+        { id: "marche-active", modelId: "walk", name: "Marche active", category: "Cardio", level: "beginner", prescription: "15–30 min à allure confortable", image: "assets/exercise-jacks.jpg", muscles: "Jambes et système cardiovasculaire.", instructions: "Choisis un parcours sûr et commence tranquillement. Augmente progressivement l’allure pour pouvoir parler par phrases courtes, puis ralentis quelques minutes avant de t’arrêter.", errors: ["Partir trop vite.", "Ignorer un terrain glissant ou une douleur.", "Oublier de boire selon la durée et les conditions."], breathing: "Respire naturellement et garde une allure qui te permet de parler.", query: "marche active technique débutant" },
+        { id: "montees-genoux", animationClip: "high-knee-march", modelView: "full", name: "Montées de genoux en marche", category: "Cardio", level: "beginner", prescription: "3 × 30–45 s", image: "assets/exercise-hiit.jpg", muscles: "Quadriceps, fléchisseurs de hanche et système cardiovasculaire.", instructions: "Marche sur place en montant alternativement les genoux à une hauteur confortable. Garde le buste droit et coordonne doucement les bras avec les jambes.", errors: ["Se pencher en arrière.", "Monter les genoux trop haut au détriment de l’équilibre.", "Accélérer avant de maîtriser le mouvement."], breathing: "Respire régulièrement et choisis une cadence qui te permet de parler.", query: "montées de genoux marche sur place" },
+        { id: "grimpeur-debout", animationClip: "standing-climber", modelView: "full", name: "Grimpeur debout sans impact", category: "Cardio", level: "beginner", prescription: "3 × 30–45 s", image: "assets/exercise-hiit.jpg", muscles: "Jambes, abdominaux et endurance cardiovasculaire.", instructions: "Debout, ramène alternativement un genou vers l’avant et accompagne-le du bras opposé, comme une marche rapide. Garde un rythme fluide sans saut.", errors: ["Balancer le tronc.", "Accélérer jusqu’à perdre la coordination.", "Continuer malgré une gêne ou un essoufflement inhabituel."], breathing: "Respire de façon continue et ralentis si nécessaire.", query: "grimpeur debout sans impact" },
+        { id: "jogging-sur-place", modelId: "jog", name: "Jogging sur place", category: "Cardio", level: "beginner", prescription: "3 × 30–60 s", image: "assets/exercise-run.jpg", muscles: "Mollets, quadriceps, fessiers et système cardiovasculaire.", instructions: "Cours sur place à faible impact, buste droit et épaules relâchées. Pose les pieds doucement et adapte la hauteur des genoux à ton confort.", errors: ["Atterrir lourdement.", "Se pencher excessivement en arrière.", "Continuer malgré une douleur ou un essoufflement anormal."], breathing: "Respire continuellement et ralentis si tu ne peux plus parler confortablement.", query: "jogging sur place technique débutant" },
+        { id: "course-sur-place", modelId: "run", name: "Course sur place", category: "Cardio", level: "intermediate", prescription: "4 × 20–30 s", image: "assets/exercise-run.jpg", muscles: "Quadriceps, fessiers, mollets et système cardiovasculaire.", instructions: "Cours sur place avec une cadence maîtrisée, bras relâchés et appuis légers. Garde de l’espace autour de toi et privilégie un sol stable.", errors: ["Accélérer au point de perdre la posture.", "Atterrir sur les jambes raides.", "Ignorer une douleur ou un malaise."], breathing: "Respire de façon rythmée, puis récupère en marchant si nécessaire.", query: "course sur place technique" },
+        { id: "velo", name: "Vélo d’endurance", category: "Cardio", level: "beginner", prescription: "20–40 min à allure modérée", image: "assets/exercise-bike.jpg", muscles: "Quadriceps, fessiers et endurance cardiovasculaire.", instructions: "Règle la selle pour garder une légère flexion du genou en bas du pédalage. Commence à faible résistance et maintiens une cadence régulière, en adaptant l’effort à ta forme.", errors: ["Selle trop basse ou trop haute.", "Augmenter brutalement la résistance.", "Continuer en cas de douleur ou de vertige."], breathing: "Respire de manière régulière et relâche les épaules.", query: "réglage vélo exercice endurance débutant" },
+        { id: "jumping-jacks", modelId: "jumping_jack", name: "Jumping jacks", category: "Cardio", level: "intermediate", prescription: "3 × 20–40 s", image: "assets/exercise-hiit.jpg", muscles: "Jambes, épaules et endurance cardiovasculaire.", instructions: "Tiens-toi debout, puis écarte les pieds en levant les bras dans une amplitude confortable. Reviens au centre en douceur ; choisis une variante sans saut si tu préfères réduire l’impact.", errors: ["Atterrir bruyamment ou genoux verrouillés.", "Sauter sur un sol glissant.", "Garder les bras dans une amplitude douloureuse."], breathing: "Respire continuellement et garde un rythme que tu peux maintenir.", query: "jumping jacks technique variante sans saut" }
+      ];
+      const exerciseModelMuscleHighlights = {
+        pompes: { primary: ["Pectoraux"], secondary: ["Triceps", "Épaules avant"] },
+        "rowing-halteres": { primary: ["Dos"], secondary: ["Biceps", "Arrière des épaules"] },
+        "souleve-terre": { primary: ["Fessiers", "Ischio-jambiers"], secondary: ["Dos", "Abdominaux"] },
+        "developpe-militaire": { primary: ["Épaules"], secondary: ["Triceps", "Abdominaux"] },
+        "oiseau-halteres": { primary: ["Arrière des épaules"], secondary: ["Haut du dos"] },
+        "elevations-laterales": { primary: ["Deltoïdes latéraux"], secondary: ["Épaules", "Trapèzes"] },
+        "elevations-frontales": { primary: ["Deltoïdes avant"], secondary: ["Épaules", "Abdominaux"] },
+        "kickback-triceps": { primary: ["Triceps"], secondary: ["Épaules"] },
+        "curl-biceps": { primary: ["Biceps"], secondary: ["Avant-bras"] },
+        crunch: { primary: ["Abdominaux"], secondary: ["Fléchisseurs de hanche"] },
+        planche: { primary: ["Abdominaux"], secondary: ["Épaules", "Fessiers"] },
+        "planche-genoux": { primary: ["Abdominaux"], secondary: ["Épaules", "Fessiers"] },
+        "dead-bug": { primary: ["Abdominaux profonds"], secondary: ["Fléchisseurs de hanche"] },
+        "crunch-velo": { primary: ["Abdominaux"], secondary: ["Fléchisseurs de hanche"] },
+        "bear-crawl": { primary: ["Abdominaux", "Épaules"], secondary: ["Quadriceps", "Fessiers"] },
+        "squat-poids-corps": { primary: ["Quadriceps", "Fessiers"], secondary: ["Abdominaux"] },
+        "fentes-arriere": { primary: ["Quadriceps", "Fessiers"], secondary: ["Ischio-jambiers", "Équilibre"] },
+        "goblet-squat": { primary: ["Quadriceps", "Fessiers"], secondary: ["Abdominaux"] },
+        "montees-mollets": { primary: ["Mollets"], secondary: ["Chevilles"] },
+        "glute-bridge": { primary: ["Fessiers"], secondary: ["Ischio-jambiers", "Abdominaux"] },
+        "extension-hanche-debout": { primary: ["Fessiers"], secondary: ["Ischio-jambiers"] },
+        "abduction-hanche-debout": { primary: ["Moyen fessier"], secondary: ["Abducteurs de hanche"] },
+        "souleve-terre-roumain": { primary: ["Ischio-jambiers", "Fessiers"], secondary: ["Dos", "Abdominaux"] },
+        "marche-active": { primary: ["Mollets", "Quadriceps"], secondary: ["Fessiers", "Ischio-jambiers"] },
+        "montees-genoux": { primary: ["Quadriceps", "Fléchisseurs de hanche"], secondary: ["Mollets", "Abdominaux"] },
+        "grimpeur-debout": { primary: ["Abdominaux", "Quadriceps"], secondary: ["Fléchisseurs de hanche", "Épaules"] },
+        "jogging-sur-place": { primary: ["Quadriceps", "Mollets"], secondary: ["Fessiers", "Ischio-jambiers"] },
+        "course-sur-place": { primary: ["Quadriceps", "Fessiers"], secondary: ["Mollets", "Ischio-jambiers"] },
+        "jumping-jacks": { primary: ["Épaules", "Mollets"], secondary: ["Quadriceps", "Fessiers"] }
+      };
+      const exerciseCatalogGrid = $("#exerciseCatalogGrid");
+      const exerciseCatalogSearch = $("#exerciseCatalogSearch");
+      const exerciseCatalogCategory = $("#exerciseCatalogCategory");
+      const exerciseCatalogLevel = $("#exerciseCatalogLevel");
+      const exerciseCatalogCount = $("#exerciseCatalogCount");
+      const exerciseDetailPanel = $("#exerciseDetailPanel");
+      let selectedCatalogExercise = null;
+      let lastExerciseDetailTrigger = null;
+      let exerciseGuidedTimerInterval = 0;
+      let exerciseGuidedTimer = null;
+      const exerciseCatalogNormalize = value => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr-FR");
+      const workoutExerciseSuggestions = $("#workoutExerciseSuggestions");
+      exerciseCatalogData.forEach(exercise => {
+        const option = document.createElement("option");
+        option.value = exercise.name;
+        option.label = exercise.category;
+        workoutExerciseSuggestions.append(option);
+      });
+      $("#workoutExerciseName").addEventListener("change", event => {
+        const selectedName = exerciseCatalogNormalize(event.currentTarget.value.trim());
+        const exercise = exerciseCatalogData.find(item => exerciseCatalogNormalize(item.name) === selectedName);
+        if (exercise) $("#workoutCategory").value = exercise.category;
+      });
+      function renderExerciseCatalog() {
+        const query = exerciseCatalogNormalize(exerciseCatalogSearch.value.trim());
+        const category = exerciseCatalogCategory.value;
+        const level = exerciseCatalogLevel.value;
+        const matches = exerciseCatalogData.filter(exercise => {
+          const searchable = exerciseCatalogNormalize([
+            exercise.name, exercise.category, exercise.muscles, exercise.instructions, exercise.prescription
+          ].join(" "));
+          return (!category || exercise.category === category) && (!level || exercise.level === level) && (!query || searchable.includes(query));
+        });
+        const orderedMatches = [
+          ...matches.filter(exercise => exercise.modelId || exercise.animationClip),
+          ...matches.filter(exercise => !exercise.modelId && !exercise.animationClip)
+        ];
+        exerciseCatalogGrid.replaceChildren();
+        if (!orderedMatches.length) {
+          const empty = document.createElement("p");
+          empty.className = "exercise-catalog-empty";
+          empty.textContent = "Aucun exercice ne correspond à ces filtres. Essaie un autre mot ou groupe musculaire.";
+          exerciseCatalogGrid.append(empty);
+        } else {
+          orderedMatches.forEach(exercise => {
+            const card = document.createElement("article");
+            card.className = "exercise-catalog-card";
+            const image = document.createElement("img");
+            image.src = exercise.image;
+            image.alt = `Photo sportive illustrative, image fixe pour la catégorie ${exercise.category} ; elle ne montre pas le mouvement complet.`;
+            image.loading = "lazy";
+            const body = document.createElement("div");
+            body.className = "exercise-catalog-card-body";
+            const meta = document.createElement("div");
+            meta.className = "exercise-catalog-meta";
+            meta.textContent = `${exercise.category} · ${exerciseLevelLabels[exercise.level]} · ${exercise.prescription}${exercise.modelId || exercise.animationClip ? " · Animation 3D" : " · Sans animation"}`;
+            const title = document.createElement("h3");
+            title.textContent = exercise.name;
+            const muscles = document.createElement("div");
+            muscles.className = "exercise-catalog-meta";
+            muscles.textContent = exercise.muscles;
+            const actions = document.createElement("div");
+            actions.className = "exercise-catalog-actions";
+            const detailsButton = document.createElement("button");
+            detailsButton.type = "button";
+            detailsButton.className = "exercise-detail-trigger";
+            detailsButton.dataset.exerciseDetail = exercise.id;
+            detailsButton.textContent = "Voir la fiche";
+            actions.append(detailsButton);
+            body.append(meta, title, muscles, actions);
+            card.append(image, body);
+            exerciseCatalogGrid.append(card);
+          });
+        }
+        exerciseCatalogCount.textContent = `${matches.length} exercice${matches.length === 1 ? "" : "s"} affiché${matches.length === 1 ? "" : "s"} sur ${exerciseCatalogData.length}.`;
+        if (selectedCatalogExercise && !matches.includes(selectedCatalogExercise)) {
+          selectedCatalogExercise = null;
+          exerciseDetailPanel.hidden = true;
+          window.dispatchEvent(new Event("nutripulse:exercise-detail-closed"));
+        }
+      }
+      function renderExerciseMuscleHighlights(exercise) {
+        const container = $("#exerciseDetailMuscleChips");
+        const hint = $("#exerciseMuscleHint");
+        container.replaceChildren();
+        const highlights = exerciseModelMuscleHighlights[exercise.id];
+        if (!highlights) {
+          const note = document.createElement("span");
+          note.className = "exercise-muscle-chip";
+          note.textContent = "Aucun repère visuel 3D";
+          container.append(note);
+          hint.textContent = "Les muscles sollicités restent indiqués dans la fiche ; ce modèle ne permet pas de les isoler visuellement.";
+          return;
+        }
+        hint.textContent = "Sur le mannequin : rouge = muscles principaux, orange = muscles secondaires. Zones indicatives qui suivent le mouvement, pas une représentation médicale détaillée.";
+        [["primary", highlights.primary], ["secondary", highlights.secondary]].forEach(([kind, names]) => {
+          names.forEach(name => {
+            const chip = document.createElement("span");
+            chip.className = `exercise-muscle-chip ${kind}`;
+            chip.textContent = `${kind === "primary" ? "Principal" : "Secondaire"} · ${name}`;
+            container.append(chip);
+          });
+        });
+      }
+      function appendExerciseDetailList(list, entries) {
+        list.replaceChildren();
+        entries.forEach(entry => {
+          const item = document.createElement("li");
+          item.textContent = entry;
+          list.append(item);
+        });
+      }
+      function exerciseGuidedTimerDefaults(exercise) {
+        const prescription = exercise.prescription;
+        const setMatch = prescription.match(/(\d+(?:\s*[–-]\s*\d+)?)\s*[×x]\s*(.+)/i);
+        const setRange = setMatch?.[1].match(/\d+/g).map(Number) || [1];
+        const target = setMatch ? setMatch[2].trim() : prescription;
+        const durationText = setMatch ? target : prescription;
+        const durationMatch = durationText.match(/(\d+)(?:\s*[–-]\s*(\d+))?\s*(s|sec(?:ondes?)?|min(?:utes?)?)/i);
+        const durationMidpoint = durationMatch
+          ? Math.round((Number(durationMatch[1]) + Number(durationMatch[2] || durationMatch[1])) / 2)
+          : null;
+        const durationSeconds = durationMidpoint === null
+          ? null
+          : durationMatch[3].toLocaleLowerCase("fr-FR").startsWith("m") ? durationMidpoint * 60 : durationMidpoint;
+        const continuous = !setMatch && durationSeconds !== null;
+        const restSeconds = continuous ? 0 : exercise.category === "Cardio" ? 45
+          : exercise.level === "advanced" ? 90
+            : exercise.level === "intermediate" ? 75 : 60;
+        return {
+          sets: Number(setRange[setRange.length - 1]),
+          target: setMatch ? target : prescription,
+          timed: durationSeconds !== null,
+          workSeconds: durationSeconds,
+          restSeconds,
+          prepSeconds: 5
+        };
+      }
+      function formatExerciseGuidedTime(milliseconds, countdown = true) {
+        const totalSeconds = Math.max(0, (countdown ? Math.ceil : Math.floor)(milliseconds / 1000));
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+        return hours
+          ? `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+          : `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+      }
+      let exerciseCoachAudioContext = null;
+      function playExerciseCoachSignal() {
+        const AudioContextType = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextType) return;
+        try {
+          if (!exerciseCoachAudioContext) exerciseCoachAudioContext = new AudioContextType();
+          const context = exerciseCoachAudioContext;
+          if (context.state === "suspended") {
+            context.resume().catch(error => console.warn("Le signal sonore du coach n’a pas pu démarrer.", error));
+          }
+          const oscillator = context.createOscillator();
+          const volume = context.createGain();
+          const startAt = context.currentTime;
+          oscillator.frequency.value = 880;
+          volume.gain.setValueAtTime(0.0001, startAt);
+          volume.gain.exponentialRampToValueAtTime(0.06, startAt + 0.02);
+          volume.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.24);
+          oscillator.connect(volume);
+          volume.connect(context.destination);
+          oscillator.start(startAt);
+          oscillator.stop(startAt + 0.25);
+        } catch (error) {
+          console.warn("Le signal sonore du coach n’est pas disponible.", error);
+        }
+      }
+      function announceExerciseCoach(message) {
+        const announcement = $("#exerciseCoachAnnouncement");
+        announcement.textContent = message;
+        if ("speechSynthesis" in window && typeof SpeechSynthesisUtterance === "function") {
+          const frenchVoice = window.speechSynthesis.getVoices()
+            .find(voice => voice.lang.toLocaleLowerCase("fr-FR").startsWith("fr"));
+          if (frenchVoice) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(message);
+            utterance.voice = frenchVoice;
+            utterance.lang = "fr-FR";
+            utterance.rate = 0.95;
+            window.speechSynthesis.speak(utterance);
+            return;
+          }
+        }
+        playExerciseCoachSignal();
+      }
+      function renderExerciseGuidedTimer() {
+        const timer = exerciseGuidedTimer;
+        const display = $("#exerciseGuidedTimerDisplay");
+        const status = $("#exerciseGuidedTimerStatus");
+        const startButton = $("#exerciseGuidedTimerStart");
+        const completeButton = $("#exerciseGuidedTimerCompleteSet");
+        const skipButton = $("#exerciseGuidedTimerSkipRest");
+        if (!timer) return;
+        const elapsed = timer.elapsedMs;
+        const isCountdown = timer.phase === "prep" || timer.phase === "rest" || (timer.phase === "work" && timer.timed);
+        const shownTime = isCountdown ? timer.remainingMs
+          : timer.phase === "work" ? elapsed : timer.phase === "ready" && timer.timed ? timer.workSeconds * 1000 : 0;
+        display.textContent = formatExerciseGuidedTime(shownTime, isCountdown || timer.phase === "ready");
+        if (timer.phase === "done") status.textContent = `Toutes les séries sont terminées. Bravo !`;
+        else if (timer.phase === "prep") status.textContent = `${timer.paused ? "Pause de préparation" : "Prépare-toi"} — départ dans ${formatExerciseGuidedTime(timer.remainingMs)}.`;
+        else if (timer.phase === "rest") status.textContent = `${timer.paused ? "Pause du repos" : "Repos"} après la série ${timer.completedSet} sur ${timer.totalSets}.`;
+        else if (timer.phase === "work") status.textContent = `${timer.paused ? "Pause" : timer.timed ? "Série chronométrée" : "Série en cours"} ${timer.currentSet} sur ${timer.totalSets} · ${timer.target}.`;
+        else status.textContent = `Prêt pour la série ${timer.currentSet} sur ${timer.totalSets} · préparation ${timer.prepSeconds} s · ${timer.target}.`;
+        startButton.textContent = timer.running ? "Ⅱ Pause" : timer.paused ? "▶ Reprendre" : timer.phase === "done" ? "✅ Terminé" : "▶ Préparer la série";
+        startButton.disabled = timer.phase === "done";
+        completeButton.hidden = timer.phase !== "work" || timer.timed;
+        completeButton.disabled = !timer.running;
+        skipButton.hidden = timer.phase !== "rest";
+        $("#exerciseGuidedTimerSets").disabled = timer.phase !== "ready" || timer.currentSet > 1;
+        $("#exerciseGuidedTimerPrep").disabled = timer.phase !== "ready" || timer.currentSet > 1;
+        $("#exerciseGuidedTimerRest").disabled = timer.phase !== "ready" || timer.currentSet > 1;
+        const previousState = window.nutripulseExerciseGuidedTimerState;
+        const state = { phase: timer.phase, running: timer.running, currentSet: timer.currentSet, totalSets: timer.totalSets };
+        window.nutripulseExerciseGuidedTimerState = state;
+        if (!previousState || previousState.phase !== state.phase || previousState.running !== state.running ||
+            previousState.currentSet !== state.currentSet || previousState.totalSets !== state.totalSets) {
+          window.dispatchEvent(new CustomEvent("nutripulse:exercise-guided-timer", { detail: state }));
+        }
+      }
+      function stopExerciseGuidedTimerInterval() {
+        window.clearInterval(exerciseGuidedTimerInterval);
+        exerciseGuidedTimerInterval = 0;
+      }
+      window.addEventListener("nutripulse:exercise-detail-closed", () => {
+        stopExerciseGuidedTimerInterval();
+        exerciseGuidedTimer = null;
+      });
+      function startExerciseGuidedTimerInterval() {
+        stopExerciseGuidedTimerInterval();
+        exerciseGuidedTimerInterval = window.setInterval(tickExerciseGuidedTimer, 100);
+      }
+      function moveExerciseGuidedTimerToNextSet(startedAt = performance.now()) {
+        const timer = exerciseGuidedTimer;
+        if (!timer) return;
+        timer.currentSet = timer.completedSet + 1;
+        timer.running = true;
+        timer.paused = false;
+        if (timer.prepSeconds > 0) {
+          timer.phase = "prep";
+          timer.remainingMs = timer.prepSeconds * 1000;
+          timer.deadline = startedAt + timer.remainingMs;
+          announceExerciseCoach(`Repos terminé. Prépare-toi, la série ${timer.currentSet} reprend dans ${timer.prepSeconds} secondes.`);
+        } else {
+          startExerciseGuidedWork(timer, startedAt);
+        }
+        startExerciseGuidedTimerInterval();
+        renderExerciseGuidedTimer();
+      }
+      function startExerciseGuidedWork(timer, startedAt) {
+        timer.phase = "work";
+        timer.startedAt = startedAt;
+        timer.elapsedMs = 0;
+        timer.remainingMs = timer.timed ? timer.workSeconds * 1000 : 0;
+        timer.deadline = timer.timed ? startedAt + timer.remainingMs : 0;
+        announceExerciseCoach(`C’est parti pour la série ${timer.currentSet} sur ${timer.totalSets}.`);
+      }
+      function completeExerciseGuidedSet(completedAt = performance.now()) {
+        const timer = exerciseGuidedTimer;
+        if (!timer) return;
+        timer.completedSet = timer.currentSet;
+        if (timer.currentSet >= timer.totalSets) {
+          timer.phase = "done";
+          timer.running = false;
+          timer.paused = false;
+          timer.remainingMs = 0;
+          stopExerciseGuidedTimerInterval();
+          announceExerciseCoach("Toutes les séries sont terminées. Bravo !");
+        } else if (timer.restSeconds > 0) {
+          timer.phase = "rest";
+          timer.remainingMs = timer.restSeconds * 1000;
+          timer.deadline = completedAt + timer.remainingMs;
+          announceExerciseCoach(`Série ${timer.completedSet} terminée. Repos de ${timer.restSeconds} secondes.`);
+        } else {
+          moveExerciseGuidedTimerToNextSet(completedAt);
+        }
+        renderExerciseGuidedTimer();
+      }
+      function tickExerciseGuidedTimer() {
+        const timer = exerciseGuidedTimer;
+        if (!timer?.running) return;
+        const now = performance.now();
+        let transitions = 0;
+        while (timer.running && transitions < 4) {
+          if (timer.phase === "work" && !timer.timed) {
+            timer.elapsedMs = Math.max(0, now - timer.startedAt);
+            break;
+          }
+          timer.remainingMs = Math.max(0, timer.deadline - now);
+          if (timer.remainingMs > 0) break;
+          if (timer.phase === "prep") {
+            const workStartedAt = timer.deadline;
+            startExerciseGuidedWork(timer, workStartedAt);
+          } else if (timer.phase === "work") {
+            completeExerciseGuidedSet(timer.deadline);
+          } else if (timer.phase === "rest") {
+            moveExerciseGuidedTimerToNextSet(timer.deadline);
+          } else {
+            break;
+          }
+          transitions++;
+        }
+        renderExerciseGuidedTimer();
+      }
+      function resetExerciseGuidedTimer(exercise) {
+        stopExerciseGuidedTimerInterval();
+        if (!exercise) {
+          exerciseGuidedTimer = null;
+          return;
+        }
+        const defaults = exerciseGuidedTimerDefaults(exercise);
+        const restLabel = defaults.restSeconds ? `Repos conseillé : ${defaults.restSeconds} s` : "Effort continu · pas de repos prévu";
+        $("#exerciseGuidedTimerPlan").textContent = `${exercise.prescription} · ${restLabel}${defaults.timed && defaults.workSeconds ? ` · Le compte à rebours utilise le milieu de la durée indiquée (${formatExerciseGuidedTime(defaults.workSeconds * 1000)}).` : ""}`;
+        $("#exerciseGuidedTimerSets").value = String(defaults.sets);
+        $("#exerciseGuidedTimerSets").setAttribute("aria-invalid", "false");
+        $("#exerciseGuidedTimerPrep").value = String(defaults.prepSeconds);
+        $("#exerciseGuidedTimerPrep").setAttribute("aria-invalid", "false");
+        $("#exerciseGuidedTimerTarget").value = defaults.target;
+        $("#exerciseGuidedTimerTarget").readOnly = true;
+        $("#exerciseGuidedTimerRest").value = String(defaults.restSeconds);
+        $("#exerciseGuidedTimerRest").setAttribute("aria-invalid", "false");
+        exerciseGuidedTimer = {
+          ...defaults,
+          exerciseId: exercise.id,
+          totalSets: defaults.sets,
+          currentSet: 1,
+          completedSet: 0,
+          phase: "ready",
+          running: false,
+          paused: false,
+          elapsedMs: 0,
+          remainingMs: 0,
+          startedAt: 0,
+          deadline: 0
+        };
+        renderExerciseGuidedTimer();
+      }
+      $("#exerciseGuidedTimerSets").addEventListener("input", () => {
+        if (!exerciseGuidedTimer || exerciseGuidedTimer.phase !== "ready" || exerciseGuidedTimer.currentSet > 1) return;
+        const value = Number($("#exerciseGuidedTimerSets").value);
+        $("#exerciseGuidedTimerSets").setAttribute("aria-invalid", String(!Number.isInteger(value) || value < 1 || value > 30));
+        if (Number.isInteger(value) && value >= 1 && value <= 30) exerciseGuidedTimer.totalSets = value;
+        renderExerciseGuidedTimer();
+      });
+      $("#exerciseGuidedTimerPrep").addEventListener("input", () => {
+        if (!exerciseGuidedTimer || exerciseGuidedTimer.phase !== "ready" || exerciseGuidedTimer.currentSet > 1) return;
+        const rawValue = $("#exerciseGuidedTimerPrep").value;
+        const value = rawValue === "" ? NaN : Number(rawValue);
+        $("#exerciseGuidedTimerPrep").setAttribute("aria-invalid", String(!Number.isInteger(value) || value < 0 || value > 30));
+        if (Number.isInteger(value) && value >= 0 && value <= 30) exerciseGuidedTimer.prepSeconds = value;
+        renderExerciseGuidedTimer();
+      });
+      $("#exerciseGuidedTimerRest").addEventListener("input", () => {
+        if (!exerciseGuidedTimer || exerciseGuidedTimer.phase !== "ready" || exerciseGuidedTimer.currentSet > 1) return;
+        const rawValue = $("#exerciseGuidedTimerRest").value;
+        const value = rawValue === "" ? NaN : Number(rawValue);
+        $("#exerciseGuidedTimerRest").setAttribute("aria-invalid", String(!Number.isInteger(value) || value < 0 || value > 600));
+        if (Number.isInteger(value) && value >= 0 && value <= 600) exerciseGuidedTimer.restSeconds = value;
+        renderExerciseGuidedTimer();
+      });
+      $("#exerciseGuidedTimerStart").addEventListener("click", () => {
+        const timer = exerciseGuidedTimer;
+        if (!timer || timer.phase === "done") return;
+        if (timer.running) {
+          if (timer.phase === "prep" || timer.phase === "rest" || (timer.phase === "work" && timer.timed)) {
+            timer.remainingMs = Math.max(0, timer.deadline - performance.now());
+          } else timer.elapsedMs = performance.now() - timer.startedAt;
+          timer.running = false;
+          timer.paused = true;
+          stopExerciseGuidedTimerInterval();
+          renderExerciseGuidedTimer();
+          return;
+        }
+        if (timer.phase === "ready") {
+          const sets = Number($("#exerciseGuidedTimerSets").value);
+          const prepValue = $("#exerciseGuidedTimerPrep").value;
+          const prep = prepValue === "" ? NaN : Number(prepValue);
+          const restValue = $("#exerciseGuidedTimerRest").value;
+          const rest = restValue === "" ? NaN : Number(restValue);
+          if (!Number.isInteger(sets) || sets < 1 || sets > 30 || !Number.isInteger(prep) || prep < 0 || prep > 30 || !Number.isInteger(rest) || rest < 0 || rest > 600) {
+            $("#exerciseGuidedTimerStatus").textContent = "Choisis 1 à 30 séries, 0 à 30 secondes de préparation et 0 à 600 secondes de repos.";
+            return;
+          }
+          timer.totalSets = sets;
+          timer.prepSeconds = prep;
+          timer.restSeconds = rest;
+          const now = performance.now();
+          if (prep > 0) {
+            timer.phase = "prep";
+            timer.remainingMs = prep * 1000;
+            timer.deadline = now + timer.remainingMs;
+            announceExerciseCoach(`Mets-toi en position selon les consignes. Départ dans ${prep} secondes.`);
+          } else {
+            startExerciseGuidedWork(timer, now);
+          }
+        } else if (timer.paused) {
+          const now = performance.now();
+          if (timer.phase === "work" && !timer.timed) timer.startedAt = now - timer.elapsedMs;
+          else timer.deadline = now + timer.remainingMs;
+        }
+        timer.paused = false;
+        timer.running = true;
+        startExerciseGuidedTimerInterval();
+        renderExerciseGuidedTimer();
+      });
+      $("#exerciseGuidedTimerCompleteSet").addEventListener("click", () => {
+        if (exerciseGuidedTimer?.phase === "work" && !exerciseGuidedTimer.timed && exerciseGuidedTimer.running) {
+          completeExerciseGuidedSet();
+        }
+      });
+      $("#exerciseGuidedTimerSkipRest").addEventListener("click", moveExerciseGuidedTimerToNextSet);
+      $("#exerciseGuidedTimerReset").addEventListener("click", () => {
+        if (selectedCatalogExercise) resetExerciseGuidedTimer(selectedCatalogExercise);
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) tickExerciseGuidedTimer();
+      });
+      function openExerciseDetail(exercise, trigger) {
+        selectedCatalogExercise = exercise;
+        lastExerciseDetailTrigger = trigger;
+        resetExerciseGuidedTimer(exercise);
+        $("#exerciseDetailTitle").textContent = exercise.name;
+        $("#exerciseDetailMeta").textContent = `${exercise.category} · ${exerciseLevelLabels[exercise.level]} · Repère indicatif : ${exercise.prescription}`;
+        $("#exerciseDetailImage").src = exercise.image;
+        $("#exerciseDetailImage").alt = `Photo sportive illustrative, image fixe pour la catégorie ${exercise.category} ; elle ne montre pas le mouvement complet.`;
+        $("#exerciseDetailImage").hidden = false;
+        $("#exerciseModelStage").hidden = true;
+        $("#exerciseModelControls").hidden = true;
+        $("#exerciseMuscleLegend").hidden = true;
+        $("#exerciseDetailStaticNote").hidden = false;
+        $("#exerciseDetailStaticNote").textContent = exercise.modelId || exercise.animationClip
+          ? "Modèle animé 3D disponible — chargement en cours."
+          : "Image fixe — aucune animation 3D disponible pour ce mouvement.";
+        $("#exerciseModelStatus").textContent = exercise.modelId || exercise.animationClip
+          ? "Chargement du modèle animé…"
+          : "Pas encore de modèle 3D pour cet exercice ; la photo reste une illustration fixe.";
+        $("#exerciseDetailMuscles").textContent = exercise.muscles;
+        renderExerciseMuscleHighlights(exercise);
+        $("#exerciseDetailInstructions").textContent = exercise.instructions;
+        $("#exerciseDetailBreathing").textContent = exercise.breathing;
+        appendExerciseDetailList($("#exerciseDetailErrors"), exercise.errors);
+        $("#exerciseDetailVideo").href = `https://www.youtube.com/results?search_query=${encodeURIComponent(`${exercise.name} ${exercise.category} technique`)}`;
+        exerciseDetailPanel.hidden = false;
+        window.dispatchEvent(new CustomEvent("nutripulse:exercise-model", {
+          detail: { exercise, muscleHighlights: exerciseModelMuscleHighlights[exercise.id] }
+        }));
+        exerciseDetailPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        $("#exerciseDetailClose").focus({ preventScroll: true });
+      }
+      exerciseCatalogGrid.addEventListener("click", event => {
+        const button = event.target.closest("button[data-exercise-detail]");
+        if (!button) return;
+        const exercise = exerciseCatalogData.find(item => item.id === button.dataset.exerciseDetail);
+        if (exercise) openExerciseDetail(exercise, button);
+      });
+      $("#exerciseDetailClose").addEventListener("click", () => {
+        exerciseDetailPanel.hidden = true;
+        selectedCatalogExercise = null;
+        resetExerciseGuidedTimer(null);
+        window.dispatchEvent(new Event("nutripulse:exercise-detail-closed"));
+        if (lastExerciseDetailTrigger && lastExerciseDetailTrigger.isConnected) lastExerciseDetailTrigger.focus();
+      });
+      exerciseCatalogSearch.addEventListener("input", renderExerciseCatalog);
+      [exerciseCatalogCategory, exerciseCatalogLevel].forEach(control =>
+        control.addEventListener("change", renderExerciseCatalog));
+      renderExerciseCatalog();
 
       let youtubeApiPromise = null;
       function loadYouTubeApi() {
@@ -4064,7 +5306,7 @@
         item.host.hidden = true;
         item.preview.hidden = false;
         item.button.disabled = ntcState.claims[item.activityKey] === ntcCurrentDate();
-        item.button.textContent = item.button.disabled ? "Séance validée aujourd’hui ✓" : "Regarder la séance (+10 EP)";
+        item.button.textContent = item.button.disabled ? "Vidéo suivie aujourd’hui ✓" : "Regarder la séance (+10 EP)";
         watchStatus(item, "Vidéo fermée. La progression de lecture n’est pas validée.");
       }
       function finishExerciseVideo(item) {
@@ -4079,7 +5321,7 @@
         item.player.pauseVideo();
         const reward = awardEffortPoints(item.activityKey, 10);
         item.button.disabled = reward.saved;
-        item.button.textContent = reward.saved ? "Séance validée aujourd’hui ✓" : "Réessayer la validation après la vidéo";
+        item.button.textContent = reward.saved ? "Vidéo suivie aujourd’hui ✓" : "Réessayer la validation après la vidéo";
         const rewardMessage = !reward.saved
           ? "La séance est terminée, mais les points n’ont pas pu être enregistrés."
           : reward.duplicate
@@ -4087,8 +5329,9 @@
             : reward.awarded
               ? `+${reward.awarded} points d’effort${reward.coins ? ` et +${reward.coins} NTC` : ""}.`
               : "Ta limite quotidienne de points est atteinte.";
-        watchStatus(item, `Séance terminée. ${rewardMessage}`);
-        showToast(`Séance terminée. ${rewardMessage}`);
+        item.workoutButton.hidden = false;
+        watchStatus(item, `Vidéo suivie à 90 %. ${rewardMessage} Si tu as fait cette séance, confirme-le avec le bouton du carnet.`);
+        showToast(`Vidéo suivie à 90 %. ${rewardMessage}`);
         updateExerciseUnlockHint(item.level);
       }
       exerciseCards.forEach(({ card, videoId, level, key }) => {
@@ -4099,8 +5342,34 @@
         button.textContent = "Regarder la séance (+10 EP)";
         if (ntcState.claims[activityKey] === ntcCurrentDate()) {
           button.disabled = true;
-          button.textContent = "Séance validée aujourd’hui ✓";
+          button.textContent = "Vidéo suivie aujourd’hui ✓";
         }
+        const workoutButton = document.createElement("button");
+        workoutButton.className = "workout-video-prefill-button";
+        workoutButton.type = "button";
+        workoutButton.textContent = "J’ai fait cette séance · noter au carnet";
+        workoutButton.hidden = true;
+        const videoType = $(".video-meta span", card)?.textContent || "";
+        const workoutCategory = videoType.includes("Musculation") ? "Corps entier"
+          : videoType.includes("Yoga") ? "Yoga / Pilates"
+            : videoType.includes("Cardio-boxe") ? "Cardio-boxe" : "Cardio";
+        const workoutName = $("h3", card)?.textContent.trim() || "Séance vidéo";
+        workoutButton.addEventListener("click", () => {
+          if (!workoutLogbookState.activeSession) workoutStartButton.click();
+          if (!workoutLogbookState.activeSession) {
+            showToast("La séance n’a pas pu démarrer dans le carnet. Réessaie.");
+            return;
+          }
+          $("#workoutCategory").value = workoutCategory;
+          $("#workoutExerciseName").value = workoutName;
+          $("#workoutSets").value = "";
+          $("#workoutReps").value = "";
+          $("#workoutWeight").value = "0";
+          $("#workoutRest").value = "60";
+          $("#workoutExerciseFields").scrollIntoView({ behavior: "smooth", block: "center" });
+          $("#workoutExerciseName").focus({ preventScroll: true });
+          showToast("Séance préremplie. Confirme les séries, répétitions et charges réellement effectuées.");
+        });
         const preview = $(".video-preview", card);
         const host = document.createElement("div");
         host.className = "exercise-player-host";
@@ -4118,7 +5387,7 @@
         const status = document.createElement("p");
         status.className = "exercise-watch-status";
         status.setAttribute("aria-live", "polite");
-        const item = { card, videoId, level, key, activityKey, button, preview, host, progress, progressFill, status, player: null, timer: 0, watched: 0, duration: 0, lastTime: null, lastTick: 0 };
+        const item = { card, videoId, level, key, activityKey, button, workoutButton, preview, host, progress, progressFill, status, player: null, timer: 0, watched: 0, duration: 0, lastTime: null, lastTick: 0 };
         button.addEventListener("click", async () => {
           if (item.player) {
             closeExercisePlayer(item);
@@ -4143,7 +5412,7 @@
                   progress.hidden = false;
                   button.disabled = false;
                   button.textContent = "Fermer la vidéo";
-                  status.textContent = "Regarde au moins 90 % de cette vidéo dans le lecteur pour la valider.";
+                  status.textContent = "Regarde au moins 90 % pour valider le suivi de la vidéo. Cela n’enregistre pas encore tes performances.";
                   item.timer = window.setInterval(() => {
                     if (!item.player || document.hidden) {
                       item.lastTick = performance.now();
@@ -4195,7 +5464,7 @@
           }
         });
         const copy = $(".video-copy", card);
-        copy.append(button, progress, status);
+        copy.append(button, progress, status, workoutButton);
       });
 
       const fruitGameArena = $("#fruitGameArena");
@@ -5784,9 +7053,59 @@
           instructions: "Fouette les œufs avec le sucre. Ajoute la farine et la levure, puis le beurre fondu et le zeste de citron. Laisse reposer la pâte au frais 30 minutes. Remplis les moules aux deux tiers et cuis 8 à 10 minutes à 200 °C."
         },
         {
+          name: "Porridge banane-cannelle", aliases: ["porridge banane", "porridge cannelle", "flocons d’avoine banane"], servings: 1, category: "Petit-déjeuner", tags: ["Porridge", "Petit-déjeuner", "Fruit"],
+          ingredients: [["Flocons d’avoine", "50 g"], ["Lait", "200 ml"], ["Banane", "1"], ["Cannelle", "1 pincée"]],
+          instructions: "Fais chauffer les flocons d’avoine et le lait dans une petite casserole à feu doux pendant 5 à 7 minutes en remuant. Verse dans un bol, ajoute la banane en rondelles et la cannelle."
+        },
+        {
+          name: "Porridge cacao-cacahuète", aliases: ["porridge chocolat", "porridge cacao", "porridge beurre de cacahuète"], servings: 1, category: "Petit-déjeuner", tags: ["Porridge", "Petit-déjeuner"],
+          ingredients: [["Flocons d’avoine", "50 g"], ["Lait", "200 ml"], ["Cacao non sucré", "1 c. à soupe"], ["Beurre de cacahuète", "1 c. à soupe"], ["Banane", "1/2"]],
+          instructions: "Mélange les flocons, le lait et le cacao dans une casserole. Fais cuire à feu doux 5 à 7 minutes en remuant. Ajoute le beurre de cacahuète et sers avec la demi-banane en rondelles."
+        },
+        {
+          name: "Porridge fruits rouges et skyr", aliases: ["porridge fruits rouges", "porridge skyr"], servings: 1, category: "Petit-déjeuner", tags: ["Porridge", "Petit-déjeuner", "Fruit", "Protéiné"],
+          ingredients: [["Flocons d’avoine", "50 g"], ["Lait", "180 ml"], ["Fruits rouges", "100 g"], ["Skyr nature", "100 g"]],
+          instructions: "Fais cuire les flocons avec le lait à feu doux pendant 5 à 7 minutes. Laisse tiédir quelques instants, puis ajoute le skyr et les fruits rouges."
+        },
+        {
           name: "Salade de lentilles", aliases: ["lentilles en salade"], servings: 4, category: "Entrée", tags: ["Féculent", "Légume"],
           ingredients: [["Lentilles vertes", "250 g"], ["Carotte", "1"], ["Oignon rouge", "1/2"], ["Moutarde", "1 c. à soupe"], ["Vinaigre", "2 c. à soupe"], ["Huile", "3 c. à soupe"]],
           instructions: "Rince les lentilles et cuis-les dans l’eau avec la carotte environ 20 minutes. Égoutte et laisse tiédir. Mélange la moutarde, le vinaigre et l’huile, puis ajoute l’oignon émincé et les lentilles."
+        },
+        {
+          name: "Tartines avocat et œuf", aliases: ["toast avocat oeuf", "tartine avocat", "avocat sur toast"], servings: 2, category: "Entrée", tags: ["Avocat", "Végétarien"],
+          ingredients: [["Pain complet", "2 tranches"], ["Avocats", "1"], ["Œufs", "2"], ["Jus de citron", "1 c. à café"], ["Graines de sésame", "1 c. à café"]],
+          instructions: "Fais griller le pain. Écrase l’avocat avec le jus de citron et étale-le sur les tartines. Fais cuire les œufs au plat ou pochés, dépose-les sur l’avocat et termine avec les graines."
+        },
+        {
+          name: "Guacamole maison", aliases: ["guacamole", "avocat écrasé"], servings: 4, category: "Entrée", tags: ["Avocat", "Végétarien"],
+          ingredients: [["Avocats", "2"], ["Tomate", "1"], ["Oignon rouge", "1/4"], ["Jus de citron vert", "1 c. à soupe"], ["Coriandre fraîche", "1 c. à soupe"]],
+          instructions: "Écrase la chair des avocats avec le jus de citron vert. Incorpore la tomate en petits dés, l’oignon finement haché et la coriandre. Mélange et sers frais."
+        },
+        {
+          name: "Verrines avocat-crevettes", aliases: ["verrine avocat crevette", "avocat aux crevettes"], servings: 4, category: "Entrée", tags: ["Avocat", "Poisson"],
+          ingredients: [["Avocats", "2"], ["Crevettes décortiquées", "160 g"], ["Fromage blanc", "2 c. à soupe"], ["Jus de citron", "1 c. à soupe"], ["Ciboulette", "1 c. à soupe"]],
+          instructions: "Écrase un avocat avec le fromage blanc et le jus de citron, puis répartis dans quatre verrines. Coupe le second avocat en dés, ajoute les crevettes et la ciboulette, puis répartis le mélange dans les verrines."
+        },
+        {
+          name: "Salade caprese", aliases: ["tomate mozzarella basilic", "salade tomate mozzarella"], servings: 4, category: "Entrée", tags: ["Légume", "Végétarien"],
+          ingredients: [["Tomates", "4"], ["Mozzarella", "250 g"], ["Basilic frais", "1 poignée"], ["Huile d’olive", "2 c. à soupe"]],
+          instructions: "Coupe les tomates et la mozzarella en tranches. Dispose-les en alternance, ajoute les feuilles de basilic, puis assaisonne avec l’huile d’olive, du sel et du poivre."
+        },
+        {
+          name: "Bruschettas tomate-basilic", aliases: ["bruschetta", "bruschetta tomate"], servings: 4, category: "Entrée", tags: ["Légume", "Féculent", "Végétarien"],
+          ingredients: [["Pain de campagne", "8 tranches"], ["Tomates", "3"], ["Gousses d’ail", "1"], ["Basilic frais", "1 poignée"], ["Huile d’olive", "2 c. à soupe"]],
+          instructions: "Fais griller le pain. Coupe les tomates en petits dés et mélange-les avec le basilic ciselé et l’huile d’olive. Frotte le pain avec l’ail, puis garnis avec les tomates."
+        },
+        {
+          name: "Taboulé frais", aliases: ["taboule", "taboulé libanais"], servings: 4, category: "Entrée", tags: ["Légume", "Féculent", "Végétarien"],
+          ingredients: [["Boulgour fin", "150 g"], ["Tomates", "2"], ["Concombre", "1/2"], ["Persil", "1 bouquet"], ["Menthe fraîche", "1/2 bouquet"], ["Jus de citron", "2 c. à soupe"]],
+          instructions: "Réhydrate le boulgour selon les indications du paquet et laisse-le refroidir. Coupe les tomates et le concombre en petits dés. Ajoute le persil et la menthe hachés, le jus de citron et un filet d’huile d’olive, puis mélange."
+        },
+        {
+          name: "Houmous maison", aliases: ["houmous", "hummus"], servings: 4, category: "Entrée", tags: ["Légume", "Végétarien"],
+          ingredients: [["Pois chiches cuits", "400 g"], ["Purée de sésame (tahini)", "2 c. à soupe"], ["Jus de citron", "2 c. à soupe"], ["Ail", "1 gousse"], ["Huile d’olive", "2 c. à soupe"]],
+          instructions: "Mixe les pois chiches avec le tahini, le jus de citron, l’ail et l’huile d’olive. Ajoute un peu d’eau jusqu’à obtenir une texture crémeuse. Sers avec un filet d’huile d’olive."
         },
         {
           name: "Carottes râpées", aliases: ["salade de carottes"], servings: 4, category: "Entrée", tags: ["Légume"],
@@ -6129,6 +7448,21 @@
           instructions: "Préchauffe le four à 200 °C. Fais fondre le chocolat avec le beurre. Fouette les œufs et le sucre, incorpore le chocolat puis la farine. Répartis dans des ramequins beurrés et cuis 8 à 10 minutes pour garder le cœur fondant."
         },
         {
+          name: "Galettes de riz au chocolat blanc", aliases: ["galette de riz white choc", "galettes de riz chocolat blanc", "rice cakes chocolat blanc"], servings: 4, category: "Dessert", tags: ["Dessert", "Féculent"],
+          ingredients: [["Galettes de riz", "4"], ["Chocolat blanc", "100 g"], ["Éclats de noisettes", "1 c. à soupe"]],
+          instructions: "Fais fondre doucement le chocolat blanc. Trempe une face de chaque galette ou étale le chocolat dessus, puis ajoute les éclats de noisettes. Place au frais jusqu’à ce que le chocolat durcisse."
+        },
+        {
+          name: "Profiteroles au chocolat", aliases: ["profiterole", "choux glace chocolat"], servings: 6, category: "Dessert", tags: ["Dessert", "Féculent"],
+          ingredients: [["Petits choux", "12"], ["Glace vanille", "6 boules"], ["Chocolat noir", "150 g"], ["Crème liquide", "100 ml"]],
+          instructions: "Ouvre les petits choux et garnis-les de glace vanille. Fais chauffer la crème, verse-la sur le chocolat haché et mélange jusqu’à obtenir une sauce lisse. Nappe les choux au moment de servir."
+        },
+        {
+          name: "Mille-feuille à la vanille", aliases: ["mille feuille", "millefeuille"], servings: 6, category: "Dessert", tags: ["Dessert", "Féculent"],
+          ingredients: [["Pâte feuilletée", "2 rouleaux"], ["Lait", "500 ml"], ["Jaunes d’œufs", "4"], ["Sucre", "100 g"], ["Maïzena", "40 g"], ["Vanille", "1 gousse"]],
+          instructions: "Fais cuire les pâtes feuilletées entre deux plaques à 200 °C jusqu’à ce qu’elles soient dorées, puis coupe-les en trois rectangles égaux. Prépare une crème pâtissière avec le lait vanillé, les jaunes, le sucre et la Maïzena. Laisse refroidir, monte le mille-feuille en alternant pâte et crème, puis réfrigère."
+        },
+        {
           name: "Clafoutis aux abricots", aliases: ["clafoutis abricot", "clafoutis abricots"], servings: 6, category: "Dessert", tags: ["Dessert", "Fruit"],
           ingredients: [["Abricots", "500 g"], ["Œufs", "3"], ["Farine", "100 g"], ["Lait", "250 ml"], ["Sucre", "80 g"], ["Beurre", "20 g"]],
           instructions: "Préchauffe le four à 180 °C et beurre un plat. Dispose les abricots dénoyautés et coupés en deux. Mélange les œufs, le sucre, la farine et le lait, verse sur les fruits et cuis 35 à 40 minutes."
@@ -6214,9 +7548,84 @@
           instructions: "Rince et cuis le quinoa selon les indications du paquet, puis laisse refroidir. Ajoute le concombre et les tomates en dés, les pois chiches et le persil. Assaisonne avec le jus de citron et un filet d’huile."
         },
         {
+          name: "Quinoa chaud aux légumes et pois chiches", aliases: ["quinoa chaud", "quinoa chaud légumes", "plat chaud quinoa"], servings: 4, category: "Plat", tags: ["Féculent", "Légume", "Végétarien"],
+          ingredients: [["Quinoa", "200 g"], ["Pois chiches cuits", "200 g"], ["Courgette", "1"], ["Poivron rouge", "1"], ["Oignon", "1"], ["Bouillon de légumes", "450 ml"], ["Cumin", "1 c. à café"]],
+          instructions: "Rince le quinoa. Fais revenir l’oignon, la courgette et le poivron en dés dans une casserole avec un filet d’huile. Ajoute le quinoa, le cumin et le bouillon, couvre et cuis à feu doux environ 15 minutes. Incorpore les pois chiches pour les 5 dernières minutes et sers chaud."
+        },
+        {
           name: "Boulettes de bœuf à la tomate", aliases: ["boulettes sauce tomate", "boulettes boeuf"], servings: 4, category: "Plat", tags: ["Viande"],
           ingredients: [["Bœuf haché", "500 g"], ["Œuf", "1"], ["Chapelure", "40 g"], ["Tomates concassées", "400 g"], ["Oignon", "1"]],
           instructions: "Mélange le bœuf, l’œuf et la chapelure, puis façonne des boulettes. Fais-les dorer, ajoute l’oignon émincé et les tomates concassées. Couvre et laisse mijoter 20 minutes."
+        },
+        {
+          name: "Lasagnes bolognaise", aliases: ["lasagne", "lasagne bolognaise", "lasagnes maison"], servings: 6, category: "Plat", tags: ["Viande", "Féculent"],
+          ingredients: [["Feuilles de lasagne", "12"], ["Bœuf haché", "500 g"], ["Tomates concassées", "400 g"], ["Oignon", "1"], ["Béchamel", "500 ml"], ["Fromage râpé", "120 g"]],
+          instructions: "Fais revenir l’oignon et le bœuf, ajoute les tomates et laisse mijoter 15 minutes. Dans un plat, alterne sauce, feuilles de lasagne et béchamel. Termine par le fromage et cuis 35 à 40 minutes à 180 °C."
+        },
+        {
+          name: "Pizza margherita", aliases: ["pizza margarita", "pizza tomate mozzarella"], servings: 2, category: "Plat", tags: ["Féculent", "Végétarien"],
+          ingredients: [["Pâte à pizza", "1"], ["Coulis de tomate", "120 g"], ["Mozzarella", "150 g"], ["Basilic frais", "quelques feuilles"], ["Huile d’olive", "1 c. à soupe"]],
+          instructions: "Préchauffe le four à 240 °C. Étale le coulis sur la pâte, ajoute la mozzarella en morceaux et un filet d’huile. Enfourne 10 à 12 minutes, puis parsème de basilic frais."
+        },
+        {
+          name: "Couscous au poulet", aliases: ["couscous poulet", "couscous de poulet"], servings: 4, category: "Plat", tags: ["Viande", "Légume", "Féculent"],
+          ingredients: [["Cuisses de poulet", "4"], ["Semoule de couscous", "250 g"], ["Carottes", "2"], ["Courgettes", "2"], ["Pois chiches cuits", "200 g"], ["Bouillon", "700 ml"], ["Épices à couscous", "2 c. à café"]],
+          instructions: "Fais dorer le poulet dans une cocotte. Ajoute les légumes en morceaux, les épices et le bouillon, puis laisse mijoter environ 30 minutes. Ajoute les pois chiches en fin de cuisson et prépare la semoule selon les indications du paquet."
+        },
+        {
+          name: "Poulet basquaise", aliases: ["poulet à la basquaise", "poulet basque"], servings: 4, category: "Plat", tags: ["Viande", "Légume"],
+          ingredients: [["Cuisses de poulet", "4"], ["Poivrons", "2"], ["Tomates", "4"], ["Oignon", "1"], ["Gousses d’ail", "2"], ["Paprika", "1 c. à café"]],
+          instructions: "Fais dorer le poulet dans une cocotte puis réserve-le. Fais revenir l’oignon, l’ail et les poivrons émincés. Ajoute les tomates et le paprika, remets le poulet et laisse mijoter à couvert 35 à 40 minutes."
+        },
+        {
+          name: "Bowl quinoa et avocat", aliases: ["bowl quinoa avocat", "quinoa avocat"], servings: 1, category: "Plat", tags: ["Féculent", "Légume", "Végétarien"],
+          ingredients: [["Quinoa cuit", "150 g"], ["Avocat", "1/2"], ["Pois chiches cuits", "80 g"], ["Tomates cerises", "80 g"], ["Concombre", "1/2"], ["Jus de citron", "1 c. à soupe"]],
+          instructions: "Dispose le quinoa dans un bol. Ajoute l’avocat en tranches, les pois chiches, les tomates coupées en deux et le concombre en dés. Assaisonne avec le jus de citron et un filet d’huile d’olive."
+        },
+        {
+          name: "Salade de poulet et légumes", aliases: ["salade poulet légumes", "salade poulet legumes"], servings: 1, category: "Plat", tags: ["Viande", "Légume"],
+          ingredients: [["Blanc de poulet", "120 g"], ["Salade verte", "1 poignée"], ["Tomate", "1"], ["Concombre", "1/2"], ["Maïs", "50 g"], ["Pain complet", "1 tranche"]],
+          instructions: "Fais cuire le poulet à cœur dans une poêle, puis coupe-le en morceaux. Coupe les légumes et dispose-les avec la salade et le maïs. Ajoute le poulet et accompagne d’une vinaigrette légère et du pain."
+        },
+        {
+          name: "Bowl de légumes verts", aliases: ["bowl légumes verts", "bowl legumes verts"], servings: 1, category: "Plat", tags: ["Légume", "Végétarien"],
+          ingredients: [["Lentilles cuites", "120 g"], ["Épinards", "1 poignée"], ["Concombre", "1/2"], ["Jus de citron", "1 c. à soupe"], ["Huile d’olive", "1 c. à café"]],
+          instructions: "Réchauffe les lentilles. Ajoute les épinards et le concombre en dés dans un bol. Dépose les lentilles dessus et assaisonne avec le citron et l’huile d’olive."
+        },
+        {
+          name: "Yaourt grec, fruits et graines", aliases: ["yaourt grec fruits graines", "collation yaourt fruits"], servings: 1, category: "Petit-déjeuner", tags: ["Petit-déjeuner", "Fruit", "Protéiné"],
+          ingredients: [["Yaourt grec nature", "150 g"], ["Pomme ou fruits rouges", "1 portion"], ["Flocons d’avoine", "20 g"], ["Graines", "1 c. à café"]],
+          instructions: "Coupe la pomme en morceaux si tu l’utilises. Verse le yaourt dans un bol et ajoute les fruits, les flocons d’avoine et les graines."
+        },
+        {
+          name: "Saumon, brocoli et riz", aliases: ["saumon brocoli riz", "saumon riz brocoli"], servings: 1, category: "Plat", tags: ["Poisson", "Légume", "Féculent"],
+          ingredients: [["Filet de saumon", "120 g"], ["Riz cru", "60 g"], ["Brocoli", "150 g"], ["Citron", "1/2"], ["Huile d’olive", "1 c. à café"]],
+          instructions: "Fais cuire le riz et le brocoli. Assaisonne le saumon avec le citron et l’huile, puis cuis-le au four à 190 °C pendant 12 à 15 minutes selon son épaisseur. Sers avec le riz et le brocoli."
+        },
+        {
+          name: "Curry de pois chiches", aliases: ["curry pois chiches", "pois chiches au curry"], servings: 1, category: "Plat", tags: ["Légume", "Végétarien"],
+          ingredients: [["Pois chiches cuits", "120 g"], ["Tomates concassées", "150 g"], ["Lait de coco", "50 ml"], ["Épinards", "1 poignée"], ["Curry doux", "1 c. à café"]],
+          instructions: "Fais mijoter les tomates, le lait de coco et le curry pendant 10 minutes. Ajoute les pois chiches et les épinards, puis poursuis la cuisson 5 minutes. Sers seul ou avec un peu de riz."
+        },
+        {
+          name: "Pâtes complètes tomate-courgette", aliases: ["pâtes tomate courgette", "pates completes courgette"], servings: 1, category: "Plat", tags: ["Féculent", "Légume", "Végétarien"],
+          ingredients: [["Pâtes complètes crues", "75 g"], ["Petite courgette", "1"], ["Tomates concassées", "150 g"], ["Ail", "1 gousse"], ["Herbes", "1 pincée"]],
+          instructions: "Fais cuire les pâtes. Coupe la courgette en dés et fais-la revenir quelques minutes. Ajoute les tomates, l’ail et les herbes, puis laisse mijoter 10 minutes. Mélange avec les pâtes égouttées."
+        },
+        {
+          name: "Wrap poulet et houmous", aliases: ["wrap poulet houmous", "wrap au poulet"], servings: 1, category: "Plat", tags: ["Viande", "Légume", "Féculent"],
+          ingredients: [["Tortilla complète", "1"], ["Poulet cuit", "100 g"], ["Houmous", "1 c. à soupe"], ["Salade", "1 poignée"], ["Tomate", "1/2"], ["Concombre", "1/4"]],
+          instructions: "Étale le houmous sur la tortilla. Ajoute le poulet et les légumes coupés en lamelles, puis roule fermement le wrap."
+        },
+        {
+          name: "Omelette épinards et feta", aliases: ["omelette épinards feta", "omelette aux épinards"], servings: 1, category: "Plat", tags: ["Légume", "Végétarien"],
+          ingredients: [["Œufs", "2"], ["Épinards", "1 poignée"], ["Feta", "25 g"], ["Poivre", "1 pincée"]],
+          instructions: "Fais revenir les épinards dans une poêle jusqu’à ce qu’ils tombent. Bats les œufs, verse-les dans la poêle et cuis à feu doux. Ajoute la feta émiettée et plie l’omelette avant de servir."
+        },
+        {
+          name: "Soupe de lentilles et carottes", aliases: ["soupe lentilles carottes", "soupe lentilles"], servings: 1, category: "Entrée", tags: ["Légume", "Féculent", "Végétarien"],
+          ingredients: [["Lentilles sèches", "70 g"], ["Carotte", "1"], ["Oignon", "1/2"], ["Bouillon", "300 ml"], ["Cumin", "1 pincée"]],
+          instructions: "Fais revenir l’oignon et la carotte en dés. Ajoute les lentilles, le cumin et le bouillon, puis laisse mijoter environ 25 minutes jusqu’à ce que les lentilles soient tendres."
         },
       ];
       const recipeTaxonomy = {
@@ -6310,7 +7719,7 @@
 
       function selectWorldRecipe(meal, selectedButton) {
         selectedWorldRecipe = meal;
-        $$(".recipe-result-button", worldRecipeResults).forEach(button => button.setAttribute("aria-pressed", String(button === selectedButton)));
+        $$(".recipe-result-button", $("#nutritionPage")).forEach(button => button.setAttribute("aria-pressed", String(button === selectedButton)));
         $("#worldRecipeTitle").textContent = meal.strMeal || "Recette";
         $("#worldRecipeInstructions").textContent = (meal.strInstructions || "Aucune préparation n’est indiquée par la fiche.").trim();
         selectedWorldRecipeBaseServings = Number(meal.recipeServings) || 4;
@@ -6326,13 +7735,21 @@
         button.className = "recipe-result-button";
         button.type = "button";
         button.setAttribute("aria-pressed", "false");
+        const icon = document.createElement("span");
+        icon.className = "recipe-result-icon";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = meal.recipeTags?.includes("Smoothie") ? "🥤"
+          : meal.recipeTags?.includes("Porridge") ? "🥣"
+            : meal.strCategory === "Entrée" ? (meal.recipeTags?.includes("Avocat") ? "🥑" : "🥗")
+              : meal.strCategory === "Dessert" ? "🍰" : "🍽️";
         const copy = document.createElement("span");
         const title = document.createElement("strong");
         title.textContent = meal.strMeal || "Recette sans titre";
         const detail = document.createElement("small");
-        detail.textContent = meal.strCategory || "Recette NutriPulse";
+        const labels = [meal.strCategory, ...(meal.recipeTags || []).filter(tag => tag === "Smoothie" || tag === "Protéiné")].filter(Boolean);
+        detail.textContent = [...new Set(labels)].join(" · ") || "Recette NutriPulse";
         copy.append(title, detail);
-        button.append(copy);
+        button.append(icon, copy);
         button.addEventListener("click", () => selectWorldRecipe(meal, button));
         return button;
       }
@@ -6394,14 +7811,13 @@
       }
 
       function closeOpenRecipeDetails() {
-        $$(".recipe-details[open]", $("#nutritionPage")).forEach(details => { details.open = false; });
-        $$(".recipe-result-button[aria-pressed='true']", worldRecipeResults).forEach(button => button.setAttribute("aria-pressed", "false"));
+        $$(".recipe-result-button[aria-pressed='true']", $("#nutritionPage")).forEach(button => button.setAttribute("aria-pressed", "false"));
         worldRecipeDetail.hidden = true;
         selectedWorldRecipe = null;
       }
 
       $("#closeWorldRecipeDetail").addEventListener("click", () => {
-        const selectedButton = $('.recipe-result-button[aria-pressed="true"]', worldRecipeResults);
+        const selectedButton = $('.recipe-result-button[aria-pressed="true"]', $("#nutritionPage"));
         worldRecipeDetail.hidden = true;
         selectedWorldRecipe = null;
         if (selectedButton) {
@@ -6450,12 +7866,9 @@
           worldRecipeStatus.textContent = `Aucune recette en français trouvée pour « ${query} ». Essaie un autre nom ou un ingrédient.`;
           return;
         }
-        const visibleMeals = matches.slice(0, 48);
-        worldRecipeResults.replaceChildren(...visibleMeals.map(makeWorldRecipeResult));
-        const resultCount = `${visibleMeals.length} recette${visibleMeals.length > 1 ? "s" : ""} trouvée${visibleMeals.length > 1 ? "s" : ""}`;
-        worldRecipeStatus.textContent = matches.length > visibleMeals.length
-          ? `${resultCount} (les premiers résultats de la sélection NutriPulse en français).`
-          : `${resultCount} dans la sélection NutriPulse en français.`;
+        worldRecipeResults.replaceChildren(...matches.map(makeWorldRecipeResult));
+        const resultCount = `${matches.length} recette${matches.length > 1 ? "s" : ""} trouvée${matches.length > 1 ? "s" : ""}`;
+        worldRecipeStatus.textContent = `${resultCount} dans la sélection NutriPulse en français.`;
       });
 
       worldRecipePeopleCount.addEventListener("input", renderScaledRecipeIngredients);
@@ -6489,6 +7902,429 @@
         if (!event.target.closest(".search-wrap")) results.classList.remove("open");
       });
     })();
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module">
+    const modelBaseUrl = "https://assiamahs.github.io/opengym3d/assets/";
+    const deskBreakModelUrl = "https://raw.githubusercontent.com/shlomorsh/desk-break/main/library/exercises.glb";
+    const stage = document.querySelector("#exerciseModelStage");
+    const controlsPanel = document.querySelector("#exerciseModelControls");
+    const image = document.querySelector("#exerciseDetailImage");
+    const staticNote = document.querySelector("#exerciseDetailStaticNote");
+    const status = document.querySelector("#exerciseModelStatus");
+    const detailPanel = document.querySelector("#exerciseDetailPanel");
+    const playButton = document.querySelector("#exerciseModelPlay");
+    const repeatButton = document.querySelector("#exerciseModelRepeat");
+    const rotateButton = document.querySelector("#exerciseModelRotate");
+    let three = null;
+    let renderer = null;
+    let camera = null;
+    let scene = null;
+    let orbitControls = null;
+    let currentModel = null;
+    let currentAccessory = null;
+    let currentModelSharesResources = false;
+    let currentModelSource = "opengym";
+    let mixer = null;
+    let currentAction = null;
+    let isPlaying = true;
+    let lastExerciseCoachPhase = "";
+    let loadRequest = 0;
+    let modelHeight = 1.7;
+    let modelViewHint = "front";
+    let resizeObserver = null;
+    let deskBreakGltfPromise = null;
+    const clock = { value: null };
+    function syncExerciseModelToTimer(state = window.nutripulseExerciseGuidedTimerState) {
+      if (!currentAction || !state) return;
+      const phaseKey = `${state.phase}:${state.currentSet}`;
+      if (["prep", "rest", "done"].includes(state.phase) && phaseKey !== lastExerciseCoachPhase) {
+        currentAction.reset();
+      }
+      lastExerciseCoachPhase = phaseKey;
+      isPlaying = state.phase === "ready" || (state.phase === "work" && state.running);
+      currentAction.paused = !isPlaying;
+      playButton.textContent = isPlaying ? "Ⅱ Pause" : "▶ Lecture";
+      playButton.setAttribute("aria-pressed", String(isPlaying));
+      repeatButton.disabled = ["prep", "work", "rest"].includes(state.phase);
+    }
+    window.addEventListener("nutripulse:exercise-guided-timer", event =>
+      syncExerciseModelToTimer(event.detail));
+    const threeModulesPromise = Promise.all([
+      import("three"),
+      import("three/addons/loaders/GLTFLoader.js"),
+      import("three/addons/controls/OrbitControls.js"),
+      import("three/addons/utils/SkeletonUtils.js")
+    ]).then(([threeModule, loaderModule, controlsModule, skeletonUtils]) => ({
+      THREE: threeModule,
+      GLTFLoader: loaderModule.GLTFLoader,
+      OrbitControls: controlsModule.OrbitControls,
+      cloneSkeleton: skeletonUtils.clone
+    })).catch(error => {
+      console.error("Le module de visualisation 3D n’a pas pu être chargé.", error);
+      return null;
+    });
+
+    function showExerciseModelFallback(message) {
+      stage.hidden = true;
+      image.hidden = false;
+      staticNote.hidden = false;
+      controlsPanel.hidden = true;
+      document.querySelector("#exerciseMuscleLegend").hidden = true;
+      status.textContent = message;
+    }
+
+    function resizeExerciseModel() {
+      if (!renderer || !camera || stage.hidden) return;
+      const width = stage.clientWidth;
+      const height = stage.clientHeight;
+      if (!width || !height) return;
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    }
+
+    function initializeExerciseViewer(modules) {
+      if (renderer) return;
+      three = modules.THREE;
+      scene = new three.Scene();
+      scene.background = new three.Color("#081629");
+      camera = new three.PerspectiveCamera(35, 1, 0.01, 100);
+      renderer = new three.WebGLRenderer({ antialias: true, alpha: false });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.outputColorSpace = three.SRGBColorSpace;
+      stage.replaceChildren(renderer.domElement);
+      orbitControls = new modules.OrbitControls(camera, renderer.domElement);
+      orbitControls.enableDamping = true;
+      orbitControls.dampingFactor = 0.08;
+      orbitControls.minDistance = 0.5;
+      orbitControls.maxDistance = 8;
+      scene.add(new three.HemisphereLight(0xe4f2ff, 0x263244, 2.2));
+      const keyLight = new three.DirectionalLight(0xffffff, 2.4);
+      keyLight.position.set(3, 5, 4);
+      scene.add(keyLight);
+      const fillLight = new three.DirectionalLight(0x71bfff, 1.2);
+      fillLight.position.set(-4, 2, -3);
+      scene.add(fillLight);
+      clock.value = new three.Clock();
+      renderer.setAnimationLoop(() => {
+        const delta = clock.value.getDelta();
+        if (stage.hidden || detailPanel.hidden || !currentModel) return;
+        if (mixer && isPlaying) mixer.update(Math.min(delta, 0.05));
+        orbitControls.update();
+        renderer.render(scene, camera);
+      });
+      if ("ResizeObserver" in window) {
+        resizeObserver = new ResizeObserver(resizeExerciseModel);
+        resizeObserver.observe(stage);
+      } else {
+        window.addEventListener("resize", resizeExerciseModel);
+      }
+    }
+
+    function releaseCurrentModel() {
+      if (!scene) return;
+      if (currentModel) {
+        scene.remove(currentModel);
+        currentModel.traverse(object => {
+          if (!currentModelSharesResources || object.userData.exerciseMuscleHighlight) {
+            if (object.geometry) object.geometry.dispose();
+            if (object.material) {
+              const materials = Array.isArray(object.material) ? object.material : [object.material];
+              materials.forEach(material => {
+                Object.values(material).forEach(value => {
+                  if (value && value.isTexture) value.dispose();
+                });
+                material.dispose();
+              });
+            }
+          }
+        });
+      }
+      if (currentAccessory) {
+        scene.remove(currentAccessory);
+        currentAccessory.traverse(object => {
+          if (object.geometry) object.geometry.dispose();
+          if (object.material) object.material.dispose();
+        });
+      }
+      currentModel = null;
+      currentAccessory = null;
+      currentModelSharesResources = false;
+      mixer = null;
+      currentAction = null;
+    }
+
+    function createExerciseChair() {
+      const chair = new three.Group();
+      const wood = new three.MeshStandardMaterial({ color: "#805b3d", roughness: 0.78 });
+      const addPart = (width, height, depth, x, y, z) => {
+        const part = new three.Mesh(new three.BoxGeometry(width, height, depth), wood);
+        part.position.set(x, y, z);
+        chair.add(part);
+      };
+      addPart(0.46, 0.04, 0.44, 0, 0.43, -0.12);
+      addPart(0.46, 0.5, 0.04, 0, 0.7, -0.34);
+      for (const x of [-0.2, 0.2]) {
+        for (const z of [-0.31, 0.07]) addPart(0.035, 0.41, 0.035, x, 0.205, z);
+      }
+      scene.add(chair);
+      currentAccessory = chair;
+    }
+
+    function setExerciseModelView(view) {
+      if (!camera || !orbitControls) return;
+      const target = orbitControls.target;
+      const isDeskBreak = currentModelSource === "deskbreak";
+      const isFloorView = isDeskBreak && modelViewHint === "floor";
+      const distance = isDeskBreak
+        ? isFloorView ? 3.55 : modelViewHint === "upper" ? 3 : 4.9
+        : Math.max(modelHeight * 1.75, 2.5);
+      const cameraY = target.y + (isDeskBreak
+        ? isFloorView ? 1.65 : modelViewHint === "upper" ? 0.2 : 0.33
+        : 0.15);
+      if (view === "profile") camera.position.set(distance, cameraY, 0);
+      else if (view === "back") camera.position.set(0, cameraY, -distance);
+      else camera.position.set(0, cameraY, distance);
+      camera.lookAt(target);
+      orbitControls.update();
+    }
+
+    function exerciseMuscleRegions(highlights) {
+      const regions = { primary: new Set(), secondary: new Set() };
+      if (!highlights) return regions;
+      const classify = label => {
+        const normalized = label.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("fr-FR");
+        const matches = [];
+        if (/pector|thorax/.test(normalized)) matches.push("chest");
+        if (/dos|dorsal|trapeze/.test(normalized)) matches.push("back");
+        if (/abdomin|sangle|tronc|core/.test(normalized)) matches.push("core");
+        if (/epaul|deltoid/.test(normalized)) matches.push("shoulders");
+        if (/avant.?bras|forearm/.test(normalized)) matches.push("forearms");
+        else if (/biceps|triceps|brachial/.test(normalized)) matches.push("upperArms");
+        if (/fessier|glute|hanche|abducteur|hip/.test(normalized)) matches.push("hips");
+        if (/quadriceps|ischio|cuisse|jamb/.test(normalized)) matches.push("thighs");
+        if (/mollet|cheville|ankle/.test(normalized)) matches.push("calves");
+        return matches;
+      };
+      [["primary", highlights.primary], ["secondary", highlights.secondary]].forEach(([kind, names]) => {
+        (names || []).forEach(name => classify(name).forEach(region => regions[kind].add(region)));
+      });
+      return regions;
+    }
+
+    function addExerciseMuscleHighlights(model, highlights) {
+      const regions = exerciseMuscleRegions(highlights);
+      if (!regions.primary.size && !regions.secondary.size) return 0;
+      const regionBoneRules = {
+        chest: /^(spine(?:0[3-5])?|chest|thorax)$/i,
+        back: /^(spine(?:0[3-5])?|chest|thorax)$/i,
+        core: /^(spine(?:0[12])?|hips)$/i,
+        shoulders: /^(arm[lr]|upperarm01\.[lr]|shoulder[lr])$/i,
+        upperArms: /^(arm[lr]|upperarm0[12]\.[lr])$/i,
+        forearms: /^(elbow[lr]|lowerarm0[12]\.[lr])$/i,
+        hips: /^(hips|leg[lr]|upperleg01\.[lr])$/i,
+        thighs: /^(leg[lr]|upperleg0[12]\.[lr])$/i,
+        calves: /^(knee[lr]|lowerleg0[12]\.[lr])$/i
+      };
+      const bones = [];
+      model.traverse(object => {
+        if (object.isBone) bones.push(object);
+      });
+      let added = 0;
+      bones.forEach(bone => {
+        const name = bone.name || "";
+        const candidates = Object.entries(regionBoneRules).filter(([region, rule]) =>
+          rule.test(name) && (regions.primary.has(region) || regions.secondary.has(region)));
+        const selected = candidates.find(([region]) => regions.primary.has(region)) || candidates[0];
+        if (!selected) return;
+        const [region] = selected;
+        const kind = regions.primary.has(region) ? "primary" : "secondary";
+        const boneChildren = bone.children.filter(child => child.isBone);
+        const childRule = region === "chest" || region === "back" || region === "core"
+          ? /^(spine|spine0[1-5]|neck)$/i
+          : region === "hips" || region === "thighs"
+            ? /^(leg[lr]|upperleg0[12]\.[lr]|knee[lr])$/i
+            : region === "calves"
+              ? /^(knee[lr]|lowerleg0[12]\.[lr]|foot[lr])$/i
+              : /^(elbow[lr]|upperarm0[12]\.[lr]|lowerarm0[12]\.[lr]|hand[lr])$/i;
+        const child = boneChildren.find(item => childRule.test(item.name || "")) || boneChildren[0];
+        const direction = child ? child.position.clone() : new three.Vector3();
+        const segmentLength = direction.length();
+        const marker = new three.Mesh(
+          new three.SphereGeometry(1, 16, 12),
+          new three.MeshBasicMaterial({
+            color: kind === "primary" ? 0xff3138 : 0xff9a36,
+            transparent: true,
+            opacity: kind === "primary" ? 0.82 : 0.65,
+            depthWrite: false
+          })
+        );
+        marker.userData.exerciseMuscleHighlight = true;
+        marker.renderOrder = 2;
+        if (child && segmentLength > 0) {
+          marker.position.copy(direction).multiplyScalar(0.5);
+          marker.quaternion.setFromUnitVectors(new three.Vector3(0, 1, 0), direction.normalize());
+        }
+        const widthFactor = ["chest", "back", "core", "hips"].includes(region) ? 0.075
+          : ["calves", "forearms"].includes(region) ? 0.04 : 0.05;
+        const localWidth = modelHeight * widthFactor / Math.max(model.scale.x, 0.0001);
+        marker.scale.set(localWidth, Math.max(segmentLength * 0.62, localWidth * 1.15), localWidth);
+        bone.add(marker);
+        added++;
+      });
+      return added;
+    }
+
+    async function loadExerciseModel(exercise, muscleHighlights) {
+      const request = ++loadRequest;
+      releaseCurrentModel();
+      if (!exercise.modelId && !exercise.animationClip) return;
+      const isDeskBreak = Boolean(exercise.animationClip);
+      currentModelSource = isDeskBreak ? "deskbreak" : "opengym";
+      modelViewHint = exercise.modelView || "full";
+      status.textContent = isDeskBreak
+        ? "Chargement du mannequin et de sa bibliothèque d’animations (environ 10 Mo la première fois)…"
+        : "Chargement du modèle animé…";
+      const modules = await threeModulesPromise;
+      if (request !== loadRequest) return;
+      if (!modules) {
+        showExerciseModelFallback("Le moteur 3D n’a pas pu démarrer. La photo fixe reste affichée.");
+        return;
+      }
+      try {
+        initializeExerciseViewer(modules);
+        const loader = new modules.GLTFLoader();
+        let gltf;
+        if (isDeskBreak) {
+          if (!deskBreakGltfPromise) {
+            deskBreakGltfPromise = loader.loadAsync(deskBreakModelUrl).catch(error => {
+              deskBreakGltfPromise = null;
+              throw error;
+            });
+          }
+          gltf = await deskBreakGltfPromise;
+        } else {
+          gltf = await loader.loadAsync(`${modelBaseUrl}${encodeURIComponent(exercise.modelId)}.glb`);
+        }
+        if (request !== loadRequest) return;
+        if (!gltf.animations || !gltf.animations.length) {
+          throw new Error("Le modèle ne contient pas de séquence animée.");
+        }
+        const animation = exercise.animationClip
+          ? three.AnimationClip.findByName(gltf.animations, exercise.animationClip)
+          : gltf.animations[0];
+        if (!animation) {
+          throw new Error(exercise.animationClip
+            ? `L’animation « ${exercise.animationClip} » est absente de la bibliothèque.`
+            : "Le modèle ne contient pas de séquence animée.");
+        }
+        const model = isDeskBreak ? modules.cloneSkeleton(gltf.scene) : gltf.scene;
+        if (isDeskBreak) {
+          model.traverse(object => {
+            if (object.isSkinnedMesh) object.frustumCulled = false;
+          });
+        }
+        const initialBounds = new three.Box3().setFromObject(model);
+        const initialHeight = initialBounds.getSize(new three.Vector3()).y;
+        if (!Number.isFinite(initialHeight) || initialHeight <= 0) {
+          throw new Error("Le modèle 3D n’a pas de dimensions utilisables.");
+        }
+        model.scale.setScalar(1.7 / initialHeight);
+        const bounds = new three.Box3().setFromObject(model);
+        const center = bounds.getCenter(new three.Vector3());
+        model.position.x -= center.x;
+        model.position.z -= center.z;
+        model.position.y -= bounds.min.y;
+        modelHeight = bounds.getSize(new three.Vector3()).y;
+        const muscleHighlightCount = addExerciseMuscleHighlights(model, muscleHighlights);
+        scene.add(model);
+        currentModel = model;
+        currentModelSharesResources = isDeskBreak;
+        mixer = new three.AnimationMixer(model);
+        currentAction = mixer.clipAction(animation);
+        currentAction.setLoop(three.LoopRepeat, Infinity);
+        currentAction.play();
+        if (exercise.modelChair) createExerciseChair();
+        isPlaying = true;
+        playButton.textContent = "Ⅱ Pause";
+        playButton.setAttribute("aria-pressed", "true");
+        stage.hidden = false;
+        controlsPanel.hidden = false;
+        document.querySelector("#exerciseMuscleLegend").hidden = muscleHighlightCount === 0;
+        image.hidden = true;
+        staticNote.hidden = true;
+        const targetHeight = isDeskBreak
+          ? modelViewHint === "floor" ? 0.25 : modelViewHint === "upper" ? 1.25 : 0.92
+          : modelHeight * 0.48;
+        orbitControls.target.set(0, targetHeight, 0);
+        orbitControls.autoRotate = false;
+        rotateButton.setAttribute("aria-pressed", "false");
+        setExerciseModelView("front");
+        resizeExerciseModel();
+        window.requestAnimationFrame(resizeExerciseModel);
+        const muscleStatus = muscleHighlights
+          ? muscleHighlightCount
+            ? " Rouge : muscles principaux ; orange : secondaires."
+            : " Le squelette ne permet pas de placer les repères musculaires sur ce modèle."
+          : "";
+        status.textContent = isDeskBreak
+          ? `Mouvement réel chargé sur mannequin 3D simplifié, sans charge représentée. Fais glisser le modèle pour le tourner.${muscleStatus}`
+          : `Animation réelle chargée. Fais glisser le modèle pour le tourner.${muscleStatus}`;
+        syncExerciseModelToTimer();
+      } catch (error) {
+        if (request !== loadRequest) return;
+        console.error(`Impossible de charger l’animation 3D pour « ${exercise.name} ».`, error);
+        showExerciseModelFallback(error.message.includes("séquence animée") || error.message.includes("est absente")
+          ? "L’animation correspondante est indisponible ; la photo fixe est affichée."
+          : "Le modèle 3D est indisponible (réseau ou WebGL). La photo fixe reste affichée.");
+      }
+    }
+
+    window.addEventListener("nutripulse:exercise-model", event =>
+      loadExerciseModel(event.detail.exercise, event.detail.muscleHighlights));
+    window.addEventListener("nutripulse:exercise-detail-closed", () => {
+      loadRequest++;
+      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+      if (currentAction) currentAction.stop();
+      releaseCurrentModel();
+    });
+    playButton.addEventListener("click", () => {
+      if (!currentAction) return;
+      const guidedState = window.nutripulseExerciseGuidedTimerState;
+      if (guidedState && ["prep", "work", "rest"].includes(guidedState.phase)) {
+        document.querySelector("#exerciseGuidedTimerStart").click();
+        return;
+      }
+      isPlaying = !isPlaying;
+      currentAction.paused = !isPlaying;
+      playButton.textContent = isPlaying ? "Ⅱ Pause" : "▶ Lecture";
+      playButton.setAttribute("aria-pressed", String(isPlaying));
+    });
+    repeatButton.addEventListener("click", () => {
+      if (!currentAction) return;
+      currentAction.reset();
+      currentAction.setLoop(three.LoopRepeat, Infinity);
+      currentAction.play();
+      isPlaying = true;
+      playButton.textContent = "Ⅱ Pause";
+      playButton.setAttribute("aria-pressed", "true");
+    });
+    rotateButton.addEventListener("click", () => {
+      if (!orbitControls) return;
+      orbitControls.autoRotate = !orbitControls.autoRotate;
+      rotateButton.setAttribute("aria-pressed", String(orbitControls.autoRotate));
+    });
+    document.querySelectorAll("[data-exercise-view]").forEach(button => {
+      button.addEventListener("click", () => setExerciseModelView(button.dataset.exerciseView));
+    });
   </script>
 </body>
 </html>
